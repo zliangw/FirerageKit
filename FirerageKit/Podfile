@@ -1,0 +1,9 @@
+platform :ios, '5.1.1'
+
+target :FirerageKitTests do
+    pod "GHUnit", "0.5.8"
+end
+
+target :FirerageKitTests do
+    pod "OCMock"
+end

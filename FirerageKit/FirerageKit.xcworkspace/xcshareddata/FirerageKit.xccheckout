@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EF43ECB0-8339-4007-A333-DBE3E1AA2D4C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FirerageKit</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0D40869D-78B8-4858-A6B1-951776E0B7F7</key>
+		<string>https://github.com/illidan-firerage/FirerageKit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FirerageKit/FirerageKit.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0D40869D-78B8-4858-A6B1-951776E0B7F7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/illidan-firerage/FirerageKit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0D40869D-78B8-4858-A6B1-951776E0B7F7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0D40869D-78B8-4858-A6B1-951776E0B7F7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FirerageKit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
