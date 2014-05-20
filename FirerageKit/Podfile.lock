@@ -1,0 +1,13 @@
+PODS:
+  - GHUnit (0.5.8)
+  - OCMock (2.2.4)
+
+DEPENDENCIES:
+  - GHUnit (= 0.5.8)
+  - OCMock
+
+SPEC CHECKSUMS:
+  GHUnit: 9184a431976f76db6dd2eee2b8a1b8437af476d1
+  OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
+
+COCOAPODS: 0.32.1
