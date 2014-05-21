@@ -1,5 +1,7 @@
 platform :ios, '5.1.1'
 
+pod 'HPGrowingTextView'
+
 target :FirerageKitTests do
     pod "GHUnit", "0.5.8"
 end
