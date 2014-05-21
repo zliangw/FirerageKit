@@ -19,6 +19,11 @@
 		1361F598192AEE6100A985F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1361F597192AEE6100A985F6 /* main.m */; };
 		1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1361F59B192AEE6100A985F6 /* FRAppDelegate.m */; };
 		1361F59E192AEE6100A985F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1361F59D192AEE6100A985F6 /* Images.xcassets */; };
+		1399CBE7192CF08800ACB1E0 /* FRLoadDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1399CBDE192CF08800ACB1E0 /* FRLoadDataTableViewController.m */; };
+		1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */; };
+		1399CBE9192CF08800ACB1E0 /* pdr_blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399CBE2192CF08800ACB1E0 /* pdr_blueArrow.png */; };
+		1399CBEA192CF08800ACB1E0 /* pdr_blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399CBE3192CF08800ACB1E0 /* pdr_blueArrow@2x.png */; };
+		1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1399CBE6192CF08800ACB1E0 /* FRPullUpLoadMoreView.m */; };
 		13ACA45E192B98AF009010AC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13ACA45D192B98AF009010AC /* MainStoryboard_iPhone.storyboard */; };
 		13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA460192B991C009010AC /* FRDemoTableViewController.m */; };
 		13ACA479192B9D5E009010AC /* FRGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA478192B9D5E009010AC /* FRGridView.m */; };
@@ -50,6 +55,14 @@
 		1361F59B192AEE6100A985F6 /* FRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRAppDelegate.m; sourceTree = "<group>"; };
 		1361F59D192AEE6100A985F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1361F5A4192AEE6100A985F6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1399CBDD192CF08800ACB1E0 /* FRLoadDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRLoadDataTableViewController.h; sourceTree = "<group>"; };
+		1399CBDE192CF08800ACB1E0 /* FRLoadDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoadDataTableViewController.m; sourceTree = "<group>"; };
+		1399CBE0192CF08800ACB1E0 /* FRPullDownRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPullDownRefreshView.h; sourceTree = "<group>"; };
+		1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPullDownRefreshView.m; sourceTree = "<group>"; };
+		1399CBE2192CF08800ACB1E0 /* pdr_blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdr_blueArrow.png; sourceTree = "<group>"; };
+		1399CBE3192CF08800ACB1E0 /* pdr_blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdr_blueArrow@2x.png"; sourceTree = "<group>"; };
+		1399CBE5192CF08800ACB1E0 /* FRPullUpLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPullUpLoadMoreView.h; sourceTree = "<group>"; };
+		1399CBE6192CF08800ACB1E0 /* FRPullUpLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPullUpLoadMoreView.m; sourceTree = "<group>"; };
 		13ACA45D192B98AF009010AC /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		13ACA45F192B991C009010AC /* FRDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRDemoTableViewController.h; sourceTree = "<group>"; };
 		13ACA460192B991C009010AC /* FRDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRDemoTableViewController.m; sourceTree = "<group>"; };
@@ -147,6 +160,9 @@
 		1361F591192AEE6100A985F6 /* FirerageKit */ = {
 			isa = PBXGroup;
 			children = (
+				1399CBDC192CF08800ACB1E0 /* FRLoadDataTableViewController */,
+				1399CBDF192CF08800ACB1E0 /* FRPullDownRefreshView */,
+				1399CBE4192CF08800ACB1E0 /* FRPullUpLoadMoreView */,
 				13BAF43B192CAC7100F189D6 /* FRSendMessageTableViewController */,
 				13ACA476192B9D47009010AC /* FRGridView */,
 				13BAF43C192CAC8800F189D6 /* FRCategories */,
@@ -171,6 +187,35 @@
 				13ACA45D192B98AF009010AC /* MainStoryboard_iPhone.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1399CBDC192CF08800ACB1E0 /* FRLoadDataTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1399CBDD192CF08800ACB1E0 /* FRLoadDataTableViewController.h */,
+				1399CBDE192CF08800ACB1E0 /* FRLoadDataTableViewController.m */,
+			);
+			path = FRLoadDataTableViewController;
+			sourceTree = "<group>";
+		};
+		1399CBDF192CF08800ACB1E0 /* FRPullDownRefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				1399CBE0192CF08800ACB1E0 /* FRPullDownRefreshView.h */,
+				1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */,
+				1399CBE2192CF08800ACB1E0 /* pdr_blueArrow.png */,
+				1399CBE3192CF08800ACB1E0 /* pdr_blueArrow@2x.png */,
+			);
+			path = FRPullDownRefreshView;
+			sourceTree = "<group>";
+		};
+		1399CBE4192CF08800ACB1E0 /* FRPullUpLoadMoreView */ = {
+			isa = PBXGroup;
+			children = (
+				1399CBE5192CF08800ACB1E0 /* FRPullUpLoadMoreView.h */,
+				1399CBE6192CF08800ACB1E0 /* FRPullUpLoadMoreView.m */,
+			);
+			path = FRPullUpLoadMoreView;
 			sourceTree = "<group>";
 		};
 		13ACA476192B9D47009010AC /* FRGridView */ = {
@@ -304,6 +349,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1399CBE9192CF08800ACB1E0 /* pdr_blueArrow.png in Resources */,
+				1399CBEA192CF08800ACB1E0 /* pdr_blueArrow@2x.png in Resources */,
 				13ACA45E192B98AF009010AC /* MainStoryboard_iPhone.storyboard in Resources */,
 				1361F596192AEE6100A985F6 /* InfoPlist.strings in Resources */,
 				1361F59E192AEE6100A985F6 /* Images.xcassets in Resources */,
@@ -398,6 +445,9 @@
 				13BAF443192CAC8800F189D6 /* UIView+UIImage.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
 				1361F598192AEE6100A985F6 /* main.m in Sources */,
+				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
+				1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */,
+				1399CBE7192CF08800ACB1E0 /* FRLoadDataTableViewController.m in Sources */,
 				13BAF446192CACB200F189D6 /* FRSendMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
