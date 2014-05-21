@@ -16,22 +16,14 @@
 
 @implementation FRGridViewItem
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithSize:(CGSize)size indexPath:(FRGridItemIndexPath *)indexPath
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     if (self) {
         // Initialization code
+        self.indexPath = indexPath;
     }
     return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

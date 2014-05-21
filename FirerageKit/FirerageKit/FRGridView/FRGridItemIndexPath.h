@@ -10,7 +10,10 @@
 
 @interface FRGridItemIndexPath : NSObject
 
-@property (nonatomic, assign, readonly) NSInteger row;
-@property (nonatomic, assign, readonly) NSInteger column;
+@property (nonatomic, assign, readonly) NSUInteger row;
+@property (nonatomic, assign, readonly) NSUInteger column;
+
++ (instancetype)indexPathWithRow:(NSUInteger)row column:(NSUInteger)column;
+- (instancetype)initWithRow:(NSUInteger)row column:(NSUInteger)column;
 
 @end

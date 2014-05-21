@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong, readonly) FRGridItemIndexPath *indexPath;
 
+- (instancetype)initWithSize:(CGSize)size indexPath:(FRGridItemIndexPath *)indexPath;
+
 @end

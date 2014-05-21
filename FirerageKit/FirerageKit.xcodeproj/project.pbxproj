@@ -26,6 +26,7 @@
 		13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA47E192BA2A6009010AC /* FRGridItemIndexPath.m */; };
 		13FD280F192C7EC30082C3C7 /* UIView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD280E192C7EC30082C3C7 /* UIView+UIImage.m */; };
 		13FD2812192C7FB60082C3C7 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2811192C7FB60082C3C7 /* UIView+Layout.m */; };
+		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
 		E79F98A66C9940B1BC2DD011 /* libPods-FirerageKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF8AC093DAD4516B0CA9D98 /* libPods-FirerageKitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		13FD280E192C7EC30082C3C7 /* UIView+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIImage.m"; sourceTree = "<group>"; };
 		13FD2810192C7FB60082C3C7 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		13FD2811192C7FB60082C3C7 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridViewDemoViewController.h; sourceTree = "<group>"; };
+		13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridViewDemoViewController.m; sourceTree = "<group>"; };
 		F853DF28440840F285932BD8 /* Pods-FirerageKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirerageKitTests.xcconfig"; path = "Pods/Pods-FirerageKitTests.xcconfig"; sourceTree = "<group>"; };
 		FDF8AC093DAD4516B0CA9D98 /* libPods-FirerageKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirerageKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,6 +140,7 @@
 			children = (
 				13FD280B192C7E3E0082C3C7 /* Categories */,
 				13ACA476192B9D47009010AC /* FRGridView */,
+				13FD2813192C96680082C3C7 /* Demos */,
 				1361F59A192AEE6100A985F6 /* FRAppDelegate.h */,
 				1361F59B192AEE6100A985F6 /* FRAppDelegate.m */,
 				13ACA45F192B991C009010AC /* FRDemoTableViewController.h */,
@@ -189,6 +193,15 @@
 				13FD2811192C7FB60082C3C7 /* UIView+Layout.m */,
 			);
 			path = FRViewCategory;
+			sourceTree = "<group>";
+		};
+		13FD2813192C96680082C3C7 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */,
+				13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */,
+			);
+			path = Demos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */,
+				13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */,
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
 				13FD280F192C7EC30082C3C7 /* UIView+UIImage.m in Sources */,

@@ -15,6 +15,7 @@
  */
 
 - (id)initWithSize:(CGSize)size;
+- (void)removeAllSubViews;
 
 /**
  *  Frame Methods
@@ -30,5 +31,13 @@
 @property (nonatomic) CGFloat centerY;
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize size;
+
+/**
+ *  AutoLayout
+ */
+
+- (void)centerInView:(UIView *)view;
+- (void)centerHorizontallyInView:(UIView *)view;
+- (void)centerVerticallyInView:(UIView *)view;
 
 @end

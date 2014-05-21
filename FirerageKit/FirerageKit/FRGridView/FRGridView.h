@@ -15,8 +15,8 @@
 
 @interface FRGridView : UIView
 
-@property (nonatomic, weak) id<FRGridViewDelegate> delegate;
-@property (nonatomic, weak) id<FRGridViewDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id<FRGridViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<FRGridViewDataSource> dataSource;
 
 - (void)reloadData;
 
@@ -26,6 +26,8 @@
 
 @optional
 - (UIEdgeInsets)gridViewEdgeInsets;
+- (CGFloat)gridView:(FRGridView *)gridView heightForRow:(NSInteger)row;
+- (CGFloat)gridViewWidthForAllItems:(FRGridView *)gridView;
 - (void)gridView:(FRGridView *)gridView didSelectItemAtIndexPath:(FRGridItemIndexPath *)indexPath;
 
 @end

@@ -15,11 +15,19 @@
 
 - (id)initWithSize:(CGSize)size
 {
-    self = [super initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    self = [super init];
     if (self) {
         // Initialization code
+        self.size = size;
     }
     return self;
+}
+
+- (void)removeAllSubViews
+{
+    for (id subView in self.subviews) {
+        [subView removeFromSuperview];
+    }
 }
 
 #pragma mark - 
@@ -120,6 +128,28 @@
 	CGRect frame = self.frame;
 	frame.size = size;
 	self.frame = frame;
+}
+
+#pragma mark - 
+#pragma mark - AutoLayout
+
+- (void)centerInView:(UIView *)view
+{
+    self.origin = CGPointMake((view.width - self.width) / 2., (view.height - self.height) / 2.);
+}
+
+- (void)centerHorizontallyInView:(UIView *)view
+{
+    CGPoint origin = self.origin;
+    origin.x = (view.width - self.width) / 2.;
+    self.origin = origin;
+}
+
+- (void)centerVerticallyInView:(UIView *)view
+{
+    CGPoint origin = self.origin;
+    origin.y = (view.height - self.height) / 2.;
+    self.origin = origin;
 }
 
 @end
