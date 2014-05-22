@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/iSapozhnik/NavigationMenu.git', :commit => '7e2528d2a22e67528137cbfa649f950d07716317' }
   s.platform = :ios, '5.1.1'
   s.source_files = 'NavigationMenu/NavigationMenuView/*.{h,m}'
-  s.resources = "NavigationMenu/NavigationMenuView/images/arrow_down.png"
+  s.resources = "NavigationMenu/NavigationMenuView/images/arrow_down@2x.png"
   s.framework = 'UIKit','Foundation','CoreGraphics','QuartzCore'
   s.requires_arc = true  
 end

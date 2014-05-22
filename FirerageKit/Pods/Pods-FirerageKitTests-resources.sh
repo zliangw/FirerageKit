@@ -41,7 +41,7 @@ install_resource()
       ;;
   esac
 }
-install_resource "NavigationMenu/NavigationMenu/NavigationMenuView/images/arrow_down.png"
+install_resource "NavigationMenu/NavigationMenu/NavigationMenuView/images/arrow_down@2x.png"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then
