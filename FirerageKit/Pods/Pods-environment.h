@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_HPGrowingTextView 1
 #define COCOAPODS_VERSION_PATCH_HPGrowingTextView 0
 
+// NavigationMenu
+#define COCOAPODS_POD_AVAILABLE_NavigationMenu
+#define COCOAPODS_VERSION_MAJOR_NavigationMenu 0
+#define COCOAPODS_VERSION_MINOR_NavigationMenu 0
+#define COCOAPODS_VERSION_PATCH_NavigationMenu 1
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3

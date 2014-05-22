@@ -35,6 +35,7 @@
 		13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF44D192D9A6600F189D6 /* FRBannerItem.m */; };
 		13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF450192D9A8100F189D6 /* FRBannerView.m */; };
 		13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */; };
+		13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */; };
 		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
 		23DC8B58F9F74A2CB10AD7AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550F6612F44F4627B361DB43 /* libPods.a */; };
 		E79F98A66C9940B1BC2DD011 /* libPods-FirerageKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF8AC093DAD4516B0CA9D98 /* libPods-FirerageKitTests.a */; };
@@ -87,6 +88,8 @@
 		13BAF450192D9A8100F189D6 /* FRBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBannerView.m; sourceTree = "<group>"; };
 		13BAF452192DAAF800F189D6 /* FRFRBannerViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFRBannerViewDemoViewController.h; sourceTree = "<group>"; };
 		13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRBannerViewDemoViewController.m; sourceTree = "<group>"; };
+		13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRNavigationMenuDemoViewController.h; sourceTree = "<group>"; };
+		13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRNavigationMenuDemoViewController.m; sourceTree = "<group>"; };
 		13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridViewDemoViewController.h; sourceTree = "<group>"; };
 		13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridViewDemoViewController.m; sourceTree = "<group>"; };
 		550F6612F44F4627B361DB43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +290,8 @@
 				13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */,
 				13BAF452192DAAF800F189D6 /* FRFRBannerViewDemoViewController.h */,
 				13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */,
+				13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */,
+				13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				13BAF442192CAC8800F189D6 /* UIView+Layout.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
 				13BAF443192CAC8800F189D6 /* UIView+UIImage.m in Sources */,
+				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
 				1361F598192AEE6100A985F6 /* main.m in Sources */,

@@ -56,6 +56,26 @@
                                             <segue destination="koL-8V-Bez" kind="push" id="tmf-Y1-90o"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xbs-hF-A5x">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xbs-hF-A5x" id="A4N-bQ-cuQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRNavigationMenuDemo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b0q-qm-1zm">
+                                                    <rect key="frame" x="20" y="11" width="280" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cQG-O0-F8k" kind="push" id="tV5-ha-7c8"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -94,7 +114,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0m-xC-omw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="415"/>
+            <point key="canvasLocation" x="1073" y="139"/>
+        </scene>
+        <!--Navigation Menu Demo View Controller - FRNavigationMenuDemo-->
+        <scene sceneID="DCZ-el-KrL">
+            <objects>
+                <viewController id="cQG-O0-F8k" customClass="FRNavigationMenuDemoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="07Q-vU-UlL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="FRNavigationMenuDemo" id="ccu-ew-xD5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSa-MN-4rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="892"/>
         </scene>
         <!--Grid View Demo View Controller - FRGridViewDemo-->
         <scene sceneID="4by-kx-2Yd">
@@ -124,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdM-mR-YMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="-369"/>
+            <point key="canvasLocation" x="1068" y="-641"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4uB-zd-ruE">
