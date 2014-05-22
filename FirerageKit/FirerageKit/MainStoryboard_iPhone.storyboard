@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Demo Table View Controller - Demo-->
+        <!--Demo Table View Controller - Demos-->
         <scene sceneID="jfd-FJ-I1c">
             <objects>
                 <tableViewController id="wXc-N6-b28" customClass="FRDemoTableViewController" sceneMemberID="viewController">
@@ -36,6 +36,46 @@
                                             <segue destination="0dP-kK-Mus" kind="push" id="ncF-RI-aId"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mwk-3E-aTF">
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mwk-3E-aTF" id="38s-Os-bOR">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRBannerViewDemo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="guJ-Ja-Tng">
+                                                    <rect key="frame" x="20" y="11" width="280" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="koL-8V-Bez" kind="push" id="tmf-Y1-90o"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xbs-hF-A5x">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xbs-hF-A5x" id="A4N-bQ-cuQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRNavigationMenuDemo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b0q-qm-1zm">
+                                                    <rect key="frame" x="20" y="11" width="280" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cQG-O0-F8k" kind="push" id="tV5-ha-7c8"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -44,11 +84,52 @@
                             <outlet property="delegate" destination="wXc-N6-b28" id="B6H-58-VMb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Demo" id="2Zp-yQ-8Y1"/>
+                    <navigationItem key="navigationItem" title="Demos" id="2Zp-yQ-8Y1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOs-lq-ZhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="546" y="139"/>
+        </scene>
+        <!--Banner View Demo View Controller - FRBannerViewDemo-->
+        <scene sceneID="Xjm-va-OTH">
+            <objects>
+                <viewController id="koL-8V-Bez" customClass="FRFRBannerViewDemoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9KO-m9-pd8">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="ETk-Ml-ue0" customClass="FRBannerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.92549026010000002" green="0.41960787770000002" blue="0.33333334329999997" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="FRBannerViewDemo" id="Nby-vz-oTh"/>
+                    <connections>
+                        <outlet property="bannerView1" destination="ETk-Ml-ue0" id="DYr-T3-sfG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0m-xC-omw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="139"/>
+        </scene>
+        <!--Navigation Menu Demo View Controller - FRNavigationMenuDemo-->
+        <scene sceneID="DCZ-el-KrL">
+            <objects>
+                <viewController id="cQG-O0-F8k" customClass="FRNavigationMenuDemoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="07Q-vU-UlL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="FRNavigationMenuDemo" id="ccu-ew-xD5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSa-MN-4rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="892"/>
         </scene>
         <!--Grid View Demo View Controller - FRGridViewDemo-->
         <scene sceneID="4by-kx-2Yd">
@@ -78,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdM-mR-YMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="139"/>
+            <point key="canvasLocation" x="1068" y="-641"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4uB-zd-ruE">

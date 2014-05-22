@@ -32,6 +32,10 @@
 		13BAF442192CAC8800F189D6 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF43F192CAC8800F189D6 /* UIView+Layout.m */; };
 		13BAF443192CAC8800F189D6 /* UIView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF441192CAC8800F189D6 /* UIView+UIImage.m */; };
 		13BAF446192CACB200F189D6 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF445192CACB200F189D6 /* FRSendMessageViewController.m */; };
+		13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF44D192D9A6600F189D6 /* FRBannerItem.m */; };
+		13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF450192D9A8100F189D6 /* FRBannerView.m */; };
+		13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */; };
+		13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */; };
 		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
 		23DC8B58F9F74A2CB10AD7AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550F6612F44F4627B361DB43 /* libPods.a */; };
 		E79F98A66C9940B1BC2DD011 /* libPods-FirerageKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF8AC093DAD4516B0CA9D98 /* libPods-FirerageKitTests.a */; };
@@ -78,6 +82,14 @@
 		13BAF441192CAC8800F189D6 /* UIView+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIImage.m"; sourceTree = "<group>"; };
 		13BAF444192CACB200F189D6 /* FRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSendMessageViewController.h; sourceTree = "<group>"; };
 		13BAF445192CACB200F189D6 /* FRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSendMessageViewController.m; sourceTree = "<group>"; };
+		13BAF44C192D9A6600F189D6 /* FRBannerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBannerItem.h; sourceTree = "<group>"; };
+		13BAF44D192D9A6600F189D6 /* FRBannerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBannerItem.m; sourceTree = "<group>"; };
+		13BAF44F192D9A8100F189D6 /* FRBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBannerView.h; sourceTree = "<group>"; };
+		13BAF450192D9A8100F189D6 /* FRBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBannerView.m; sourceTree = "<group>"; };
+		13BAF452192DAAF800F189D6 /* FRFRBannerViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFRBannerViewDemoViewController.h; sourceTree = "<group>"; };
+		13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRBannerViewDemoViewController.m; sourceTree = "<group>"; };
+		13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRNavigationMenuDemoViewController.h; sourceTree = "<group>"; };
+		13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRNavigationMenuDemoViewController.m; sourceTree = "<group>"; };
 		13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridViewDemoViewController.h; sourceTree = "<group>"; };
 		13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridViewDemoViewController.m; sourceTree = "<group>"; };
 		550F6612F44F4627B361DB43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +172,7 @@
 		1361F591192AEE6100A985F6 /* FirerageKit */ = {
 			isa = PBXGroup;
 			children = (
+				13BAF44B192D99F300F189D6 /* FRBanner */,
 				1399CBDC192CF08800ACB1E0 /* FRLoadDataTableViewController */,
 				1399CBDF192CF08800ACB1E0 /* FRPullDownRefreshView */,
 				1399CBE4192CF08800ACB1E0 /* FRPullUpLoadMoreView */,
@@ -259,11 +272,26 @@
 			path = FRViewCategory;
 			sourceTree = "<group>";
 		};
+		13BAF44B192D99F300F189D6 /* FRBanner */ = {
+			isa = PBXGroup;
+			children = (
+				13BAF44C192D9A6600F189D6 /* FRBannerItem.h */,
+				13BAF44D192D9A6600F189D6 /* FRBannerItem.m */,
+				13BAF44F192D9A8100F189D6 /* FRBannerView.h */,
+				13BAF450192D9A8100F189D6 /* FRBannerView.m */,
+			);
+			path = FRBanner;
+			sourceTree = "<group>";
+		};
 		13FD2813192C96680082C3C7 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
 				13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */,
 				13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */,
+				13BAF452192DAAF800F189D6 /* FRFRBannerViewDemoViewController.h */,
+				13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */,
+				13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */,
+				13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -436,14 +464,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */,
 				13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */,
 				13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */,
+				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
 				13BAF442192CAC8800F189D6 /* UIView+Layout.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
 				13BAF443192CAC8800F189D6 /* UIView+UIImage.m in Sources */,
+				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
+				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
 				1361F598192AEE6100A985F6 /* main.m in Sources */,
 				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
 				1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */,

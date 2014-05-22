@@ -1,6 +1,8 @@
 platform :ios, '5.1.1'
 
 pod 'HPGrowingTextView'
+pod 'SDWebImage'
+pod 'NavigationMenu', :podspec => './PodsSpecs/NavigationMenu.podspec'
 
 target :FirerageKitTests do
     pod "GHUnit", "0.5.8"
