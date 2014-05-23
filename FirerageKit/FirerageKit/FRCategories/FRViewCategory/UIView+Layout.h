@@ -15,7 +15,7 @@
  */
 
 - (id)initWithSize:(CGSize)size;
-- (void)removeAllSubViews;
+- (void)removeAllSubviews;
 
 /**
  *  Frame Methods

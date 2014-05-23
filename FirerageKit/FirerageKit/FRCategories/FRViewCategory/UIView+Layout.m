@@ -23,7 +23,7 @@
     return self;
 }
 
-- (void)removeAllSubViews
+- (void)removeAllSubviews
 {
     for (id subView in self.subviews) {
         [subView removeFromSuperview];
