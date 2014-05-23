@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (UIImage)
+@interface UIView (FRImage)
 
 - (UIImage *)toImage;
 

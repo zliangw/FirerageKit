@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import "UIView+UIImage.h"
+#import "UIView+FRImage.h"
 
-@implementation UIView (UIImage)
+@implementation UIView (FRImage)
 
 - (UIImage *)toImage
 {

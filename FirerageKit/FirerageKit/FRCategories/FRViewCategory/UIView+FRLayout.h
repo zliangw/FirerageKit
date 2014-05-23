@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Layout)
+@interface UIView (FRLayout)
 
 /**
  *  Init Methods

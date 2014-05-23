@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import "UIView+Layout.h"
+#import "UIView+FRLayout.h"
 
-@implementation UIView (Layout)
+@implementation UIView (FRLayout)
 
 #pragma mark - 
 #pragma mark - Init Methods

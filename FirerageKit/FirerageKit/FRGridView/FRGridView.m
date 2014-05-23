@@ -7,7 +7,7 @@
 //
 
 #import "FRGridView.h"
-#import "UIView+Layout.h"
+#import "UIView+FRLayout.h"
 
 static float HeightForRowAtIndexPathDefault = 60.;
 

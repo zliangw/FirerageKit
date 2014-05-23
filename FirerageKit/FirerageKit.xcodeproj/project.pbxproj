@@ -29,8 +29,8 @@
 		13ACA479192B9D5E009010AC /* FRGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA478192B9D5E009010AC /* FRGridView.m */; };
 		13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA47B192BA173009010AC /* FRGridViewItem.m */; };
 		13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA47E192BA2A6009010AC /* FRGridItemIndexPath.m */; };
-		13BAF442192CAC8800F189D6 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF43F192CAC8800F189D6 /* UIView+Layout.m */; };
-		13BAF443192CAC8800F189D6 /* UIView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF441192CAC8800F189D6 /* UIView+UIImage.m */; };
+		13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF43F192CAC8800F189D6 /* UIView+FRLayout.m */; };
+		13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF441192CAC8800F189D6 /* UIView+FRImage.m */; };
 		13BAF446192CACB200F189D6 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF445192CACB200F189D6 /* FRSendMessageViewController.m */; };
 		13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF44D192D9A6600F189D6 /* FRBannerItem.m */; };
 		13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF450192D9A8100F189D6 /* FRBannerView.m */; };
@@ -76,10 +76,10 @@
 		13ACA47B192BA173009010AC /* FRGridViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridViewItem.m; sourceTree = "<group>"; };
 		13ACA47D192BA2A6009010AC /* FRGridItemIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridItemIndexPath.h; sourceTree = "<group>"; };
 		13ACA47E192BA2A6009010AC /* FRGridItemIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridItemIndexPath.m; sourceTree = "<group>"; };
-		13BAF43E192CAC8800F189D6 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
-		13BAF43F192CAC8800F189D6 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
-		13BAF440192CAC8800F189D6 /* UIView+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIImage.h"; sourceTree = "<group>"; };
-		13BAF441192CAC8800F189D6 /* UIView+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIImage.m"; sourceTree = "<group>"; };
+		13BAF43E192CAC8800F189D6 /* UIView+FRLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRLayout.h"; sourceTree = "<group>"; };
+		13BAF43F192CAC8800F189D6 /* UIView+FRLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FRLayout.m"; sourceTree = "<group>"; };
+		13BAF440192CAC8800F189D6 /* UIView+FRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRImage.h"; sourceTree = "<group>"; };
+		13BAF441192CAC8800F189D6 /* UIView+FRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FRImage.m"; sourceTree = "<group>"; };
 		13BAF444192CACB200F189D6 /* FRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSendMessageViewController.h; sourceTree = "<group>"; };
 		13BAF445192CACB200F189D6 /* FRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSendMessageViewController.m; sourceTree = "<group>"; };
 		13BAF44C192D9A6600F189D6 /* FRBannerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBannerItem.h; sourceTree = "<group>"; };
@@ -264,10 +264,10 @@
 		13BAF43D192CAC8800F189D6 /* FRViewCategory */ = {
 			isa = PBXGroup;
 			children = (
-				13BAF43E192CAC8800F189D6 /* UIView+Layout.h */,
-				13BAF43F192CAC8800F189D6 /* UIView+Layout.m */,
-				13BAF440192CAC8800F189D6 /* UIView+UIImage.h */,
-				13BAF441192CAC8800F189D6 /* UIView+UIImage.m */,
+				13BAF43E192CAC8800F189D6 /* UIView+FRLayout.h */,
+				13BAF43F192CAC8800F189D6 /* UIView+FRLayout.m */,
+				13BAF440192CAC8800F189D6 /* UIView+FRImage.h */,
+				13BAF441192CAC8800F189D6 /* UIView+FRImage.m */,
 			);
 			path = FRViewCategory;
 			sourceTree = "<group>";
@@ -470,9 +470,9 @@
 				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
-				13BAF442192CAC8800F189D6 /* UIView+Layout.m in Sources */,
+				13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
-				13BAF443192CAC8800F189D6 /* UIView+UIImage.m in Sources */,
+				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
 				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,

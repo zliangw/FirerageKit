@@ -8,7 +8,7 @@
 
 #import "FRFRBannerViewDemoViewController.h"
 #import "FRBannerView.h"
-#import "UIView+Layout.h"
+#import "UIView+FRLayout.h"
 
 @interface FRFRBannerViewDemoViewController ()
 
