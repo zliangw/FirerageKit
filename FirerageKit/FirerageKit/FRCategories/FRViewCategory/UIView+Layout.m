@@ -15,12 +15,7 @@
 
 - (id)initWithSize:(CGSize)size
 {
-    self = [super init];
-    if (self) {
-        // Initialization code
-        self.size = size;
-    }
-    return self;
+    return [self initWithFrame:CGRectMake(0, 0, size.width, size.height)];
 }
 
 - (void)removeAllSubviews
