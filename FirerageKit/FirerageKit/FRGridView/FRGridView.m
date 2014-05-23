@@ -97,7 +97,7 @@ static float HeightForRowAtIndexPathDefault = 60.;
             itemSpace = (_itemTableView.width - _numberOfColumnsInGridView * [_delegate gridViewWidthForAllItems:self]) / (_numberOfColumnsInGridView + 1);
         }
         
-        [cell.contentView removeAllSubViews];
+        [cell.contentView removeAllSubviews];
         for (NSInteger columnsInGridView = 0; columnsInGridView < _numberOfColumnsInGridView; columnsInGridView++) {
             FRGridItemIndexPath *itemIndexPath = [FRGridItemIndexPath indexPathWithRow:indexPath.row column:columnsInGridView];
             FRGridViewItem *gridViewItem = [_dataSource gridView:self itemAtIndexPath:itemIndexPath];
