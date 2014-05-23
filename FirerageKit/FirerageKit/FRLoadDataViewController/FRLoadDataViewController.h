@@ -10,17 +10,17 @@
 #import "FRPullDownRefreshView.h"
 #import "FRPullUpLoadMoreView.h"
 
-@class FRLoadDataTableViewController;
+@class FRLoadDataViewController;
 
 @protocol FRLoadDataTableViewControllerDelegate <NSObject>
 
 @optional
-- (void)loadDataTableViewControllerDidStartRefreshing:(FRLoadDataTableViewController *)loadDataTableViewController;
-- (void)loadDataTableViewControllerDidStartLoadMore:(FRLoadDataTableViewController *)loadDataTableViewController;
+- (void)loadDataTableViewControllerDidStartRefreshing:(FRLoadDataViewController *)loadDataTableViewController;
+- (void)loadDataTableViewControllerDidStartLoadMore:(FRLoadDataViewController *)loadDataTableViewController;
 
 @end
 
-@interface FRLoadDataTableViewController : UIViewController <FRPullDownRefreshViewDelegate, FRPullUpLoadMoreViewDelegate>
+@interface FRLoadDataViewController : UIViewController <FRPullDownRefreshViewDelegate, FRPullUpLoadMoreViewDelegate>
 
 @property (nonatomic, retain, readonly) UITableView *tableView;
 @property (nonatomic, assign) id<FRLoadDataTableViewControllerDelegate> loadDataDelegate;

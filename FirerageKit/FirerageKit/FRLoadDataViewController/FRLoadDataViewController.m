@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "FRLoadDataTableViewController.h"
+#import "FRLoadDataViewController.h"
 
-@interface FRLoadDataTableViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FRLoadDataViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, retain) UITableView *tableView;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation FRLoadDataTableViewController
+@implementation FRLoadDataViewController
 
 @synthesize isLoadMore = _isLoadMore;
 @synthesize isRefresh = _isRefresh;
