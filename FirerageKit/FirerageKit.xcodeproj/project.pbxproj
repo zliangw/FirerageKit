@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		133C8685192F26D40091E968 /* FRLoadDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8684192F26D40091E968 /* FRLoadDataViewController.m */; };
-		133C8689192F26E70091E968 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8688192F26E70091E968 /* FRSendMessageViewController.m */; };
+		133C8689192F26E70091E968 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8688192F26E70091E968 /* FRChatViewController.m */; };
 		133CE54A192AF50100F69CDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58B192AEE6100A985F6 /* Foundation.framework */; };
 		133CE54B192AF50100F69CDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58D192AEE6100A985F6 /* CoreGraphics.framework */; };
 		133CE54C192AF50100F69CDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58F192AEE6100A985F6 /* UIKit.framework */; };
@@ -21,6 +21,8 @@
 		1361F598192AEE6100A985F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1361F597192AEE6100A985F6 /* main.m */; };
 		1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1361F59B192AEE6100A985F6 /* FRAppDelegate.m */; };
 		1361F59E192AEE6100A985F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1361F59D192AEE6100A985F6 /* Images.xcassets */; };
+		139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */; };
+		139093AE1930467700ECB341 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AD1930467700ECB341 /* FRSendMessageViewController.m */; };
 		1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */; };
 		1399CBE9192CF08800ACB1E0 /* pdr_blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399CBE2192CF08800ACB1E0 /* pdr_blueArrow.png */; };
 		1399CBEA192CF08800ACB1E0 /* pdr_blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399CBE3192CF08800ACB1E0 /* pdr_blueArrow@2x.png */; };
@@ -36,6 +38,8 @@
 		13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF450192D9A8100F189D6 /* FRBannerView.m */; };
 		13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */; };
 		13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */; };
+		13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */; };
+		13E21980193068440044FCF2 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */; };
 		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
 		23DC8B58F9F74A2CB10AD7AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550F6612F44F4627B361DB43 /* libPods.a */; };
 		E79F98A66C9940B1BC2DD011 /* libPods-FirerageKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF8AC093DAD4516B0CA9D98 /* libPods-FirerageKitTests.a */; };
@@ -44,8 +48,8 @@
 /* Begin PBXFileReference section */
 		133C8683192F26D40091E968 /* FRLoadDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRLoadDataViewController.h; sourceTree = "<group>"; };
 		133C8684192F26D40091E968 /* FRLoadDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoadDataViewController.m; sourceTree = "<group>"; };
-		133C8687192F26E70091E968 /* FRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSendMessageViewController.h; sourceTree = "<group>"; };
-		133C8688192F26E70091E968 /* FRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSendMessageViewController.m; sourceTree = "<group>"; };
+		133C8687192F26E70091E968 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
+		133C8688192F26E70091E968 /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewController.m; sourceTree = "<group>"; };
 		133CE549192AF50100F69CDE /* FirerageKitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirerageKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		133CE573192AF54600F69CDE /* FirerageKitTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FirerageKitTests-Info.plist"; sourceTree = "<group>"; };
 		133CE574192AF54600F69CDE /* FirerageKitTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirerageKitTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -63,6 +67,10 @@
 		1361F59B192AEE6100A985F6 /* FRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRAppDelegate.m; sourceTree = "<group>"; };
 		1361F59D192AEE6100A985F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1361F5A4192AEE6100A985F6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		139093A919303F0C00ECB341 /* FRChatViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewControllerDemoViewController.h; sourceTree = "<group>"; };
+		139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewControllerDemoViewController.m; sourceTree = "<group>"; };
+		139093AC1930467700ECB341 /* FRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSendMessageViewController.h; sourceTree = "<group>"; };
+		139093AD1930467700ECB341 /* FRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSendMessageViewController.m; sourceTree = "<group>"; };
 		1399CBE0192CF08800ACB1E0 /* FRPullDownRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPullDownRefreshView.h; sourceTree = "<group>"; };
 		1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPullDownRefreshView.m; sourceTree = "<group>"; };
 		1399CBE2192CF08800ACB1E0 /* pdr_blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdr_blueArrow.png; sourceTree = "<group>"; };
@@ -90,6 +98,9 @@
 		13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRBannerViewDemoViewController.m; sourceTree = "<group>"; };
 		13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRNavigationMenuDemoViewController.h; sourceTree = "<group>"; };
 		13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRNavigationMenuDemoViewController.m; sourceTree = "<group>"; };
+		13E2197C1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFRSendMessageViewControllerDemoViewController.h; sourceTree = "<group>"; };
+		13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRSendMessageViewControllerDemoViewController.m; sourceTree = "<group>"; };
+		13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendTextViewBkg@2x.png"; sourceTree = "<group>"; };
 		13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridViewDemoViewController.h; sourceTree = "<group>"; };
 		13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridViewDemoViewController.m; sourceTree = "<group>"; };
 		550F6612F44F4627B361DB43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +147,11 @@
 		133C8686192F26E70091E968 /* FRSendMessageViewController */ = {
 			isa = PBXGroup;
 			children = (
-				133C8687192F26E70091E968 /* FRSendMessageViewController.h */,
-				133C8688192F26E70091E968 /* FRSendMessageViewController.m */,
+				139093A81930391100ECB341 /* Images */,
+				133C8687192F26E70091E968 /* FRChatViewController.h */,
+				133C8688192F26E70091E968 /* FRChatViewController.m */,
+				139093AC1930467700ECB341 /* FRSendMessageViewController.h */,
+				139093AD1930467700ECB341 /* FRSendMessageViewController.m */,
 			);
 			path = FRSendMessageViewController;
 			sourceTree = "<group>";
@@ -220,6 +234,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		139093A81930391100ECB341 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		1399CBDF192CF08800ACB1E0 /* FRPullDownRefreshView */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +314,10 @@
 				13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */,
 				13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */,
 				13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */,
+				139093A919303F0C00ECB341 /* FRChatViewControllerDemoViewController.h */,
+				139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */,
+				13E2197C1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.h */,
+				13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -378,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1399CBE9192CF08800ACB1E0 /* pdr_blueArrow.png in Resources */,
+				13E21980193068440044FCF2 /* SendTextViewBkg@2x.png in Resources */,
 				1399CBEA192CF08800ACB1E0 /* pdr_blueArrow@2x.png in Resources */,
 				13ACA45E192B98AF009010AC /* MainStoryboard_iPhone.storyboard in Resources */,
 				1361F596192AEE6100A985F6 /* InfoPlist.strings in Resources */,
@@ -467,9 +494,12 @@
 				13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */,
 				13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */,
 				13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */,
-				133C8689192F26E70091E968 /* FRSendMessageViewController.m in Sources */,
+				133C8689192F26E70091E968 /* FRChatViewController.m in Sources */,
+				139093AE1930467700ECB341 /* FRSendMessageViewController.m in Sources */,
 				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
+				13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */,
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
+				139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
 				13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,

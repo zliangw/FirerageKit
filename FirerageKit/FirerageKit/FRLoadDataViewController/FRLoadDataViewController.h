@@ -22,7 +22,7 @@
 
 @interface FRLoadDataViewController : UIViewController <FRPullDownRefreshViewDelegate, FRPullUpLoadMoreViewDelegate>
 
-@property (nonatomic, retain, readonly) UITableView *tableView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, assign) id<FRLoadDataTableViewControllerDelegate> loadDataDelegate;
 @property (nonatomic, assign) BOOL hasLoadMoreCompleted;
 @property (nonatomic, assign) BOOL loadMoreAllowed;

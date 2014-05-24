@@ -6,6 +6,12 @@
 // project.
 
 
+// DAKeyboardControl
+#define COCOAPODS_POD_AVAILABLE_DAKeyboardControl
+#define COCOAPODS_VERSION_MAJOR_DAKeyboardControl 2
+#define COCOAPODS_VERSION_MINOR_DAKeyboardControl 3
+#define COCOAPODS_VERSION_PATCH_DAKeyboardControl 1
+
 // HPGrowingTextView
 #define COCOAPODS_POD_AVAILABLE_HPGrowingTextView
 #define COCOAPODS_VERSION_MAJOR_HPGrowingTextView 1
@@ -35,4 +41,10 @@
 #define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 6
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 0
+
+// UIBubbleTableView
+#define COCOAPODS_POD_AVAILABLE_UIBubbleTableView
+#define COCOAPODS_VERSION_MAJOR_UIBubbleTableView 0
+#define COCOAPODS_VERSION_MINOR_UIBubbleTableView 2
+#define COCOAPODS_VERSION_PATCH_UIBubbleTableView 0
 

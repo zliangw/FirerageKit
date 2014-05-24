@@ -8,9 +8,7 @@
 
 #import "FRLoadDataViewController.h"
 
-@interface FRLoadDataViewController () <UITableViewDataSource, UITableViewDelegate>
-
-@property (nonatomic, retain) UITableView *tableView;
+@interface FRLoadDataViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, assign) BOOL isLoadMore;
 @property (nonatomic, assign) BOOL isRefresh;
@@ -47,12 +45,6 @@
 - (void)loadView
 {
     [super loadView];
-    
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    [self.view addSubview:_tableView];
 }
 
 - (void)viewDidLoad
@@ -64,7 +56,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.refreshView = [[FRPullDownRefreshView alloc] initWithOwner:self.tableView delegate:self];
 }
 
 - (void)viewDidUnload
@@ -77,6 +68,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)removeRefreshView
+{
+    if (_refreshView) {
+        [_refreshView stopRefreshing];
+        _refreshView.delegate = nil;
+        [_refreshView removeFromSuperview];
+        _refreshView = nil;
+    }
 }
 
 - (void)removeLoadMoreView
@@ -92,7 +93,7 @@
 - (void)addLoadMoreView
 {
     if (_loadMoreAllowed && !_loadMoreView) {
-        _loadMoreView = [[FRPullUpLoadMoreView alloc] initWithOwner:self.tableView delegate:self];
+        _loadMoreView = [[FRPullUpLoadMoreView alloc] initWithOwner:self.scrollView delegate:self];
         _loadMoreView.backgroundColor = [UIColor clearColor];
     }
 }
@@ -160,20 +161,28 @@
         return;
     }
     
+    UITableView *tableView = nil;
+    if ([_scrollView isKindOfClass:[UITableView class]]) {
+        tableView = (UITableView *)_scrollView;
+    } else {
+        return;
+    }
+    
+    
     _hasLoadMoreCompleted = hasLoadMoreCompleted;
     if (!_hasLoadMoreCompleted) {
         [self addLoadMoreView];
-        self.tableView.tableFooterView = nil;
+        tableView.tableFooterView = nil;
     } else {
         if (_loadMoreView) {
             [self removeLoadMoreView];
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), self.tableView.rowHeight)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.frame), tableView.rowHeight)];
             label.textAlignment = UITextAlignmentCenter;
             label.text = NSLocalizedString(@"加载完成", nil);
             label.font = [UIFont systemFontOfSize:12.];
             label.textColor = [UIColor lightGrayColor];
             label.backgroundColor = [UIColor clearColor];
-            self.tableView.tableFooterView = label;
+            tableView.tableFooterView = label;
         }
     }
 }
@@ -184,6 +193,17 @@
     if (!_loadMoreAllowed) {
         [self removeLoadMoreView];
     }
+}
+
+- (void)setScrollView:(UIScrollView *)scrollView
+{
+    _scrollView = scrollView;
+    _scrollView.delegate = self;
+    if (![_scrollView isKindOfClass:[UITableView class]]) {
+        self.loadMoreAllowed = NO;
+    }
+    [self removeRefreshView];
+    self.refreshView = [[FRPullDownRefreshView alloc] initWithOwner:self.scrollView delegate:self];
 }
 
 #pragma mark - scrollVieDelegte methods
@@ -231,25 +251,6 @@
 - (void)pullUpLoadMoreViewLoadingStarted:(FRPullUpLoadMoreView*)pullUpLoadMoreView
 {
     [self startLoadMore];
-}
-
-#pragma mark -
-#pragma mark - UITableViewDelegate
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    return cell;
 }
 
 @end
