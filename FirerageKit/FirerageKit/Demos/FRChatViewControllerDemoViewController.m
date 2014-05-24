@@ -1,18 +1,18 @@
 //
-//  FRSendMessageViewController.m
+//  FRChatViewControllerDemoViewController.m
 //  FirerageKit
 //
 //  Created by Aidian on 14-5-24.
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import "FRSendMessageViewController.h"
+#import "FRChatViewControllerDemoViewController.h"
 
-@interface FRSendMessageViewController ()
+@interface FRChatViewControllerDemoViewController ()
 
 @end
 
-@implementation FRSendMessageViewController
+@implementation FRChatViewControllerDemoViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

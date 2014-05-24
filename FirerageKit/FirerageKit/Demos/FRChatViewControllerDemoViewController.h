@@ -1,5 +1,5 @@
 //
-//  FRSendMessageViewController.h
+//  FRChatViewControllerDemoViewController.h
 //  FirerageKit
 //
 //  Created by Aidian on 14-5-24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FRSendMessageViewController : UIViewController
+@interface FRChatViewControllerDemoViewController : UIViewController
 
 @end
