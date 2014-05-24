@@ -204,6 +204,7 @@
     }
     [self removeRefreshView];
     self.refreshView = [[FRPullDownRefreshView alloc] initWithOwner:self.scrollView delegate:self];
+    [self.view addSubview:_scrollView];
 }
 
 #pragma mark - scrollVieDelegte methods
