@@ -12,7 +12,11 @@
 
 - (void)addIOS7BackLeftBarButtonItem
 {
-    [self addBarButtonItemWithTarget:self normalImageName:@"back.png" highlightedImageName:@"backHilighted.png" isLeft:YES selector:@selector(leftBtnDidPressed:)];
+    [self addBarButtonItemWithTarget:self normalImageName:@"zt_webview_left" highlightedImageName:nil isLeft:YES selector:@selector(leftBtnDidPressed:)];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.) {
+        UIButton *lBtn = (UIButton *)self.navigationItem.leftBarButtonItem.customView;
+        lBtn.imageEdgeInsets  = UIEdgeInsetsMake(0, -20, 0, 0);
+    }
 }
 
 - (void)leftBtnDidPressed:(id)sender
