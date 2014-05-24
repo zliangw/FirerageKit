@@ -34,10 +34,11 @@ typedef NS_ENUM(NSInteger, FRBannerViewPageControlStyle)
 
 @interface FRBannerView : UIView
 
-@property (nonatomic, weak) id<FRBannerViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<FRBannerViewDelegate> delegate;
 @property (nonatomic, assign) FRBannerViewPageControlStyle pageControlStyle;
 @property (nonatomic, assign) NSTimeInterval autoRollingDelayTime; //Default is 2m
-@property (nonatomic, assign) BOOL autoRolling;
+@property (nonatomic, assign) BOOL autoRoolEnabled; // Default is YES
+@property (nonatomic, assign) NSInteger curPage; // Default is 1
 @property (nonatomic, strong) NSArray *bannerItems;
 
 - (instancetype)initWithFrame:(CGRect)frame direction:(FRBannerViewDirection)direction bannerItems:(NSArray *)bannerItems;
@@ -47,6 +48,8 @@ typedef NS_ENUM(NSInteger, FRBannerViewPageControlStyle)
 
 @protocol FRBannerViewDelegate <NSObject>
 
+@optional
+- (void)bannerView:(FRBannerView *)bannerView didRollItemAtIndex:(NSInteger)index;
 - (void)bannerView:(FRBannerView *)bannerView didSelectItemAtIndex:(NSInteger)index;
 
 @end

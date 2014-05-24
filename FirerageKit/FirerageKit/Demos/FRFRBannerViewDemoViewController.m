@@ -10,7 +10,7 @@
 #import "FRBannerView.h"
 #import "UIView+FRLayout.h"
 
-@interface FRFRBannerViewDemoViewController ()
+@interface FRFRBannerViewDemoViewController () <FRBannerViewDelegate>
 
 @property (nonatomic, strong) IBOutlet FRBannerView *bannerView1;
 
@@ -42,8 +42,14 @@
     [_bannerView1 reloadData];
     
     FRBannerView *bannerView2 = [[FRBannerView alloc] initWithFrame:CGRectMake(0, _bannerView1.bottom + 30, 320, 70) direction:RBannerViewDefaultDirection bannerItems:bannerItems];
+    bannerView2.delegate = self;
     bannerView2.autoRollingDelayTime = 4;
     [self.view addSubview:bannerView2];
+    
+    FRBannerView *bannerView3 = [[FRBannerView alloc] initWithFrame:CGRectMake(0, bannerView2.bottom + 30, 320, 70) direction:RBannerViewDefaultDirection bannerItems:bannerItems];
+    bannerView3.curPage = 2;
+    bannerView3.autoRoolEnabled = NO;
+    [self.view addSubview:bannerView3];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,15 +58,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - FRBannerViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)bannerView:(FRBannerView *)bannerView didRollItemAtIndex:(NSInteger)index
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSLog(@"didRollItemAtIndex = %d", index);
 }
-*/
+
+- (void)bannerView:(FRBannerView *)bannerView didSelectItemAtIndex:(NSInteger)index
+{
+    NSLog(@"didSelectItemAtIndex = %d", index);
+}
 
 @end

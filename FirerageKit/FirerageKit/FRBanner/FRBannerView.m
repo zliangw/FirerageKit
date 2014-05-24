@@ -13,11 +13,11 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 
 @interface FRBannerView () <UIScrollViewDelegate>
 {
-    NSInteger _curPage;
     NSInteger _totalPage;
     NSInteger _totalCount;
 }
 
+@property (nonatomic, assign, readwrite) BOOL autoRolling;
 @property (nonatomic, assign) FRBannerViewDirection direction;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
@@ -32,30 +32,28 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
     if (self) {
         // Initialization code
         [self initView];
-        
-        _totalPage = _bannerItems.count;
-        _totalCount = _totalPage;
-        _curPage = 1;
-
-        self.autoRollingDelayTime = AutoRollingDefaultDelayTime;
+        [self setDefaultDatas];
         self.direction = direction;
-        self.pageControlStyle = FRBannerViewPageControlMiddleStyle;
         self.bannerItems = bannerItems;
-        
         [self reloadData];
     }
     return self;
 }
 
-- (void)awakeFromNib
+- (void)setDefaultDatas
 {
-    [self initView];
-    
     _totalPage = _bannerItems.count;
     _totalCount = _totalPage;
     _curPage = 1;
+    self.autoRoolEnabled = YES;
     self.autoRollingDelayTime = AutoRollingDefaultDelayTime;
     self.pageControlStyle = FRBannerViewPageControlMiddleStyle;
+}
+
+- (void)awakeFromNib
+{
+    [self initView];
+    [self setDefaultDatas];
 }
 
 - (void)initView
@@ -108,6 +106,29 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 
 #pragma mark -
 #pragma mark - Setter Methods
+
+- (void)setAutoRoolEnabled:(BOOL)autoRoolEnabled
+{
+    _autoRoolEnabled = autoRoolEnabled;
+    if (_autoRoolEnabled && !_autoRolling) {
+        [self startRolling];
+    } else if (!_autoRoolEnabled && _autoRolling) {
+        [self stopRolling];
+    }
+}
+
+- (void)setCurPage:(NSInteger)curPage
+{
+    _curPage = [self getPageIndex:curPage];
+    [self refreshScrollView];
+    if (self.autoRoolEnabled)
+    {
+        [self performSelector:@selector(rollingScrollAction) withObject:nil afterDelay:self.autoRollingDelayTime];
+    }
+    if (_delegate && [_delegate respondsToSelector:@selector(bannerView:didRollItemAtIndex:)]) {
+        [_delegate bannerView:self didRollItemAtIndex:_curPage-1];
+    }
+}
 
 - (void)setBannerItems:(NSArray *)bannerItems
 {
@@ -194,13 +215,7 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
             _scrollView.contentOffset = CGPointMake(0, 1.99*_scrollView.frame.size.height);
         }
     } completion:^(BOOL finished) {
-        _curPage = [self getPageIndex:_curPage+1];
-        [self refreshScrollView];
-        
-        if (self.autoRolling)
-        {
-            [self performSelector:@selector(rollingScrollAction) withObject:nil afterDelay:self.autoRollingDelayTime];
-        }
+        self.curPage = _curPage+1;
     }];
 }
 
@@ -263,7 +278,7 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
     NSInteger x = aScrollView.contentOffset.x;
     NSInteger y = aScrollView.contentOffset.y;
 
-    if (self.autoRolling)
+    if (self.autoRoolEnabled)
     {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(rollingScrollAction) object:nil];
     }
@@ -274,12 +289,18 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
         {
             _curPage = [self getPageIndex:_curPage+1];
             [self refreshScrollView];
+            if (_delegate && [_delegate respondsToSelector:@selector(bannerView:didRollItemAtIndex:)]) {
+                [_delegate bannerView:self didRollItemAtIndex:_curPage-1];
+            }
         }
         
         if (x <= 0)
         {
             _curPage = [self getPageIndex:_curPage-1];
             [self refreshScrollView];
+            if (_delegate && [_delegate respondsToSelector:@selector(bannerView:didRollItemAtIndex:)]) {
+                [_delegate bannerView:self didRollItemAtIndex:_curPage-1];
+            }
         }
     }
     else if(_direction == RBannerViewPortaitDirection)
@@ -288,12 +309,18 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
         {
             _curPage = [self getPageIndex:_curPage+1];
             [self refreshScrollView];
+            if (_delegate && [_delegate respondsToSelector:@selector(bannerView:didRollItemAtIndex:)]) {
+                [_delegate bannerView:self didRollItemAtIndex:_curPage-1];
+            }
         }
         
         if (y <= 0)
         {
             _curPage = [self getPageIndex:_curPage-1];
             [self refreshScrollView];
+            if (_delegate && [_delegate respondsToSelector:@selector(bannerView:didRollItemAtIndex:)]) {
+                [_delegate bannerView:self didRollItemAtIndex:_curPage-1];
+            }
         }
     }
 }
