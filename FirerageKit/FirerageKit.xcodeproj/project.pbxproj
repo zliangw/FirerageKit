@@ -32,6 +32,7 @@
 		13ACA479192B9D5E009010AC /* FRGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA478192B9D5E009010AC /* FRGridView.m */; };
 		13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA47B192BA173009010AC /* FRGridViewItem.m */; };
 		13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ACA47E192BA2A6009010AC /* FRGridItemIndexPath.m */; };
+		13AE732B1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE732A1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m */; };
 		13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF43F192CAC8800F189D6 /* UIView+FRLayout.m */; };
 		13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF441192CAC8800F189D6 /* UIView+FRImage.m */; };
 		13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF44D192D9A6600F189D6 /* FRBannerItem.m */; };
@@ -86,6 +87,8 @@
 		13ACA47B192BA173009010AC /* FRGridViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridViewItem.m; sourceTree = "<group>"; };
 		13ACA47D192BA2A6009010AC /* FRGridItemIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridItemIndexPath.h; sourceTree = "<group>"; };
 		13ACA47E192BA2A6009010AC /* FRGridItemIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridItemIndexPath.m; sourceTree = "<group>"; };
+		13AE73291930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRCustomNavigationBarItem.h"; sourceTree = "<group>"; };
+		13AE732A1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FRCustomNavigationBarItem.m"; sourceTree = "<group>"; };
 		13BAF43E192CAC8800F189D6 /* UIView+FRLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRLayout.h"; sourceTree = "<group>"; };
 		13BAF43F192CAC8800F189D6 /* UIView+FRLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FRLayout.m"; sourceTree = "<group>"; };
 		13BAF440192CAC8800F189D6 /* UIView+FRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRImage.h"; sourceTree = "<group>"; };
@@ -275,9 +278,19 @@
 			path = FRGridView;
 			sourceTree = "<group>";
 		};
+		13AE73251930A53E009C527A /* FRViewControllerCategory */ = {
+			isa = PBXGroup;
+			children = (
+				13AE73291930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.h */,
+				13AE732A1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m */,
+			);
+			path = FRViewControllerCategory;
+			sourceTree = "<group>";
+		};
 		13BAF43C192CAC8800F189D6 /* FRCategories */ = {
 			isa = PBXGroup;
 			children = (
+				13AE73251930A53E009C527A /* FRViewControllerCategory */,
 				13BAF43D192CAC8800F189D6 /* FRViewCategory */,
 			);
 			path = FRCategories;
@@ -504,6 +517,7 @@
 				13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
 				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
+				13AE732B1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m in Sources */,
 				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
