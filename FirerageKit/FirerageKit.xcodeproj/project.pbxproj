@@ -21,6 +21,8 @@
 		1361F598192AEE6100A985F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1361F597192AEE6100A985F6 /* main.m */; };
 		1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1361F59B192AEE6100A985F6 /* FRAppDelegate.m */; };
 		1361F59E192AEE6100A985F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1361F59D192AEE6100A985F6 /* Images.xcassets */; };
+		137921211931CD7100589DC5 /* FRTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 137921201931CD7100589DC5 /* FRTextFieldTableViewCell.m */; };
+		137921241931CFFD00589DC5 /* FRTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 137921231931CFFD00589DC5 /* FRTextViewTableViewCell.m */; };
 		139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */; };
 		139093AE1930467700ECB341 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AD1930467700ECB341 /* FRSendMessageViewController.m */; };
 		1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */; };
@@ -68,6 +70,10 @@
 		1361F59B192AEE6100A985F6 /* FRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRAppDelegate.m; sourceTree = "<group>"; };
 		1361F59D192AEE6100A985F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1361F5A4192AEE6100A985F6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1379211F1931CD7100589DC5 /* FRTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		137921201931CD7100589DC5 /* FRTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		137921221931CFFD00589DC5 /* FRTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextViewTableViewCell.h; sourceTree = "<group>"; };
+		137921231931CFFD00589DC5 /* FRTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRTextViewTableViewCell.m; sourceTree = "<group>"; };
 		139093A919303F0C00ECB341 /* FRChatViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewControllerDemoViewController.h; sourceTree = "<group>"; };
 		139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewControllerDemoViewController.m; sourceTree = "<group>"; };
 		139093AC1930467700ECB341 /* FRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSendMessageViewController.h; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 		1361F591192AEE6100A985F6 /* FirerageKit */ = {
 			isa = PBXGroup;
 			children = (
+				1379211E1931C96C00589DC5 /* FRTableViewCell */,
 				133C8686192F26E70091E968 /* FRSendMessageViewController */,
 				133C8682192F26D40091E968 /* FRLoadDataViewController */,
 				13BAF44B192D99F300F189D6 /* FRBanner */,
@@ -235,6 +242,17 @@
 				13ACA45D192B98AF009010AC /* MainStoryboard_iPhone.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1379211E1931C96C00589DC5 /* FRTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1379211F1931CD7100589DC5 /* FRTextFieldTableViewCell.h */,
+				137921201931CD7100589DC5 /* FRTextFieldTableViewCell.m */,
+				137921221931CFFD00589DC5 /* FRTextViewTableViewCell.h */,
+				137921231931CFFD00589DC5 /* FRTextViewTableViewCell.m */,
+			);
+			path = FRTableViewCell;
 			sourceTree = "<group>";
 		};
 		139093A81930391100ECB341 /* Images */ = {
@@ -514,7 +532,9 @@
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
+				137921241931CFFD00589DC5 /* FRTextViewTableViewCell.m in Sources */,
 				13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */,
+				137921211931CD7100589DC5 /* FRTextFieldTableViewCell.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
 				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
 				13AE732B1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m in Sources */,

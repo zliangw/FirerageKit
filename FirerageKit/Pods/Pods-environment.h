@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_DAKeyboardControl 3
 #define COCOAPODS_VERSION_PATCH_DAKeyboardControl 1
 
+// GCPlaceholderTextView
+#define COCOAPODS_POD_AVAILABLE_GCPlaceholderTextView
+#define COCOAPODS_VERSION_MAJOR_GCPlaceholderTextView 0
+#define COCOAPODS_VERSION_MINOR_GCPlaceholderTextView 0
+#define COCOAPODS_VERSION_PATCH_GCPlaceholderTextView 1
+
 // HPGrowingTextView
 #define COCOAPODS_POD_AVAILABLE_HPGrowingTextView
 #define COCOAPODS_VERSION_MAJOR_HPGrowingTextView 1
