@@ -1,5 +1,5 @@
 #include "Pods-SDWebImage.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/SDWebImage" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/DAKeyboardControl" "${PODS_ROOT}/Headers/GCPlaceholderTextView" "${PODS_ROOT}/Headers/GHUnit" "${PODS_ROOT}/Headers/HPGrowingTextView" "${PODS_ROOT}/Headers/NavigationMenu" "${PODS_ROOT}/Headers/OCMock" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/UIBubbleTableView"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/SDWebImage" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/BButton" "${PODS_ROOT}/Headers/DAKeyboardControl" "${PODS_ROOT}/Headers/GCPlaceholderTextView" "${PODS_ROOT}/Headers/GHUnit" "${PODS_ROOT}/Headers/HPGrowingTextView" "${PODS_ROOT}/Headers/NavigationMenu" "${PODS_ROOT}/Headers/OCMock" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/UIBubbleTableView"
 OTHER_LDFLAGS = -ObjC ${PODS_SDWEBIMAGE_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}

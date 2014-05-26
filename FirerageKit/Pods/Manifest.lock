@@ -1,4 +1,5 @@
 PODS:
+  - BButton (4.0.0)
   - DAKeyboardControl (2.3.1)
   - GCPlaceholderTextView (0.0.1)
   - GHUnit (0.5.8)
@@ -11,6 +12,7 @@ PODS:
   - UIBubbleTableView (0.2)
 
 DEPENDENCIES:
+  - BButton (from `./PodsSpecs/BButton.podspec`)
   - DAKeyboardControl
   - GCPlaceholderTextView (from `./PodsSpecs/GCPlaceholderTextView.podspec`)
   - GHUnit (= 0.5.8)
@@ -21,12 +23,15 @@ DEPENDENCIES:
   - UIBubbleTableView
 
 EXTERNAL SOURCES:
+  BButton:
+    :podspec: ./PodsSpecs/BButton.podspec
   GCPlaceholderTextView:
     :podspec: ./PodsSpecs/GCPlaceholderTextView.podspec
   NavigationMenu:
     :podspec: ./PodsSpecs/NavigationMenu.podspec
 
 SPEC CHECKSUMS:
+  BButton: f4157e12528ef2f972dbd3ff1ceac8b3d0ddcf6e
   DAKeyboardControl: b17935d41242e094f96ec22696405c620ffb088b
   GCPlaceholderTextView: d69f96e355d6b133e0dc8ae98b8c473c3bf75bce
   GHUnit: 980b787567c498b587529dad43c5020f1ea310e2

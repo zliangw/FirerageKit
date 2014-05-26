@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13017E651932D16600FD4BC9 /* FRBootstrapButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E641932D16600FD4BC9 /* FRBootstrapButton.m */; };
+		13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */; };
 		133C8685192F26D40091E968 /* FRLoadDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8684192F26D40091E968 /* FRLoadDataViewController.m */; };
 		133C8689192F26E70091E968 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8688192F26E70091E968 /* FRChatViewController.m */; };
 		133CE54A192AF50100F69CDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58B192AEE6100A985F6 /* Foundation.framework */; };
@@ -49,6 +51,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13017E631932D16600FD4BC9 /* FRBootstrapButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBootstrapButton.h; sourceTree = "<group>"; };
+		13017E641932D16600FD4BC9 /* FRBootstrapButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBootstrapButton.m; sourceTree = "<group>"; };
+		13017E661932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBootstrapButtonDemoViewController.h; sourceTree = "<group>"; };
+		13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBootstrapButtonDemoViewController.m; sourceTree = "<group>"; };
 		133C8683192F26D40091E968 /* FRLoadDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRLoadDataViewController.h; sourceTree = "<group>"; };
 		133C8684192F26D40091E968 /* FRLoadDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoadDataViewController.m; sourceTree = "<group>"; };
 		133C8687192F26E70091E968 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
@@ -144,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13017E621932D0BB00FD4BC9 /* FRButton */ = {
+			isa = PBXGroup;
+			children = (
+				13017E631932D16600FD4BC9 /* FRBootstrapButton.h */,
+				13017E641932D16600FD4BC9 /* FRBootstrapButton.m */,
+			);
+			path = FRButton;
+			sourceTree = "<group>";
+		};
 		133C8682192F26D40091E968 /* FRLoadDataViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +228,7 @@
 		1361F591192AEE6100A985F6 /* FirerageKit */ = {
 			isa = PBXGroup;
 			children = (
+				13017E621932D0BB00FD4BC9 /* FRButton */,
 				1379211E1931C96C00589DC5 /* FRTableViewCell */,
 				133C8686192F26E70091E968 /* FRSendMessageViewController */,
 				133C8682192F26D40091E968 /* FRLoadDataViewController */,
@@ -349,6 +365,8 @@
 				139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */,
 				13E2197C1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.h */,
 				13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */,
+				13017E661932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.h */,
+				13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -522,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13017E651932D16600FD4BC9 /* FRBootstrapButton.m in Sources */,
 				13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */,
 				13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */,
 				13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */,
@@ -543,6 +562,7 @@
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
 				133C8685192F26D40091E968 /* FRLoadDataViewController.m in Sources */,
 				1361F598192AEE6100A985F6 /* main.m in Sources */,
+				13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */,
 				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
 				1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */,
 			);

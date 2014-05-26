@@ -6,6 +6,12 @@
 // project.
 
 
+// BButton
+#define COCOAPODS_POD_AVAILABLE_BButton
+#define COCOAPODS_VERSION_MAJOR_BButton 4
+#define COCOAPODS_VERSION_MINOR_BButton 0
+#define COCOAPODS_VERSION_PATCH_BButton 0
+
 // DAKeyboardControl
 #define COCOAPODS_POD_AVAILABLE_DAKeyboardControl
 #define COCOAPODS_VERSION_MAJOR_DAKeyboardControl 2

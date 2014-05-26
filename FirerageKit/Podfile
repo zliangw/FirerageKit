@@ -6,6 +6,7 @@ pod 'DAKeyboardControl'
 pod 'UIBubbleTableView'
 pod 'NavigationMenu', :podspec => './PodsSpecs/NavigationMenu.podspec'
 pod 'GCPlaceholderTextView', :podspec => './PodsSpecs/GCPlaceholderTextView.podspec'
+pod 'BButton', :podspec => './PodsSpecs/BButton.podspec'
 
 target :FirerageKitTests do
     pod "GHUnit", "0.5.8"

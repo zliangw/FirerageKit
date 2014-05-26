@@ -41,6 +41,7 @@ install_resource()
       ;;
   esac
 }
+install_resource "BButton/BButton/resources/FontAwesome.ttf"
 install_resource "NavigationMenu/NavigationMenu/NavigationMenuView/images/arrow_down@2x.png"
 install_resource "UIBubbleTableView/images/bubbleMine.png"
 install_resource "UIBubbleTableView/images/bubbleMine@2x.png"
