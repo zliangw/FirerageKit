@@ -18,8 +18,6 @@
 
 @interface FRFlatSegmentedControl ()
 
-@property (nonatomic, assign, readwrite) NSInteger selectedIndex;
-
 @end
 
 @implementation FRFlatSegmentedControl
