@@ -223,7 +223,9 @@
     }else if (scrollView.contentOffset.y  < 0){
         [_refreshView ownerDidScroll];
     }
-    
+    if (_loadDataDelegate && [_loadDataDelegate respondsToSelector:@selector(loadDataTableViewControllerDidScroll:)]) {
+        [_loadDataDelegate loadDataTableViewControllerDidScroll:self];
+    }
 }
 
 // 拖动结束后

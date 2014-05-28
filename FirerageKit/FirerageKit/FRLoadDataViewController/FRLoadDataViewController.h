@@ -17,6 +17,7 @@
 @optional
 - (void)loadDataTableViewControllerDidStartRefreshing:(FRLoadDataViewController *)loadDataTableViewController;
 - (void)loadDataTableViewControllerDidStartLoadMore:(FRLoadDataViewController *)loadDataTableViewController;
+- (void)loadDataTableViewControllerDidScroll:(FRLoadDataViewController *)loadDataTableViewController;
 
 @end
 

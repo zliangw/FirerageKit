@@ -8,8 +8,11 @@
 
 #import "FRBootstrapButtonDemoViewController.h"
 #import "FRBootstrapButton.h"
+#import "UILabel+FRFitSize.h"
 
 @interface FRBootstrapButtonDemoViewController ()
+
+@property (nonatomic, strong) IBOutlet UILabel *label;
 
 @end
 
@@ -30,6 +33,9 @@
     // Do any additional setup after loading the view.
     [[FRBootstrapButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
     [[FRBootstrapButton appearance] setBootstrapV3BorderWidth:0.1];
+    
+    _label.text = @"sdfjsalkfjlsdakfjlksdjflkdsjfklsdfjdskfjlsfjsadklfjdslkfjsaljdskfjslfjsdlkfjdksljfklds";
+    //[_label constrainedToSize:CGSizeMake(40, 100)];
 }
 
 - (void)didReceiveMemoryWarning
