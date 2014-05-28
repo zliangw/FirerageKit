@@ -11,6 +11,7 @@
 #import "UILabel+FRFitSize.h"
 #import "FRFlatSegmentedControl.h"
 #import "UIView+FRTouchBlock.h"
+#import "FRCameraUtils.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -43,8 +44,17 @@
     flatSegmentedControl.itemTitles = [NSArray arrayWithObjects:@"Stream", @"Mixer", nil];
     [self.view addSubview:flatSegmentedControl];
     
+    __weak typeof(self) weakSelf = self;
+    FRCameraUtils *cameraUtils = [[FRCameraUtils alloc] init];
     [self.view addSingleTapWithBlock:^(UIView *view) {
         NSLog(@"tap");
+        [cameraUtils showCameraInViewController:weakSelf sourceType:UIImagePickerControllerSourceTypeCamera allowsEditing:NO willShowedBlock:^{
+            
+        } canceledBlock:^{
+            
+        } finishedBlock:^(UIImage *image, NSDictionary *editingInfo) {
+            
+        }];
     }];
 }
 
