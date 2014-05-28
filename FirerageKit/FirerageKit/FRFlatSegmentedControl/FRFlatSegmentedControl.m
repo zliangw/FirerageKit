@@ -16,6 +16,12 @@
 #define ItemTitleSelectedColorDefault   [UIColor flatBlueColor]
 #define BorderColorDefault              [UIColor flatBlueColor]
 
+@interface FRFlatSegmentedControl ()
+
+@property (nonatomic, assign, readwrite) NSInteger selectedIndex;
+
+@end
+
 @implementation FRFlatSegmentedControl
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -76,6 +82,11 @@
 {
     self.clipsToBounds = YES;
     self.layer.cornerRadius = cornerRadius;
+}
+
+- (NSInteger)selectedIndex
+{
+    return self.selectedIndexes.firstIndex;
 }
 
 @end

@@ -11,6 +11,7 @@
 @interface FRFlatSegmentedControl : AKSegmentedControl
 
 @property (nonatomic, assign) CGFloat cornerRadius;
+@property (nonatomic, assign, readonly) NSInteger selectedIndex;
 @property (nonatomic, strong) NSArray *itemTitles; // items must be NSStrings
 @property (nonatomic, strong) UIColor *borderColor;
 @property (nonatomic, strong) UIColor *normalColor;
