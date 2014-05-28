@@ -10,6 +10,7 @@
 #import "FRBootstrapButton.h"
 #import "UILabel+FRFitSize.h"
 #import "FRFlatSegmentedControl.h"
+#import "UIView+FRTouchBlock.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -41,6 +42,10 @@
     FRFlatSegmentedControl *flatSegmentedControl = [[FRFlatSegmentedControl alloc] initWithFrame:CGRectMake(50, 100, 200, 30)];
     flatSegmentedControl.itemTitles = [NSArray arrayWithObjects:@"Stream", @"Mixer", nil];
     [self.view addSubview:flatSegmentedControl];
+    
+    [self.view addSingleTapWithBlock:^(UIView *view) {
+        NSLog(@"tap");
+    }];
 }
 
 - (void)didReceiveMemoryWarning
