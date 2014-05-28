@@ -1,4 +1,5 @@
 PODS:
+  - AKSegmentedControl (1.0.4)
   - BButton (4.0.0)
   - DAKeyboardControl (2.3.1)
   - GCPlaceholderTextView (0.0.1)
@@ -10,8 +11,10 @@ PODS:
     - SDWebImage/Core
   - SDWebImage/Core (3.6)
   - UIBubbleTableView (0.2)
+  - UIColor+MLPFlatColors (1.0)
 
 DEPENDENCIES:
+  - AKSegmentedControl
   - BButton (from `./PodsSpecs/BButton.podspec`)
   - DAKeyboardControl
   - GCPlaceholderTextView (from `./PodsSpecs/GCPlaceholderTextView.podspec`)
@@ -21,6 +24,7 @@ DEPENDENCIES:
   - OCMock
   - SDWebImage
   - UIBubbleTableView
+  - UIColor+MLPFlatColors (~> 1.0)
 
 EXTERNAL SOURCES:
   BButton:
@@ -31,6 +35,7 @@ EXTERNAL SOURCES:
     :podspec: ./PodsSpecs/NavigationMenu.podspec
 
 SPEC CHECKSUMS:
+  AKSegmentedControl: 8e57e55506f9f851f1f669ac537a3a9d7c681108
   BButton: f4157e12528ef2f972dbd3ff1ceac8b3d0ddcf6e
   DAKeyboardControl: b17935d41242e094f96ec22696405c620ffb088b
   GCPlaceholderTextView: d69f96e355d6b133e0dc8ae98b8c473c3bf75bce
@@ -40,5 +45,6 @@ SPEC CHECKSUMS:
   OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
   SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
   UIBubbleTableView: 66dc0d3e696597ecbe61d6f47960bd2133d177e1
+  UIColor+MLPFlatColors: d74d0e59ba8eb8960c0f8136928056d91e208585
 
 COCOAPODS: 0.33.1

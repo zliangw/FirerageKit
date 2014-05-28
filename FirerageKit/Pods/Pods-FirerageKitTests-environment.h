@@ -6,6 +6,12 @@
 // project.
 
 
+// AKSegmentedControl
+#define COCOAPODS_POD_AVAILABLE_AKSegmentedControl
+#define COCOAPODS_VERSION_MAJOR_AKSegmentedControl 1
+#define COCOAPODS_VERSION_MINOR_AKSegmentedControl 0
+#define COCOAPODS_VERSION_PATCH_AKSegmentedControl 4
+
 // BButton
 #define COCOAPODS_POD_AVAILABLE_BButton
 #define COCOAPODS_VERSION_MAJOR_BButton 4
@@ -59,4 +65,10 @@
 #define COCOAPODS_VERSION_MAJOR_UIBubbleTableView 0
 #define COCOAPODS_VERSION_MINOR_UIBubbleTableView 2
 #define COCOAPODS_VERSION_PATCH_UIBubbleTableView 0
+
+// UIColor+MLPFlatColors
+#define COCOAPODS_POD_AVAILABLE_UIColor_MLPFlatColors
+#define COCOAPODS_VERSION_MAJOR_UIColor_MLPFlatColors 1
+#define COCOAPODS_VERSION_MINOR_UIColor_MLPFlatColors 0
+#define COCOAPODS_VERSION_PATCH_UIColor_MLPFlatColors 0
 

@@ -9,6 +9,7 @@
 #import "FRBootstrapButtonDemoViewController.h"
 #import "FRBootstrapButton.h"
 #import "UILabel+FRFitSize.h"
+#import "FRFlatSegmentedControl.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -36,6 +37,10 @@
     
     _label.text = @"sdfjsalkfjlsdakfjlksdjflkdsjfklsdfjdskfjlsfjsadklfjdslkfjsaljdskfjslfjsdlkfjdksljfklds";
     //[_label constrainedToSize:CGSizeMake(40, 100)];
+    
+    FRFlatSegmentedControl *flatSegmentedControl = [[FRFlatSegmentedControl alloc] initWithFrame:CGRectMake(50, 100, 200, 30)];
+    flatSegmentedControl.itemTitles = [NSArray arrayWithObjects:@"Stream", @"Mixer", nil];
+    [self.view addSubview:flatSegmentedControl];
 }
 
 - (void)didReceiveMemoryWarning

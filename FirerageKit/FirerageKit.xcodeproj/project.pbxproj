@@ -48,6 +48,7 @@
 		13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */; };
 		13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */; };
 		13E21980193068440044FCF2 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */; };
+		13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */; };
 		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
 		23DC8B58F9F74A2CB10AD7AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550F6612F44F4627B361DB43 /* libPods.a */; };
 		E79F98A66C9940B1BC2DD011 /* libPods-FirerageKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF8AC093DAD4516B0CA9D98 /* libPods-FirerageKitTests.a */; };
@@ -125,6 +126,8 @@
 		13E2197C1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFRSendMessageViewControllerDemoViewController.h; sourceTree = "<group>"; };
 		13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRSendMessageViewControllerDemoViewController.m; sourceTree = "<group>"; };
 		13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendTextViewBkg@2x.png"; sourceTree = "<group>"; };
+		13FC988B1935C9C900A95D75 /* FRFlatSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFlatSegmentedControl.h; sourceTree = "<group>"; };
+		13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFlatSegmentedControl.m; sourceTree = "<group>"; };
 		13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridViewDemoViewController.h; sourceTree = "<group>"; };
 		13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGridViewDemoViewController.m; sourceTree = "<group>"; };
 		550F6612F44F4627B361DB43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +274,7 @@
 		1361F591192AEE6100A985F6 /* FirerageKit */ = {
 			isa = PBXGroup;
 			children = (
+				13FC988A1935C9A200A95D75 /* FRFlatSegmentedControl */,
 				13017E6E1932E1DA00FD4BC9 /* FRDevice */,
 				13017E621932D0BB00FD4BC9 /* FRButton */,
 				1379211E1931C96C00589DC5 /* FRTableViewCell */,
@@ -397,6 +401,15 @@
 				13BAF450192D9A8100F189D6 /* FRBannerView.m */,
 			);
 			path = FRBanner;
+			sourceTree = "<group>";
+		};
+		13FC988A1935C9A200A95D75 /* FRFlatSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				13FC988B1935C9C900A95D75 /* FRFlatSegmentedControl.h */,
+				13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */,
+			);
+			path = FRFlatSegmentedControl;
 			sourceTree = "<group>";
 		};
 		13FD2813192C96680082C3C7 /* Demos */ = {
@@ -611,6 +624,7 @@
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
 				133C8685192F26D40091E968 /* FRLoadDataViewController.m in Sources */,
 				1361F598192AEE6100A985F6 /* main.m in Sources */,
+				13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */,
 				13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */,
 				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
 				1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */,
