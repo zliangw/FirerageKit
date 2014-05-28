@@ -18,6 +18,7 @@
 		133CE54C192AF50100F69CDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58F192AEE6100A985F6 /* UIKit.framework */; };
 		133CE577192AF54600F69CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CE575192AF54600F69CDE /* main.m */; };
 		133CE579192AF85600F69CDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CE578192AF85600F69CDE /* MyTest.m */; };
+		134454A51935A5B0008C6A9C /* UIImage+FRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 134454A41935A5B0008C6A9C /* UIImage+FRColor.m */; };
 		1361F58C192AEE6100A985F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58B192AEE6100A985F6 /* Foundation.framework */; };
 		1361F58E192AEE6100A985F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58D192AEE6100A985F6 /* CoreGraphics.framework */; };
 		1361F590192AEE6100A985F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58F192AEE6100A985F6 /* UIKit.framework */; };
@@ -70,6 +71,8 @@
 		133CE574192AF54600F69CDE /* FirerageKitTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FirerageKitTests-Prefix.pch"; sourceTree = "<group>"; };
 		133CE575192AF54600F69CDE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		133CE578192AF85600F69CDE /* MyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTest.m; sourceTree = "<group>"; };
+		134454A31935A5B0008C6A9C /* UIImage+FRColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FRColor.h"; sourceTree = "<group>"; };
+		134454A41935A5B0008C6A9C /* UIImage+FRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FRColor.m"; sourceTree = "<group>"; };
 		1361F588192AEE6100A985F6 /* FirerageKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirerageKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1361F58B192AEE6100A985F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1361F58D192AEE6100A985F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -222,6 +225,15 @@
 			path = FirerageKitTests;
 			sourceTree = "<group>";
 		};
+		134454A21935A588008C6A9C /* FRImageCategory */ = {
+			isa = PBXGroup;
+			children = (
+				134454A31935A5B0008C6A9C /* UIImage+FRColor.h */,
+				134454A41935A5B0008C6A9C /* UIImage+FRColor.m */,
+			);
+			path = FRImageCategory;
+			sourceTree = "<group>";
+		};
 		1361F57F192AEE6100A985F6 = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +368,7 @@
 		13BAF43C192CAC8800F189D6 /* FRCategories */ = {
 			isa = PBXGroup;
 			children = (
+				134454A21935A588008C6A9C /* FRImageCategory */,
 				13017E6A1932E0C000FD4BC9 /* FRLabelCategory */,
 				13017E691932E0AF00FD4BC9 /* FRButtonCategory */,
 				13AE73251930A53E009C527A /* FRViewControllerCategory */,
@@ -589,6 +602,7 @@
 				137921241931CFFD00589DC5 /* FRTextViewTableViewCell.m in Sources */,
 				13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */,
 				137921211931CD7100589DC5 /* FRTextFieldTableViewCell.m in Sources */,
+				134454A51935A5B0008C6A9C /* UIImage+FRColor.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
 				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
 				13AE732B1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m in Sources */,
