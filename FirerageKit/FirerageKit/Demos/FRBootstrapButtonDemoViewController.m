@@ -21,6 +21,11 @@
 
 @implementation FRBootstrapButtonDemoViewController
 
+- (void)dealloc
+{
+    [FRCameraUtils releaseUtils];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,10 +50,8 @@
     [self.view addSubview:flatSegmentedControl];
     
     __weak typeof(self) weakSelf = self;
-    FRCameraUtils *cameraUtils = [[FRCameraUtils alloc] init];
     [self.view addSingleTapWithBlock:^(UIView *view) {
-        NSLog(@"tap");
-        [cameraUtils showCameraInViewController:weakSelf sourceType:UIImagePickerControllerSourceTypeCamera allowsEditing:NO willShowedBlock:^{
+        [FRCameraUtils showCameraInViewController:weakSelf sourceType:UIImagePickerControllerSourceTypeCamera allowsEditing:NO cameraDevice:UIImagePickerControllerCameraDeviceFront willShowedBlock:^{
             
         } canceledBlock:^{
             

@@ -16,6 +16,22 @@
 
 @implementation FRCameraUtils
 
+static dispatch_once_t once;
+static id instance;
++ (FRCameraUtils *)sharedUtils
+{
+    dispatch_once(&once, ^{
+        instance = [self new];
+    });
+    return instance;
+}
+
++ (void)releaseUtils
+{
+    instance = nil;
+    once = 0;
+}
+
 - (void)dealloc
 {
     _imagePicker.delegate = nil;
@@ -31,17 +47,21 @@
     return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
-- (void)showCameraInViewController:(UIViewController *)viewController sourceType:(UIImagePickerControllerSourceType)sourceType allowsEditing:(BOOL)allowsEditing willShowedBlock:(FRCameraWillShowedBlock)willShowedBlock canceledBlock:(FRCameraCanceledBlock)canceledBlock finishedBlock:(FRCameraFinishedBlock)finishedBlock
++ (void)showCameraInViewController:(UIViewController *)viewController sourceType:(UIImagePickerControllerSourceType)sourceType allowsEditing:(BOOL)allowsEditing cameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice willShowedBlock:(FRCameraWillShowedBlock)willShowedBlock canceledBlock:(FRCameraCanceledBlock)canceledBlock finishedBlock:(FRCameraFinishedBlock)finishedBlock
 {
+    [[FRCameraUtils sharedUtils] showCameraInViewController:viewController sourceType:sourceType allowsEditing:allowsEditing cameraDevice:cameraDevice willShowedBlock:willShowedBlock canceledBlock:canceledBlock finishedBlock:finishedBlock];
+}
+
+- (void)showCameraInViewController:(UIViewController *)viewController sourceType:(UIImagePickerControllerSourceType)sourceType allowsEditing:(BOOL)allowsEditing cameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice willShowedBlock:(FRCameraWillShowedBlock)willShowedBlock canceledBlock:(FRCameraCanceledBlock)canceledBlock finishedBlock:(FRCameraFinishedBlock)finishedBlock
+{
+    NSAssert([UIImagePickerController isSourceTypeAvailable:sourceType], @"Device not support the type");
+    
     if (_imagePicker == nil) {
         _imagePicker = [[UIImagePickerController alloc] init];
         _imagePicker.delegate = self;
         _imagePicker.allowsEditing = allowsEditing;
-    }
-    
-    _imagePicker.sourceType = sourceType;
-    if (![UIImagePickerController isSourceTypeAvailable:sourceType] ) {
-        return;
+        _imagePicker.sourceType = sourceType;
+        _imagePicker.cameraDevice = cameraDevice;
     }
     
     self.willShowedBlock = willShowedBlock;

@@ -18,10 +18,15 @@ typedef void (^FRCameraFinishedBlock) (UIImage *image ,NSDictionary *editingInfo
 @property (nonatomic, copy) FRCameraCanceledBlock canceledBlock;
 @property (nonatomic, copy) FRCameraFinishedBlock finishedBlock;
 
++ (FRCameraUtils *)sharedUtils;
++ (void)releaseUtils;
+
 + (BOOL)isSupportCamera;
 
 + (BOOL)isSupportPhotoLibrary;
 
-- (void)showCameraInViewController:(UIViewController *)viewController sourceType:(UIImagePickerControllerSourceType)sourceType allowsEditing:(BOOL)allowsEditing willShowedBlock:(FRCameraWillShowedBlock)willShowedBlock canceledBlock:(FRCameraCanceledBlock)canceledBlock finishedBlock:(FRCameraFinishedBlock)finishedBlock;
++ (void)showCameraInViewController:(UIViewController *)viewController sourceType:(UIImagePickerControllerSourceType)sourceType allowsEditing:(BOOL)allowsEditing cameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice willShowedBlock:(FRCameraWillShowedBlock)willShowedBlock canceledBlock:(FRCameraCanceledBlock)canceledBlock finishedBlock:(FRCameraFinishedBlock)finishedBlock;
+
+- (void)showCameraInViewController:(UIViewController *)viewController sourceType:(UIImagePickerControllerSourceType)sourceType allowsEditing:(BOOL)allowsEditing cameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice willShowedBlock:(FRCameraWillShowedBlock)willShowedBlock canceledBlock:(FRCameraCanceledBlock)canceledBlock finishedBlock:(FRCameraFinishedBlock)finishedBlock;
 
 @end
