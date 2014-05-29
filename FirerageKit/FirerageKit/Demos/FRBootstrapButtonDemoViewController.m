@@ -13,6 +13,7 @@
 #import "UIView+FRTouchBlock.h"
 #import "FRCameraUtils.h"
 #import "UIAlertView+FRUtils.h"
+#import "FRDevice.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -70,6 +71,8 @@
             
         }];
     }];
+    
+    [FRDevice isDevice5];
     
 }
 
