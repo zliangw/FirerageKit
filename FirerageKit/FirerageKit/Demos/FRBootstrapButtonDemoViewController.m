@@ -12,6 +12,7 @@
 #import "FRFlatSegmentedControl.h"
 #import "UIView+FRTouchBlock.h"
 #import "FRCameraUtils.h"
+#import "UIAlertView+FRUtils.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -51,14 +52,25 @@
     
     __weak typeof(self) weakSelf = self;
     [self.view addSingleTapWithBlock:^(UIView *view) {
-        [FRCameraUtils showCameraInViewController:weakSelf sourceType:UIImagePickerControllerSourceTypeCamera allowsEditing:NO cameraDevice:UIImagePickerControllerCameraDeviceFront willShowedBlock:^{
+//        [FRCameraUtils showCameraInViewController:weakSelf sourceType:UIImagePickerControllerSourceTypeCamera allowsEditing:NO cameraDevice:UIImagePickerControllerCameraDeviceFront willShowedBlock:^{
+//            
+//        } canceledBlock:^{
+//            
+//        } finishedBlock:^(UIImage *image, NSDictionary *editingInfo) {
+//            
+//        }];
+        
+        [UIAlertView showMessage:@"hello" withTitle:@"title" confirmTitle:@"ok" cancelTitle:@"cancel" confirmBlock:^(UIAlertView *alertView) {
             
-        } canceledBlock:^{
+        } cancelBlock:^(UIAlertView *alertView) {
             
-        } finishedBlock:^(UIImage *image, NSDictionary *editingInfo) {
+        }];
+        
+        [UIAlertView showMessage:@"hello" withTitle:@"title" cancelTitle:@"cancel" otherTitles:[NSArray arrayWithObjects:@"1", @"2", nil] tapBlock:^(UIAlertView *alertView, NSInteger tapIndex) {
             
         }];
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning
