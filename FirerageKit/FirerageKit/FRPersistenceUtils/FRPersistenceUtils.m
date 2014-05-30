@@ -10,15 +10,15 @@
 
 @implementation FRPersistenceUtils
 
-+ (NSString *)defaultArchiverPathOfObject:(id)object
++ (NSString *)defaultArchiverPathOfObject:(Class)objectClass
 {
-    return [[FRFileManager documentsDirectory] stringByAppendingPathComponent:NSStringFromClass([object class])];
+    return [[FRFileManager documentsDirectory] stringByAppendingPathComponent:NSStringFromClass(objectClass)];
 }
 
 + (BOOL)archiverObject:(id)object
 {
     BOOL result = NO;
-    NSString *path = [[self class] defaultArchiverPathOfObject:object];
+    NSString *path = [[self class] defaultArchiverPathOfObject:[object class]];
     NSError *error = [FRFileManager createDirectoryAtPath:path];
     if (!error) {
         result = [FRPersistenceUtils archiverObject:object withKey:NSStringFromClass([object class]) path:path];
@@ -26,10 +26,10 @@
     return result;
 }
 
-+ (id)unArchiverObject:(id)object
++ (id)unArchiverObjectByClass:(Class)objClass
 {
-    NSString *path = [[self class] defaultArchiverPathOfObject:object];
-    return [FRPersistenceUtils unArchiverWithKey:NSStringFromClass([object class]) path:path];
+    NSString *path = [[self class] defaultArchiverPathOfObject:objClass];
+    return [FRPersistenceUtils unArchiverWithKey:NSStringFromClass(objClass) path:path];
 }
 
 + (BOOL)archiverObject:(id)object withKey:(NSString *)key path:(NSString *)path

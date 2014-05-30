@@ -11,10 +11,10 @@
 
 @interface FRPersistenceUtils : NSObject
 
-+ (NSString *)defaultArchiverPathOfObject:(id)object;
++ (NSString *)defaultArchiverPathOfObject:(Class)objectClass;
 
 + (BOOL)archiverObject:(id)object;
-+ (id)unArchiverObject:(id)object;
++ (id)unArchiverObjectByClass:(Class)objectClass;
 
 + (BOOL)archiverObject:(id)object withKey:(NSString *)key path:(NSString *)path;
 + (id)unArchiverWithKey:(NSString *)key path:(NSString *)path;
