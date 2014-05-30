@@ -117,9 +117,10 @@
     return totalFaceRects;
 }
 
-- (UIImage *) scaleImageFocusingOnRect:(CGRect) facesRect {
-    CGFloat multi1 = self.size.width / self.size.width;
-    CGFloat multi2 = self.size.height / self.size.height;
+- (UIImage *) scaleImageFocusingOnRect:(CGRect) facesRect fillSize:(CGSize)fillSize
+{
+    CGFloat multi1 = fillSize.width / self.size.width;
+    CGFloat multi2 = fillSize.height / self.size.height;
     CGFloat multi = MAX(multi1, multi2);
     
     //We need to 'flip' the Y coordinate to make it match the iOS coordinate system one
@@ -130,8 +131,8 @@
     CGRect imageRect = CGRectZero;
     imageRect.size.width = self.size.width * multi;
     imageRect.size.height = self.size.height * multi;
-    imageRect.origin.x = MIN(0.0, MAX(-facesRect.origin.x + self.size.width/2.0 - facesRect.size.width/2.0, -imageRect.size.width + self.size.width));
-    imageRect.origin.y = MIN(0.0, MAX(-facesRect.origin.y + self.size.height/2.0 -facesRect.size.height/2.0, -imageRect.size.height + self.size.height));
+    imageRect.origin.x = MIN(0.0, MAX(-facesRect.origin.x + fillSize.width/2.0 - facesRect.size.width/2.0, -imageRect.size.width + fillSize.width));
+    imageRect.origin.y = MIN(0.0, MAX(-facesRect.origin.y + fillSize.height/2.0 -facesRect.size.height/2.0, -imageRect.size.height + fillSize.height));
     
     imageRect = CGRectIntegral(imageRect);
     
@@ -143,11 +144,11 @@
     return newImage;
 }
 
-- (void)faceAwareFillWithBlock:(FRCropBlock)cropBlock
+- (void)faceAwareFillWithSize:(CGSize)size block:(FRCropBlock)cropBlock
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         CGRect facesRect = [self rectWithFaces];
-        UIImage *newImage = [self scaleImageFocusingOnRect:facesRect];
+        UIImage *newImage = [self scaleImageFocusingOnRect:facesRect fillSize:size];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             cropBlock(newImage);

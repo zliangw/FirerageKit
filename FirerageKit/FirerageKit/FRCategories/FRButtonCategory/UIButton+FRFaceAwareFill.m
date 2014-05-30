@@ -29,7 +29,7 @@ static char operationKey;
                 if (image) {
                     UIImage *newImage = [image cropWithProportion:proportion type:cropType];
                     if (faceAwareFilled) {
-                        [newImage faceAwareFillWithBlock:^(UIImage *faceAwareFilledImage) {
+                        [newImage faceAwareFillWithSize:self.frame.size block:^(UIImage *faceAwareFilledImage) {
                             [sself setBackgroundImage:faceAwareFilledImage forState:state];
                         }];
                     } else {

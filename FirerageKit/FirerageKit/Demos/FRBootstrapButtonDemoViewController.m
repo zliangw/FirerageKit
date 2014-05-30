@@ -72,7 +72,7 @@
         }];
     }];
     
-    [FRDevice isDevice5];
+//    [FRDevice isDevice5];
     
 }
 

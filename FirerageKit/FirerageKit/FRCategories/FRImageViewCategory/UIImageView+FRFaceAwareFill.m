@@ -35,14 +35,14 @@ static char operationKey;
             dispatch_main_sync_safe(^{
                 if (!wself) return;
                 if (image) {
-                    UIImage *newImage = [image cropWithProportion:proportion type:cropType];
                     if (faceAwareFilled) {
-                        [newImage faceAwareFillWithBlock:^(UIImage *faceAwareFilledImage) {
+                        wself.contentMode = UIViewContentModeTopLeft;
+                        [image faceAwareFillWithSize:self.frame.size block:^(UIImage *faceAwareFilledImage) {
                             wself.image = faceAwareFilledImage;
                             [wself setNeedsLayout];
                         }];
                     } else {
-                        wself.image = newImage;
+                        wself.image = [image cropWithProportion:proportion type:cropType];
                         [wself setNeedsLayout];
                     }
                 }

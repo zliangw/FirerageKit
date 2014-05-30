@@ -22,6 +22,6 @@ typedef enum {
 @interface UIImage (FRCrop)
 
 - (UIImage *)cropWithProportion:(CGFloat)proportion type:(FRCropType)cropType;
-- (void)faceAwareFillWithBlock:(FRCropBlock)cropBlock;
+- (void)faceAwareFillWithSize:(CGSize)size block:(FRCropBlock)cropBlock;
 
 @end
