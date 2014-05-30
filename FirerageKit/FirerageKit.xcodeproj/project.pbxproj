@@ -37,6 +37,8 @@
 		137921241931CFFD00589DC5 /* FRTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 137921231931CFFD00589DC5 /* FRTextViewTableViewCell.m */; };
 		139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */; };
 		139093AE1930467700ECB341 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AD1930467700ECB341 /* FRSendMessageViewController.m */; };
+		13913DE4193856670016F742 /* FRPersistenceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13913DE3193856670016F742 /* FRPersistenceUtils.m */; };
+		13913DE7193856BC0016F742 /* FRFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13913DE6193856BC0016F742 /* FRFileManager.m */; };
 		1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */; };
 		1399CBE9192CF08800ACB1E0 /* pdr_blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399CBE2192CF08800ACB1E0 /* pdr_blueArrow.png */; };
 		1399CBEA192CF08800ACB1E0 /* pdr_blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399CBE3192CF08800ACB1E0 /* pdr_blueArrow@2x.png */; };
@@ -115,6 +117,10 @@
 		139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewControllerDemoViewController.m; sourceTree = "<group>"; };
 		139093AC1930467700ECB341 /* FRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSendMessageViewController.h; sourceTree = "<group>"; };
 		139093AD1930467700ECB341 /* FRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSendMessageViewController.m; sourceTree = "<group>"; };
+		13913DE2193856670016F742 /* FRPersistenceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPersistenceUtils.h; sourceTree = "<group>"; };
+		13913DE3193856670016F742 /* FRPersistenceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPersistenceUtils.m; sourceTree = "<group>"; };
+		13913DE5193856BC0016F742 /* FRFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFileManager.h; sourceTree = "<group>"; };
+		13913DE6193856BC0016F742 /* FRFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFileManager.m; sourceTree = "<group>"; };
 		1399CBE0192CF08800ACB1E0 /* FRPullDownRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPullDownRefreshView.h; sourceTree = "<group>"; };
 		1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPullDownRefreshView.m; sourceTree = "<group>"; };
 		1399CBE2192CF08800ACB1E0 /* pdr_blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdr_blueArrow.png; sourceTree = "<group>"; };
@@ -335,6 +341,7 @@
 		1361F591192AEE6100A985F6 /* FirerageKit */ = {
 			isa = PBXGroup;
 			children = (
+				13913DE11938564F0016F742 /* FRPersistenceUtils */,
 				1316D43F1935E58300F00922 /* FRCameraUtils */,
 				13FC988A1935C9A200A95D75 /* FRFlatSegmentedControl */,
 				13017E6E1932E1DA00FD4BC9 /* FRDevice */,
@@ -387,6 +394,17 @@
 				13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		13913DE11938564F0016F742 /* FRPersistenceUtils */ = {
+			isa = PBXGroup;
+			children = (
+				13913DE2193856670016F742 /* FRPersistenceUtils.h */,
+				13913DE3193856670016F742 /* FRPersistenceUtils.m */,
+				13913DE5193856BC0016F742 /* FRFileManager.h */,
+				13913DE6193856BC0016F742 /* FRFileManager.m */,
+			);
+			path = FRPersistenceUtils;
 			sourceTree = "<group>";
 		};
 		1399CBDF192CF08800ACB1E0 /* FRPullDownRefreshView */ = {
@@ -676,8 +694,10 @@
 				1316D45C19371F6C00F00922 /* UIColor+FRUtils.m in Sources */,
 				139093AE1930467700ECB341 /* FRSendMessageViewController.m in Sources */,
 				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
+				13913DE7193856BC0016F742 /* FRFileManager.m in Sources */,
 				1316D45F193736BE00F00922 /* UIImage+FRCrop.m in Sources */,
 				13017E711932E20000FD4BC9 /* FRDevice.m in Sources */,
+				13913DE4193856670016F742 /* FRPersistenceUtils.m in Sources */,
 				13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */,
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */,
