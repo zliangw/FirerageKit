@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FRFileManager.h"
 
 @interface FRPersistenceUtils : NSObject
+
++ (NSString *)defaultArchiverPathOfObject:(id)object;
+
++ (BOOL)archiverObject:(id)object;
++ (id)unArchiverObject:(id)object;
 
 + (BOOL)archiverObject:(id)object withKey:(NSString *)key path:(NSString *)path;
 + (id)unArchiverWithKey:(NSString *)key path:(NSString *)path;

@@ -10,6 +10,28 @@
 
 @implementation FRPersistenceUtils
 
++ (NSString *)defaultArchiverPathOfObject:(id)object
+{
+    return [[FRFileManager documentsDirectory] stringByAppendingPathComponent:NSStringFromClass([object class])];
+}
+
++ (BOOL)archiverObject:(id)object
+{
+    BOOL result = NO;
+    NSString *path = [[self class] defaultArchiverPathOfObject:object];
+    NSError *error = [FRFileManager createDirectoryAtPath:path];
+    if (!error) {
+        result = [FRPersistenceUtils archiverObject:object withKey:NSStringFromClass([object class]) path:path];
+    }
+    return result;
+}
+
++ (id)unArchiverObject:(id)object
+{
+    NSString *path = [[self class] defaultArchiverPathOfObject:object];
+    return [FRPersistenceUtils unArchiverWithKey:NSStringFromClass([object class]) path:path];
+}
+
 + (BOOL)archiverObject:(id)object withKey:(NSString *)key path:(NSString *)path
 {
     BOOL result = NO;
