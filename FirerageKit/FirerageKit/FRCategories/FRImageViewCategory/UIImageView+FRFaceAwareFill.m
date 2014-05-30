@@ -36,7 +36,6 @@ static char operationKey;
                 if (!wself) return;
                 if (image) {
                     if (faceAwareFilled) {
-                        wself.contentMode = UIViewContentModeTopLeft;
                         [image faceAwareFillWithSize:self.frame.size block:^(UIImage *faceAwareFilledImage) {
                             wself.image = faceAwareFilledImage;
                             [wself setNeedsLayout];
