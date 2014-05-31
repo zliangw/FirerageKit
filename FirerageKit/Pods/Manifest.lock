@@ -4,7 +4,6 @@ PODS:
   - DAKeyboardControl (2.3.1)
   - GCPlaceholderTextView (0.0.1)
   - GHUnit (0.5.8)
-  - HPGrowingTextView (1.1)
   - NavigationMenu (0.0.1)
   - OCMock (2.2.4)
   - SDWebImage (3.6):
@@ -19,7 +18,6 @@ DEPENDENCIES:
   - DAKeyboardControl
   - GCPlaceholderTextView (from `./PodsSpecs/GCPlaceholderTextView.podspec`)
   - GHUnit (= 0.5.8)
-  - HPGrowingTextView
   - NavigationMenu (from `./PodsSpecs/NavigationMenu.podspec`)
   - OCMock
   - SDWebImage
@@ -40,7 +38,6 @@ SPEC CHECKSUMS:
   DAKeyboardControl: b17935d41242e094f96ec22696405c620ffb088b
   GCPlaceholderTextView: d69f96e355d6b133e0dc8ae98b8c473c3bf75bce
   GHUnit: 980b787567c498b587529dad43c5020f1ea310e2
-  HPGrowingTextView: 07d5ab1f1e867acfb7a6f498b819948c9e97d07c
   NavigationMenu: a70e6906296cda2620969069f839cf9d31740cd0
   OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
   SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc

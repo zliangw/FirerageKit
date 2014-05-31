@@ -1,6 +1,5 @@
 platform :ios, '5.1.1'
 
-pod 'HPGrowingTextView'
 pod 'SDWebImage'
 pod 'DAKeyboardControl'
 pod 'UIBubbleTableView'

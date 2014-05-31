@@ -12,7 +12,7 @@
 
 @class FRLoadDataViewController;
 
-@protocol FRLoadDataTableViewControllerDelegate <NSObject>
+@protocol FRLoadDataViewControllerDelegate <NSObject>
 
 @optional
 - (void)loadDataTableViewControllerDidStartRefreshing:(FRLoadDataViewController *)loadDataTableViewController;
@@ -24,7 +24,7 @@
 @interface FRLoadDataViewController : UIViewController <FRPullDownRefreshViewDelegate, FRPullUpLoadMoreViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, assign) id<FRLoadDataTableViewControllerDelegate> loadDataDelegate;
+@property (nonatomic, assign) id<FRLoadDataViewControllerDelegate> loadDataDelegate;
 @property (nonatomic, assign) BOOL hasLoadMoreCompleted;
 @property (nonatomic, assign) BOOL loadMoreAllowed;
 

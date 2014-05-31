@@ -640,12 +640,7 @@
 	
 	if ([atext isEqualToString:@"\n"]) {
 		if ([delegate respondsToSelector:@selector(growingTextViewShouldReturn:)]) {
-			if (![delegate performSelector:@selector(growingTextViewShouldReturn:) withObject:self]) {
-				return YES;
-			} else {
-				[textView resignFirstResponder];
-				return NO;
-			}
+            return [delegate growingTextViewShouldReturn:self];
 		}
 	}
 	

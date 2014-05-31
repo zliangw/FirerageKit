@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6k7-Zk-WX3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6k7-Zk-WX3">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -197,23 +197,37 @@
             <objects>
                 <viewController id="jOh-NR-yUm" customClass="FRFRSendMessageViewControllerDemoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mM9-K5-alL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lHg-up-YHH">
-                                <rect key="frame" x="120" y="325" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FDN-3j-6t4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="wGO-6z-cN1">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wGO-6z-cN1" id="Ie4-w9-4DY">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <segue destination="4ej-lZ-05f" kind="push" id="eR7-96-2rV"/>
+                                    <outlet property="dataSource" destination="jOh-NR-yUm" id="Ca4-IF-Nyf"/>
+                                    <outlet property="delegate" destination="jOh-NR-yUm" id="dkC-xm-lCD"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="SendMessage" id="HI5-qf-IGw"/>
+                    <connections>
+                        <outlet property="messageContentView" destination="FDN-3j-6t4" id="LAz-F6-x5b"/>
+                        <outlet property="tableView" destination="FDN-3j-6t4" id="Vah-yK-HKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLf-fn-PF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,22 +280,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48g-Xy-dgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1062" y="3014"/>
-        </scene>
-        <!--Send Message View Controller - SendMsg-->
-        <scene sceneID="6od-sq-9Vd">
-            <objects>
-                <viewController storyboardIdentifier="FRSendMessageViewController" id="4ej-lZ-05f" customClass="FRSendMessageViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WbB-4W-CbG">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="SendMsg" id="55m-Vv-rMI"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9gD-po-UuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1549" y="2282"/>
         </scene>
         <!--Chat View Controller Demo View Controller - FRChatDemo-->
         <scene sceneID="cus-vp-EB3">

@@ -12,12 +12,21 @@
 
 @interface FRSendMessageViewController () <HPGrowingTextViewDelegate>
 
-@property (strong, nonatomic) UIView *textViewContainerView;
-@property (strong, nonatomic) HPGrowingTextView *textView;
+@property (nonatomic, strong) UIView *inputContainerView;
+@property (nonatomic, strong) HPGrowingTextView *messageInputView;
 
 @end
 
 @implementation FRSendMessageViewController
+
+- (void)dealloc
+{
+    self.loadDataDelegate = nil;
+    self.messageInputView.delegate = nil;
+    self.sendMessageDelegate = nil;
+    [self.messageInputView resignFirstResponder];
+    [self.view removeKeyboardControl];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +37,17 @@
     return self;
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.sendMessageDelegate = nil;
+}
+
 - (void)loadView
 {
     [super loadView];
     
-    if (_textViewContainerView) {
+    if (_inputContainerView) {
         return;
     }
     
@@ -41,33 +56,38 @@
         self.inputViewHeight = inputHeight;
     }
     
-    if (_contentView == nil) {
-        self.contentView = [[UIView alloc] initWithFrame:[self mainBoundsMinusHeight:_inputViewHeight]];
+    if (_messageContentView == nil) {
+        self.messageContentView = [[UIView alloc] initWithFrame:[self mainBoundsMinusHeight:_inputViewHeight]];
     }
-    [self.view addSubview:_contentView];
+    _messageContentView.frame = [self mainBoundsMinusHeight:_inputViewHeight];
+    [self.view addSubview:_messageContentView];
     
-    self.textViewContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_contentView.frame), CGRectGetWidth(self.view.bounds), _inputViewHeight)];
-    _textViewContainerView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_textViewContainerView];
+    self.inputContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_messageContentView.frame), CGRectGetWidth(self.view.bounds), _inputViewHeight)];
+    if (!_inputContainerColor) {
+        _inputContainerColor = [UIColor clearColor];
+    }
+    _inputContainerView.backgroundColor = _inputContainerColor;
+    [self.view addSubview:_inputContainerView];
     
-	_textView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(5, 3, CGRectGetWidth(self.view.bounds) - 10, _textViewContainerView.bounds.size.height)];
-    _textView.contentInset = UIEdgeInsetsMake(0, 5, 0, 5);
-	_textView.minNumberOfLines = 1;
-	_textView.maxNumberOfLines = 2;
-	_textView.returnKeyType = UIReturnKeySend;
-	_textView.font = [UIFont systemFontOfSize:15.0f];
-	_textView.delegate = self;
-    _textView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
-    _textView.backgroundColor = [UIColor clearColor];
-    _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    _messageInputView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.view.bounds) - 8.5, _inputContainerView.bounds.size.height)];
+    _messageInputView.contentInset = UIEdgeInsetsMake(0, 5, 0, 5);
+    _messageInputView.minNumberOfLines = 1;
+    _messageInputView.maxNumberOfLines = 2;
+    _messageInputView.returnKeyType = UIReturnKeySend;
+    _messageInputView.font = [UIFont systemFontOfSize:15.0f];
+    _messageInputView.delegate = self;
+    _messageInputView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
+    _messageInputView.backgroundColor = [UIColor clearColor];
+    _messageInputView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    _messageInputView.internalTextView.enablesReturnKeyAutomatically = YES;
     
-    [_textViewContainerView addSubview:_textView];
-    _textViewContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [_inputContainerView addSubview:_messageInputView];
+    _inputContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
-    UIImageView *messageTextViewBg = [[UIImageView alloc] initWithFrame:CGRectMake(_textView.frame.origin.x, _textView.frame.origin.y - 3, _textView.frame.size.width, _textView.frame.size.height + 7)];
+    UIImageView *messageTextViewBg = [[UIImageView alloc] initWithFrame:CGRectMake(_messageInputView.frame.origin.x - 2, _messageInputView.frame.origin.y - 3, _messageInputView.frame.size.width + 2, _messageInputView.frame.size.height + 7)];
     messageTextViewBg.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [messageTextViewBg setImage:[[UIImage imageNamed:@"SendTextViewBkg.png"] stretchableImageWithLeftCapWidth:25 topCapHeight:15]];
-    [_textViewContainerView insertSubview:messageTextViewBg belowSubview:_textView];
+    [_inputContainerView insertSubview:messageTextViewBg belowSubview:_messageInputView];
 }
 
 - (void)viewDidLoad
@@ -75,16 +95,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.keyboardTriggerOffset = _textViewContainerView.bounds.size.height;
+    self.view.keyboardTriggerOffset = _inputContainerView.bounds.size.height;
     __weak typeof(self) weakSelf = self;
     [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView, BOOL opening, BOOL closing) {
-        CGRect toolBarFrame = weakSelf.textViewContainerView.frame;
+        CGRect toolBarFrame = weakSelf.inputContainerView.frame;
         toolBarFrame.origin.y = keyboardFrameInView.origin.y - toolBarFrame.size.height;
-        weakSelf.textViewContainerView.frame = toolBarFrame;
+        weakSelf.inputContainerView.frame = toolBarFrame;
         
-        CGRect tableViewFrame = weakSelf.contentView.frame;
+        CGRect tableViewFrame = weakSelf.messageContentView.frame;
         tableViewFrame.size.height = toolBarFrame.origin.y;
-        weakSelf.contentView.frame = tableViewFrame;
+        weakSelf.messageContentView.frame = tableViewFrame;
     }];
 }
 
@@ -96,13 +116,28 @@
 
 #pragma mark - Setter
 
-- (void)setContentView:(UIView *)contentView
+- (void)setMessageContentView:(UIView *)contentView
 {
-    if (_contentView) {
-        [_contentView removeFromSuperview];
+    if (_messageContentView) {
+        [_messageContentView removeFromSuperview];
     }
-    _contentView = contentView;
-    _contentView.frame = [self mainBoundsMinusHeight:_inputViewHeight];
+    _messageContentView = contentView;
+    _messageContentView.autoresizingMask = UIViewAutoresizingNone;
+    _messageContentView.frame = [self mainBoundsMinusHeight:_inputViewHeight];
+}
+
+- (void)setInputContainerColor:(UIColor *)inputContainerColor
+{
+    if (_inputContainerColor) {
+        _inputContainerColor = inputContainerColor;
+        _inputContainerView.backgroundColor = _inputContainerColor;
+    }
+}
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    _placeholder = [placeholder copy];
+    _messageInputView.placeholder = _placeholder;
 }
 
 #pragma mark - Private Methods
@@ -115,20 +150,32 @@
     return CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - [[UIApplication sharedApplication] statusBarFrame].size.height - navigationBarHeight - tabBarHeight - bottomToolbarHeight - minus);
 }
 
-- (void)sendMessage
+#pragma mark -
+#pragma mark - Member Methods
+
+- (void)sendMessage:(NSString *)message
 {
     if (_sendMessageDelegate && [_sendMessageDelegate respondsToSelector:@selector(sendMessageViewController:didSentMessage:)]) {
-        [_sendMessageDelegate sendMessageViewController:self didSentMessage:_textView.text];
+        [_sendMessageDelegate sendMessageViewController:self didSentMessage:message];
     }
-    _textView.text =@"";
-    [_textView refreshHeight];
+}
+
+- (void)clearMessageInputView
+{
+    _messageInputView.text =@"";
+    [_messageInputView refreshHeight];
+}
+
+- (void)resignInputViewFirstResponder
+{
+    [_messageInputView.internalTextView resignFirstResponder];
 }
 
 #pragma mark - Btn Action
 
 - (void)doneBtnDidPressed:(id)sender
 {
-    [self sendMessage];
+    [self sendMessage:_messageInputView.text];
 }
 
 #pragma mark - HPGrowingTextViewDelegate
@@ -137,16 +184,36 @@
 {
     float diff = (growingTextView.frame.size.height - height);
     
-	CGRect r = _textViewContainerView.frame;
+	CGRect r = _inputContainerView.frame;
     r.size.height -= diff;
     r.origin.y += diff;
-	_textViewContainerView.frame = r;
+	_inputContainerView.frame = r;
+    
+    CGRect tableViewFrame = self.messageContentView.frame;
+    tableViewFrame.size.height = _inputContainerView.frame.origin.y;
+    self.messageContentView.frame = tableViewFrame;
 }
 
 - (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
 {
-    [self sendMessage];
-    return YES;
+    [self sendMessage:_messageInputView.text];
+    [self clearMessageInputView];
+    
+    return NO;
+}
+
+- (void)growingTextViewDidBeginEditing:(HPGrowingTextView *)growingTextView
+{
+    if (_sendMessageDelegate && [_sendMessageDelegate respondsToSelector:@selector(sendMessageViewControllerDidBeginInputting:)]) {
+        [_sendMessageDelegate sendMessageViewControllerDidBeginInputting:self];
+    }
+}
+
+- (void)growingTextViewDidEndEditing:(HPGrowingTextView *)growingTextView
+{
+    if (_sendMessageDelegate && [_sendMessageDelegate respondsToSelector:@selector(sendMessageViewControllerDidEndInputting:withMessage:)]) {
+        [_sendMessageDelegate sendMessageViewControllerDidEndInputting:self withMessage:_messageInputView.text];
+    }
 }
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FRSendMessageViewController.h"
 
-@interface FRFRSendMessageViewControllerDemoViewController : UIViewController
+@interface FRFRSendMessageViewControllerDemoViewController : FRSendMessageViewController
 
 @end

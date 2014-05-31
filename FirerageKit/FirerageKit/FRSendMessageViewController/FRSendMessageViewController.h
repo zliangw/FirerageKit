@@ -13,8 +13,14 @@
 @interface FRSendMessageViewController : FRLoadDataViewController
 
 @property (nonatomic, weak) IBOutlet id<FRSendMessageViewControllerDelegate> sendMessageDelegate;
-@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) CGFloat inputViewHeight;// Default is 44
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, strong) IBOutlet UIView *messageContentView;
+@property (nonatomic, strong) UIColor *inputContainerColor;
+
+- (void)clearMessageInputView;
+- (void)resignInputViewFirstResponder;
+- (void)sendMessage:(NSString *)message;
 
 @end
 
@@ -22,5 +28,7 @@
 
 @optional
 - (void)sendMessageViewController:(FRSendMessageViewController *)sendMessageViewController didSentMessage:(NSString *)message;
+- (void)sendMessageViewControllerDidBeginInputting:(FRSendMessageViewController *)sendMessageViewController;
+- (void)sendMessageViewControllerDidEndInputting:(FRSendMessageViewController *)sendMessageViewController withMessage:(NSString *)message;
 
 @end
