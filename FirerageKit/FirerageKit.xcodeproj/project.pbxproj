@@ -26,6 +26,7 @@
 		133CE577192AF54600F69CDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CE575192AF54600F69CDE /* main.m */; };
 		133CE579192AF85600F69CDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CE578192AF85600F69CDE /* MyTest.m */; };
 		134454A51935A5B0008C6A9C /* UIImage+FRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 134454A41935A5B0008C6A9C /* UIImage+FRColor.m */; };
+		134BF4931939548000D1D524 /* FRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 134BF4921939548000D1D524 /* FRUser.m */; };
 		1361F58C192AEE6100A985F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58B192AEE6100A985F6 /* Foundation.framework */; };
 		1361F58E192AEE6100A985F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58D192AEE6100A985F6 /* CoreGraphics.framework */; };
 		1361F590192AEE6100A985F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58F192AEE6100A985F6 /* UIKit.framework */; };
@@ -97,6 +98,8 @@
 		133CE578192AF85600F69CDE /* MyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTest.m; sourceTree = "<group>"; };
 		134454A31935A5B0008C6A9C /* UIImage+FRColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FRColor.h"; sourceTree = "<group>"; };
 		134454A41935A5B0008C6A9C /* UIImage+FRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FRColor.m"; sourceTree = "<group>"; };
+		134BF4911939548000D1D524 /* FRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRUser.h; sourceTree = "<group>"; };
+		134BF4921939548000D1D524 /* FRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRUser.m; sourceTree = "<group>"; };
 		1361F588192AEE6100A985F6 /* FirerageKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirerageKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1361F58B192AEE6100A985F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1361F58D192AEE6100A985F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -512,6 +515,8 @@
 				13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */,
 				13017E661932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.h */,
 				13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */,
+				134BF4911939548000D1D524 /* FRUser.h */,
+				134BF4921939548000D1D524 /* FRUser.m */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 				1361F598192AEE6100A985F6 /* main.m in Sources */,
 				13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */,
 				13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */,
+				134BF4931939548000D1D524 /* FRUser.m in Sources */,
 				1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */,
 				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
 				1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */,

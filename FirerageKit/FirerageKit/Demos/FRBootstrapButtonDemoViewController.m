@@ -14,6 +14,8 @@
 #import "FRCameraUtils.h"
 #import "UIAlertView+FRUtils.h"
 #import "FRDevice.h"
+#import "FRPersistenceUtils.h"
+#import "FRUser.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -74,6 +76,13 @@
     
 //    [FRDevice isDevice5];
     
+    FRUser *user = [[FRUser alloc] init];
+    user.sex = YES;
+    user.name = @"MR";
+    [FRPersistenceUtils archiveObject:user];
+    
+    FRUser *user2 = [FRPersistenceUtils unArchiveObjectByClass:[FRUser class]];
+    NSLog(@"%d, %@", user2.sex, user2.name);
 }
 
 - (void)didReceiveMemoryWarning

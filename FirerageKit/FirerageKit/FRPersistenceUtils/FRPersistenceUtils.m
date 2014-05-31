@@ -10,46 +10,63 @@
 
 @implementation FRPersistenceUtils
 
-+ (NSString *)defaultArchiverPathOfObject:(Class)objectClass
++ (NSString *)defaultArchiverDirectoryOfObject:(Class)objectClass
 {
     return [[FRFileManager documentsDirectory] stringByAppendingPathComponent:NSStringFromClass(objectClass)];
 }
 
-+ (BOOL)archiverObject:(id)object
++ (NSString *)defaultArchiverFileNameOfObject:(Class)objectClass
 {
-    BOOL result = NO;
-    NSString *path = [[self class] defaultArchiverPathOfObject:[object class]];
-    NSError *error = [FRFileManager createDirectoryAtPath:path];
+    return [[[self class] defaultArchiverDirectoryOfObject:objectClass] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.archiver", NSStringFromClass(objectClass)]];
+}
+
++ (NSString *)defaultArchiverKeyOfObject:(Class)objectClass
+{
+    return NSStringFromClass(objectClass);
+}
+
++ (NSError *)archiveObject:(id)object
+{
+    NSError *error = nil;
+    Class objectClass = [object class];
+    
+    NSString *directoryPath = [[self class] defaultArchiverDirectoryOfObject:objectClass];
+    error = [FRFileManager createDirectoryAtPath:directoryPath];
+    
     if (!error) {
-        result = [FRPersistenceUtils archiverObject:object withKey:NSStringFromClass([object class]) path:path];
+        NSString *fileName = [[self class] defaultArchiverFileNameOfObject:objectClass];
+        NSString *key = [[self class] defaultArchiverKeyOfObject:[object class]];
+        error = [FRPersistenceUtils archiveObject:object withKey:key fileName:fileName];
     }
-    return result;
+    
+    return error;
 }
 
-+ (id)unArchiverObjectByClass:(Class)objClass
++ (id)unArchiveObjectByClass:(Class)objClass
 {
-    NSString *path = [[self class] defaultArchiverPathOfObject:objClass];
-    return [FRPersistenceUtils unArchiverWithKey:NSStringFromClass(objClass) path:path];
+    NSString *fileName = [[self class] defaultArchiverFileNameOfObject:objClass];
+    NSString *key = [[self class] defaultArchiverKeyOfObject:objClass];
+    return [FRPersistenceUtils unArchiveWithKey:key fileName:fileName];
 }
 
-+ (BOOL)archiverObject:(id)object withKey:(NSString *)key path:(NSString *)path
++ (NSError *)archiveObject:(id)object withKey:(NSString *)key fileName:(NSString *)fileName
 {
-    BOOL result = NO;
-    if (object && key.length > 0 && path.length > 0) {
+    NSError *error = nil;
+    if (object && key.length > 0 && fileName.length > 0) {
         NSMutableData *data = [[NSMutableData alloc] init];
         NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
         [archiver encodeObject:object forKey:key];
         [archiver finishEncoding];
-        result = [data writeToFile:path atomically:YES];
+        [data writeToFile:fileName options:NSDataWritingAtomic error:&error];
     }
-    return result;
+    return error;
 }
 
-+ (id)unArchiverWithKey:(NSString *)key path:(NSString *)path
++ (id)unArchiveWithKey:(NSString *)key fileName:(NSString *)fileName
 {
     id object = nil;
-    if (key.length > 0 && path.length > 0) {
-        NSData *data = [[NSMutableData alloc] initWithContentsOfFile:path];
+    if (key.length > 0 && fileName.length > 0) {
+        NSData *data = [[NSMutableData alloc] initWithContentsOfFile:fileName];
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         object = [unarchiver decodeObjectForKey:key] ;
         [unarchiver finishDecoding];

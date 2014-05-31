@@ -11,12 +11,14 @@
 
 @interface FRPersistenceUtils : NSObject
 
-+ (NSString *)defaultArchiverPathOfObject:(Class)objectClass;
++ (NSString *)defaultArchiverDirectoryOfObject:(Class)objectClass;
++ (NSString *)defaultArchiverFileNameOfObject:(Class)objectClass;
++ (NSString *)defaultArchiverKeyOfObject:(Class)objectClass;
 
-+ (BOOL)archiverObject:(id)object;
-+ (id)unArchiverObjectByClass:(Class)objectClass;
++ (NSError *)archiveObject:(id)object;
++ (id)unArchiveObjectByClass:(Class)objectClass;
 
-+ (BOOL)archiverObject:(id)object withKey:(NSString *)key path:(NSString *)path;
-+ (id)unArchiverWithKey:(NSString *)key path:(NSString *)path;
++ (NSError *)archiveObject:(id)object withKey:(NSString *)key fileName:(NSString *)fileName;
++ (id)unArchiveWithKey:(NSString *)key fileName:(NSString *)fileName;
 
 @end
