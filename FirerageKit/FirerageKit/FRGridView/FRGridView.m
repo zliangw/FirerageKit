@@ -89,6 +89,7 @@ static float HeightForRowAtIndexPathDefault = 60.;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:dequeueReusableCellWithIdentifier];
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     if (_dataSource && [_dataSource respondsToSelector:@selector(gridView:itemAtIndexPath:)]) {
