@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+FRColor.h"
+#import "UIColor+FRUtils.h"
 
 @implementation UIImage (FRColor)
 
@@ -44,6 +45,42 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+- (UIColor *)colorAtPoint:(CGPoint)point
+{
+    UIColor *resultColor = nil;
+    
+    CGImageRef imageRef = self.CGImage;
+    NSUInteger width = CGImageGetWidth(imageRef);
+    NSUInteger height = CGImageGetHeight(imageRef);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    unsigned char *rawData = (unsigned char*) calloc(height * width * 4, sizeof(unsigned char));
+    NSUInteger bytesPerPixel = 4;
+    NSUInteger bytesPerRow = bytesPerPixel * width;
+    NSUInteger bitsPerComponent = 8;
+    CGContextRef context = CGBitmapContextCreate(rawData, width, height,
+                                                 bitsPerComponent, bytesPerRow, colorSpace,
+                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    CGColorSpaceRelease(colorSpace);
+    
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+    CGContextRelease(context);
+    
+    // Now your rawData contains the image data in the RGBA8888 pixel format.
+    int byteIndex = (bytesPerRow * point.y) + point.x * bytesPerPixel;
+    UInt8 red   = rawData[byteIndex];
+    UInt8 green = rawData[byteIndex + 1];
+    UInt8 blue  = rawData[byteIndex + 2];
+    UInt8 alpha = rawData[byteIndex + 3];
+    
+    if (alpha) {
+        resultColor = [UIColor colorWith256Red:red green:green blue:blue alpha:alpha];
+    }
+    
+    free(rawData);
+    
+    return resultColor;
 }
 
 @end

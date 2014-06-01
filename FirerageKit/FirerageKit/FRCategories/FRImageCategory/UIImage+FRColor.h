@@ -13,4 +13,6 @@
 + (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size andRoundSize:(CGFloat)roundSize;
 
+- (UIColor *)colorAtPoint:(CGPoint)point;
+
 @end

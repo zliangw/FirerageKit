@@ -56,10 +56,6 @@
 		13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF450192D9A8100F189D6 /* FRBannerView.m */; };
 		13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */; };
 		13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */; };
-		13C3EF4B1939A73F00508EB6 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C3EF461939A73F00508EB6 /* HPGrowingTextView.m */; };
-		13C3EF4C1939A73F00508EB6 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C3EF481939A73F00508EB6 /* HPTextViewInternal.m */; };
-		13C3EF4D1939A73F00508EB6 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 13C3EF491939A73F00508EB6 /* LICENSE.txt */; };
-		13C3EF4E1939A73F00508EB6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 13C3EF4A1939A73F00508EB6 /* README.md */; };
 		13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */; };
 		13E21980193068440044FCF2 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */; };
 		13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */; };
@@ -157,12 +153,6 @@
 		13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRBannerViewDemoViewController.m; sourceTree = "<group>"; };
 		13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRNavigationMenuDemoViewController.h; sourceTree = "<group>"; };
 		13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRNavigationMenuDemoViewController.m; sourceTree = "<group>"; };
-		13C3EF451939A73F00508EB6 /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
-		13C3EF461939A73F00508EB6 /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
-		13C3EF471939A73F00508EB6 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
-		13C3EF481939A73F00508EB6 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
-		13C3EF491939A73F00508EB6 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		13C3EF4A1939A73F00508EB6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		13E2197C1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFRSendMessageViewControllerDemoViewController.h; sourceTree = "<group>"; };
 		13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRSendMessageViewControllerDemoViewController.m; sourceTree = "<group>"; };
 		13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendTextViewBkg@2x.png"; sourceTree = "<group>"; };
@@ -505,22 +495,8 @@
 		13C3EF431939A73F00508EB6 /* ThirdFrameWork */ = {
 			isa = PBXGroup;
 			children = (
-				13C3EF441939A73F00508EB6 /* HPGrowingTextView */,
 			);
 			path = ThirdFrameWork;
-			sourceTree = "<group>";
-		};
-		13C3EF441939A73F00508EB6 /* HPGrowingTextView */ = {
-			isa = PBXGroup;
-			children = (
-				13C3EF451939A73F00508EB6 /* HPGrowingTextView.h */,
-				13C3EF461939A73F00508EB6 /* HPGrowingTextView.m */,
-				13C3EF471939A73F00508EB6 /* HPTextViewInternal.h */,
-				13C3EF481939A73F00508EB6 /* HPTextViewInternal.m */,
-				13C3EF491939A73F00508EB6 /* LICENSE.txt */,
-				13C3EF4A1939A73F00508EB6 /* README.md */,
-			);
-			path = HPGrowingTextView;
 			sourceTree = "<group>";
 		};
 		13FC988A1935C9A200A95D75 /* FRFlatSegmentedControl */ = {
@@ -640,8 +616,6 @@
 				13ACA45E192B98AF009010AC /* MainStoryboard_iPhone.storyboard in Resources */,
 				1361F596192AEE6100A985F6 /* InfoPlist.strings in Resources */,
 				1361F59E192AEE6100A985F6 /* Images.xcassets in Resources */,
-				13C3EF4E1939A73F00508EB6 /* README.md in Resources */,
-				13C3EF4D1939A73F00508EB6 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,7 +709,6 @@
 				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
 				13913DE7193856BC0016F742 /* FRFileManager.m in Sources */,
 				1316D45F193736BE00F00922 /* UIImage+FRCrop.m in Sources */,
-				13C3EF4B1939A73F00508EB6 /* HPGrowingTextView.m in Sources */,
 				13017E711932E20000FD4BC9 /* FRDevice.m in Sources */,
 				13913DE4193856670016F742 /* FRPersistenceUtils.m in Sources */,
 				13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */,
@@ -762,7 +735,6 @@
 				134BF4931939548000D1D524 /* FRUser.m in Sources */,
 				1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */,
 				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
-				13C3EF4C1939A73F00508EB6 /* HPTextViewInternal.m in Sources */,
 				1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */,
 				13017E6D1932E0FE00FD4BC9 /* UILabel+FRFitSize.m in Sources */,
 			);

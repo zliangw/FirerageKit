@@ -30,6 +30,12 @@
 #define COCOAPODS_VERSION_MINOR_GCPlaceholderTextView 0
 #define COCOAPODS_VERSION_PATCH_GCPlaceholderTextView 1
 
+// HPGrowingTextView
+#define COCOAPODS_POD_AVAILABLE_HPGrowingTextView
+#define COCOAPODS_VERSION_MAJOR_HPGrowingTextView 0
+#define COCOAPODS_VERSION_MINOR_HPGrowingTextView 0
+#define COCOAPODS_VERSION_PATCH_HPGrowingTextView 1
+
 // NavigationMenu
 #define COCOAPODS_POD_AVAILABLE_NavigationMenu
 #define COCOAPODS_VERSION_MAJOR_NavigationMenu 0
