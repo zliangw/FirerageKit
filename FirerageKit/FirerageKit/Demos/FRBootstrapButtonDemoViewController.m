@@ -7,7 +7,7 @@
 //
 
 #import "FRBootstrapButtonDemoViewController.h"
-#import "FRBootstrapButton.h"
+#import "BButton.h"
 #import "UILabel+FRFitSize.h"
 #import "FRFlatSegmentedControl.h"
 #import "UIView+FRTouchBlock.h"
@@ -16,6 +16,8 @@
 #import "FRDevice.h"
 #import "FRPersistenceUtils.h"
 #import "FRUser.h"
+#import "UIViewController+FRProgressHUD.h"
+#import "NSObject+FRBlock.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -39,12 +41,17 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[FRBootstrapButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
-    [[FRBootstrapButton appearance] setBootstrapV3BorderWidth:0.1];
+    [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
+    [[BButton appearance] setBootstrapV3BorderWidth:[NSNumber numberWithFloat:0]];
     
     _label.text = @"sdfjsalkfjlsdakfjlksdjflkdsjfklsdfjdskfjlsfjsadklfjdslkfjsaljdskfjslfjsdlkfjdksljfklds";
     //[_label constrainedToSize:CGSizeMake(40, 100)];
@@ -63,15 +70,17 @@
 //            
 //        }];
         
-        [UIAlertView showMessage:@"hello" withTitle:@"title" confirmTitle:@"ok" cancelTitle:@"cancel" confirmBlock:^(UIAlertView *alertView) {
-            
-        } cancelBlock:^(UIAlertView *alertView) {
-            
-        }];
+//        [UIAlertView showMessage:@"hello" withTitle:@"title" confirmTitle:@"ok" cancelTitle:@"cancel" confirmBlock:^(UIAlertView *alertView) {
+//            
+//        } cancelBlock:^(UIAlertView *alertView) {
+//            
+//        }];
+//        
+//        [UIAlertView showMessage:@"hello" withTitle:@"title" cancelTitle:@"cancel" otherTitles:[NSArray arrayWithObjects:@"1", @"2", nil] tapBlock:^(UIAlertView *alertView, NSInteger tapIndex) {
+//            
+//        }];
         
-        [UIAlertView showMessage:@"hello" withTitle:@"title" cancelTitle:@"cancel" otherTitles:[NSArray arrayWithObjects:@"1", @"2", nil] tapBlock:^(UIAlertView *alertView, NSInteger tapIndex) {
-            
-        }];
+        
     }];
     
 //    [FRDevice isDevice5];
@@ -101,5 +110,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)testBtn:(id)sender
+{
+    self.successedHUDImageName = @"37x-Checkmark.png";
+    
+//    [self showHUDWithLabelText:@"Loading..."];
+    
+    [self showSuccessedToast:@"Complete" hideAfterDelay:4.];
+    
+    __weak typeof(self) weakSelf = self;
+    [self performBlock:^{
+//        UIImageView *imageView;
+//        UIImage *image = [UIImage imageNamed:@"37x-Checkmark.png"];
+//        imageView = [[UIImageView alloc] initWithImage:image];
+//        [weakSelf changeHUDStateWithMode:FRProgressHUDModeCustomView labelText:@"Complete" customView:imageView];
+        [weakSelf showSuccessedToast:@"Complete" hideAfterDelay:4.];
+    } afterDelay:2.];
+}
 
 @end

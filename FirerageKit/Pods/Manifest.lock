@@ -21,7 +21,7 @@ DEPENDENCIES:
   - GCPlaceholderTextView (from `./PodsSpecs/GCPlaceholderTextView.podspec`)
   - GHUnit (= 0.5.8)
   - HPGrowingTextView (from `./PodsSpecs/HPGrowingTextView.podspec`)
-  - MBProgressHUD (~> 0.8)
+  - MBProgressHUD (from `./PodsSpecs/MBProgressHUD.podspec`)
   - NavigationMenu (from `./PodsSpecs/NavigationMenu.podspec`)
   - OCMock
   - SDWebImage
@@ -35,6 +35,8 @@ EXTERNAL SOURCES:
     :podspec: ./PodsSpecs/GCPlaceholderTextView.podspec
   HPGrowingTextView:
     :podspec: ./PodsSpecs/HPGrowingTextView.podspec
+  MBProgressHUD:
+    :podspec: ./PodsSpecs/MBProgressHUD.podspec
   NavigationMenu:
     :podspec: ./PodsSpecs/NavigationMenu.podspec
 
@@ -45,7 +47,7 @@ SPEC CHECKSUMS:
   GCPlaceholderTextView: d69f96e355d6b133e0dc8ae98b8c473c3bf75bce
   GHUnit: 980b787567c498b587529dad43c5020f1ea310e2
   HPGrowingTextView: 324c45ddc0f2fd403154608162787536afe5a7b3
-  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  MBProgressHUD: 128ccc1515e2d7d71068e15f25c44654bc432d50
   NavigationMenu: a70e6906296cda2620969069f839cf9d31740cd0
   OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
   SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
