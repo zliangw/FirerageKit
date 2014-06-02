@@ -36,6 +36,12 @@
 #define COCOAPODS_VERSION_MINOR_HPGrowingTextView 0
 #define COCOAPODS_VERSION_PATCH_HPGrowingTextView 1
 
+// MBProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+
 // NavigationMenu
 #define COCOAPODS_POD_AVAILABLE_NavigationMenu
 #define COCOAPODS_VERSION_MAJOR_NavigationMenu 0

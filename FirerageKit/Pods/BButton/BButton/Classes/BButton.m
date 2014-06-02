@@ -23,6 +23,8 @@
 static CGFloat const kBButtonCornerRadiusV2 = 6.0f;
 static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 
+static CGFloat const kBButtonBorderWidth = .2f;
+
 @interface BButton ()
 
 @property (assign, nonatomic) BButtonStyle buttonStyle;
@@ -197,10 +199,13 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     return [BButton cornerRadiusForStyle:_buttonStyle];
 }
 
-- (CGFloat)bootstrapV3BorderWidth
+- (NSNumber *)bootstrapV3BorderWidth
 {
-    if (_bootstrapV3BorderWidth == 0) {
+    if (!_bootstrapV3BorderWidth) {
         _bootstrapV3BorderWidth = [[[self class] appearance] bootstrapV3BorderWidth];
+        if (!_bootstrapV3BorderWidth) {
+            _bootstrapV3BorderWidth = [NSNumber numberWithFloat:kBButtonBorderWidth];
+        }
     }
     
     return _bootstrapV3BorderWidth;
@@ -213,21 +218,41 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     _color = newColor;
     
     if ([newColor bb_isLightColor]) {
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
+        if (_normalTitleColor) {
+            [self setTitleColor:_normalTitleColor forState:UIControlStateNormal];
+        } else {
+            [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
+        }
         
         if(self.shouldShowDisabled)
             [self setTitleColor:[UIColor colorWithWhite:0.4f alpha:0.5f] forState:UIControlStateDisabled];
     }
     else {
-        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
+        if (_highlightedTitleColor) {
+            [self setTitleColor:_highlightedTitleColor forState:UIControlStateHighlighted];
+        } else {
+            [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
+        }
         
         if(self.shouldShowDisabled)
             [self setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateDisabled];
     }
     
     [self setNeedsDisplay];
+}
+
+- (void)setNormalTitleColor:(UIColor *)normalTitleColor
+{
+    _normalTitleColor = normalTitleColor;
+    [self setTitleColor:normalTitleColor forState:UIControlStateNormal];
+}
+
+- (void)setHighlightedTitleColor:(UIColor *)highlightedTitleColor
+{
+    _highlightedTitleColor = highlightedTitleColor;
+    [self setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
 }
 
 - (void)setShouldShowDisabled:(BOOL)show
@@ -502,7 +527,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     
     CGContextSetStrokeColorWithColor(*context, border.CGColor);
     
-    CGContextSetLineWidth(*context, self.bootstrapV3BorderWidth);
+    CGContextSetLineWidth(*context, self.bootstrapV3BorderWidth.floatValue);
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
                                                     cornerRadius:[self.buttonCornerRadius floatValue]];

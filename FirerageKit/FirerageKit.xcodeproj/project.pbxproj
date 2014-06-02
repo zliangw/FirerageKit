@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13017E651932D16600FD4BC9 /* FRBootstrapButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E641932D16600FD4BC9 /* FRBootstrapButton.m */; };
 		13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */; };
 		13017E6D1932E0FE00FD4BC9 /* UILabel+FRFitSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E6C1932E0FE00FD4BC9 /* UILabel+FRFitSize.m */; };
 		13017E711932E20000FD4BC9 /* FRDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E701932E20000FD4BC9 /* FRDevice.m */; };
@@ -18,6 +17,8 @@
 		1316D45F193736BE00F00922 /* UIImage+FRCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D45E193736BE00F00922 /* UIImage+FRCrop.m */; };
 		1316D46319373EB000F00922 /* UIImageView+FRFaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D46219373EB000F00922 /* UIImageView+FRFaceAwareFill.m */; };
 		1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D46519373ED300F00922 /* UIButton+FRFaceAwareFill.m */; };
+		132AAC52193BFC29003ECD2D /* NSObject+FRBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 132AAC51193BFC29003ECD2D /* NSObject+FRBlock.m */; };
+		132AAC55193C051D003ECD2D /* UIViewController+FRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 132AAC54193C051D003ECD2D /* UIViewController+FRProgressHUD.m */; };
 		133C8685192F26D40091E968 /* FRLoadDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8684192F26D40091E968 /* FRLoadDataViewController.m */; };
 		133C8689192F26E70091E968 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8688192F26E70091E968 /* FRChatViewController.m */; };
 		133CE54A192AF50100F69CDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58B192AEE6100A985F6 /* Foundation.framework */; };
@@ -65,8 +66,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13017E631932D16600FD4BC9 /* FRBootstrapButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBootstrapButton.h; sourceTree = "<group>"; };
-		13017E641932D16600FD4BC9 /* FRBootstrapButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBootstrapButton.m; sourceTree = "<group>"; };
 		13017E661932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBootstrapButtonDemoViewController.h; sourceTree = "<group>"; };
 		13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBootstrapButtonDemoViewController.m; sourceTree = "<group>"; };
 		13017E6B1932E0FE00FD4BC9 /* UILabel+FRFitSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FRFitSize.h"; sourceTree = "<group>"; };
@@ -87,6 +86,10 @@
 		1316D46219373EB000F00922 /* UIImageView+FRFaceAwareFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FRFaceAwareFill.m"; sourceTree = "<group>"; };
 		1316D46419373ED300F00922 /* UIButton+FRFaceAwareFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FRFaceAwareFill.h"; sourceTree = "<group>"; };
 		1316D46519373ED300F00922 /* UIButton+FRFaceAwareFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FRFaceAwareFill.m"; sourceTree = "<group>"; };
+		132AAC50193BFC29003ECD2D /* NSObject+FRBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FRBlock.h"; sourceTree = "<group>"; };
+		132AAC51193BFC29003ECD2D /* NSObject+FRBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FRBlock.m"; sourceTree = "<group>"; };
+		132AAC53193C051D003ECD2D /* UIViewController+FRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRProgressHUD.h"; sourceTree = "<group>"; };
+		132AAC54193C051D003ECD2D /* UIViewController+FRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FRProgressHUD.m"; sourceTree = "<group>"; };
 		133C8683192F26D40091E968 /* FRLoadDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRLoadDataViewController.h; sourceTree = "<group>"; };
 		133C8684192F26D40091E968 /* FRLoadDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoadDataViewController.m; sourceTree = "<group>"; };
 		133C8687192F26E70091E968 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
@@ -195,8 +198,6 @@
 		13017E621932D0BB00FD4BC9 /* FRButton */ = {
 			isa = PBXGroup;
 			children = (
-				13017E631932D16600FD4BC9 /* FRBootstrapButton.h */,
-				13017E641932D16600FD4BC9 /* FRBootstrapButton.m */,
 			);
 			path = FRButton;
 			sourceTree = "<group>";
@@ -262,6 +263,15 @@
 				1316D46219373EB000F00922 /* UIImageView+FRFaceAwareFill.m */,
 			);
 			path = FRImageViewCategory;
+			sourceTree = "<group>";
+		};
+		132AAC4F193BFC0B003ECD2D /* FRObjectCategory */ = {
+			isa = PBXGroup;
+			children = (
+				132AAC50193BFC29003ECD2D /* NSObject+FRBlock.h */,
+				132AAC51193BFC29003ECD2D /* NSObject+FRBlock.m */,
+			);
+			path = FRObjectCategory;
 			sourceTree = "<group>";
 		};
 		133C8682192F26D40091E968 /* FRLoadDataViewController */ = {
@@ -449,6 +459,8 @@
 			children = (
 				13AE73291930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.h */,
 				13AE732A1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m */,
+				132AAC53193C051D003ECD2D /* UIViewController+FRProgressHUD.h */,
+				132AAC54193C051D003ECD2D /* UIViewController+FRProgressHUD.m */,
 			);
 			path = FRViewControllerCategory;
 			sourceTree = "<group>";
@@ -456,6 +468,7 @@
 		13BAF43C192CAC8800F189D6 /* FRCategories */ = {
 			isa = PBXGroup;
 			children = (
+				132AAC4F193BFC0B003ECD2D /* FRObjectCategory */,
 				1316D46019373E1200F00922 /* FRImageViewCategory */,
 				1316D45919371F5300F00922 /* FRColorCategory */,
 				1316D4471936CEC600F00922 /* FRAlertViewCategory */,
@@ -699,7 +712,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1316D43E1935DE2C00F00922 /* UIView+FRTouchBlock.m in Sources */,
-				13017E651932D16600FD4BC9 /* FRBootstrapButton.m in Sources */,
 				13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */,
 				13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */,
 				13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */,
@@ -725,6 +737,7 @@
 				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
 				13AE732B1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m in Sources */,
 				1316D44A1936CEC600F00922 /* UIAlertView+FRUtils.m in Sources */,
+				132AAC52193BFC29003ECD2D /* NSObject+FRBlock.m in Sources */,
 				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
@@ -737,6 +750,7 @@
 				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
 				1399CBEB192CF08800ACB1E0 /* FRPullUpLoadMoreView.m in Sources */,
 				13017E6D1932E0FE00FD4BC9 /* UILabel+FRFitSize.m in Sources */,
+				132AAC55193C051D003ECD2D /* UIViewController+FRProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

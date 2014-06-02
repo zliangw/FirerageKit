@@ -6,8 +6,8 @@ Pod::Spec.new do |s|
 	s.social_media_url	= 'https://twitter.com/jesse_squires'
 	s.license			= 'MIT'
 	s.authors			= { 'Jesse Squires' => 'jesse.squires.developer@gmail.com', 'Mathieu Bolard' => 'mattlawer08@gmail.com' }
-	s.source			= { :git => 'https://github.com/jessesquires/BButton.git', :tag => s.version.to_s }
-	s.platform			= :ios, '5.0'
+	s.source			= { :git => 'https://github.com/illidan-firerage/BButton', :commit => 'e35dfb1fe82b7d93f2ead5c809d6cb7189679109' }
+	s.platform			= :ios, '5.1.1'
 	s.source_files		= 'BButton/Classes/*'
 	s.resource			= 'BButton/Resources/*'
 	s.framework			= 'CoreGraphics'
