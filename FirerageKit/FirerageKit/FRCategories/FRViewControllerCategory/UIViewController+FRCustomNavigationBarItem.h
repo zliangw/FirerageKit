@@ -10,8 +10,13 @@
 
 @interface UIViewController (FRCustomNavigationBarItem)
 
-- (void)addIOS7BackLeftBarButtonItem;
-- (void)addLeftBarButtonItemWithTarget:(id)target normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName selector:(SEL)selctor;
-- (void)addRightBarButtonItemWithTarget:(id)target normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName selector:(SEL)selctor;
+@property (nonatomic, copy) NSString *backBarButtonItemNormalImageName;
+@property (nonatomic, copy) NSString *backBarButtonItemHighlightedImageName;
+@property (nonatomic, copy) NSString *backBarButtonItemTitle;
+
+- (void)addIOSBackBarButtonItemAutomatically;
+- (void)addIOS7BackBarButtonItemWithTitle:(NSString *)title normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName;
+- (void)addLeftBarButtonItemWithTarget:(id)target title:(NSString *)title normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName selector:(SEL)selctor;
+- (void)addRightBarButtonItemWithTarget:(id)target title:(NSString *)title normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName selector:(SEL)selctor;
 
 @end

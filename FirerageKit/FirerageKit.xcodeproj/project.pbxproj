@@ -10,6 +10,8 @@
 		13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */; };
 		13017E6D1932E0FE00FD4BC9 /* UILabel+FRFitSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E6C1932E0FE00FD4BC9 /* UILabel+FRFitSize.m */; };
 		13017E711932E20000FD4BC9 /* FRDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E701932E20000FD4BC9 /* FRDevice.m */; };
+		130327D8193D5C8E0001976F /* FRRefreshAndLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 130327D7193D5C8E0001976F /* FRRefreshAndLoadMoreView.m */; };
+		130327DB193D634E0001976F /* FRLoadDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 130327DA193D634E0001976F /* FRLoadDataTableViewController.m */; };
 		1316D43E1935DE2C00F00922 /* UIView+FRTouchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D43D1935DE2C00F00922 /* UIView+FRTouchBlock.m */; };
 		1316D4421935E59200F00922 /* FRCameraUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D4411935E59200F00922 /* FRCameraUtils.m */; };
 		1316D44A1936CEC600F00922 /* UIAlertView+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D4491936CEC600F00922 /* UIAlertView+FRUtils.m */; };
@@ -19,8 +21,6 @@
 		1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D46519373ED300F00922 /* UIButton+FRFaceAwareFill.m */; };
 		132AAC52193BFC29003ECD2D /* NSObject+FRBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 132AAC51193BFC29003ECD2D /* NSObject+FRBlock.m */; };
 		132AAC55193C051D003ECD2D /* UIViewController+FRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 132AAC54193C051D003ECD2D /* UIViewController+FRProgressHUD.m */; };
-		133C8685192F26D40091E968 /* FRLoadDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8684192F26D40091E968 /* FRLoadDataViewController.m */; };
-		133C8689192F26E70091E968 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133C8688192F26E70091E968 /* FRChatViewController.m */; };
 		133CE54A192AF50100F69CDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58B192AEE6100A985F6 /* Foundation.framework */; };
 		133CE54B192AF50100F69CDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58D192AEE6100A985F6 /* CoreGraphics.framework */; };
 		133CE54C192AF50100F69CDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58F192AEE6100A985F6 /* UIKit.framework */; };
@@ -38,7 +38,6 @@
 		137921211931CD7100589DC5 /* FRTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 137921201931CD7100589DC5 /* FRTextFieldTableViewCell.m */; };
 		137921241931CFFD00589DC5 /* FRTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 137921231931CFFD00589DC5 /* FRTextViewTableViewCell.m */; };
 		139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AA19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m */; };
-		139093AE1930467700ECB341 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139093AD1930467700ECB341 /* FRSendMessageViewController.m */; };
 		13913DE4193856670016F742 /* FRPersistenceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13913DE3193856670016F742 /* FRPersistenceUtils.m */; };
 		13913DE7193856BC0016F742 /* FRFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13913DE6193856BC0016F742 /* FRFileManager.m */; };
 		1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1399CBE1192CF08800ACB1E0 /* FRPullDownRefreshView.m */; };
@@ -57,7 +56,6 @@
 		13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF450192D9A8100F189D6 /* FRBannerView.m */; };
 		13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */; };
 		13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */; };
-		13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */; };
 		13E21980193068440044FCF2 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */; };
 		13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */; };
 		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
@@ -72,6 +70,10 @@
 		13017E6C1932E0FE00FD4BC9 /* UILabel+FRFitSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FRFitSize.m"; sourceTree = "<group>"; };
 		13017E6F1932E20000FD4BC9 /* FRDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRDevice.h; sourceTree = "<group>"; };
 		13017E701932E20000FD4BC9 /* FRDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRDevice.m; sourceTree = "<group>"; };
+		130327D6193D5C8E0001976F /* FRRefreshAndLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRRefreshAndLoadMoreView.h; sourceTree = "<group>"; };
+		130327D7193D5C8E0001976F /* FRRefreshAndLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRRefreshAndLoadMoreView.m; sourceTree = "<group>"; };
+		130327D9193D634E0001976F /* FRLoadDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRLoadDataTableViewController.h; sourceTree = "<group>"; };
+		130327DA193D634E0001976F /* FRLoadDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoadDataTableViewController.m; sourceTree = "<group>"; };
 		1316D43C1935DE2C00F00922 /* UIView+FRTouchBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRTouchBlock.h"; sourceTree = "<group>"; };
 		1316D43D1935DE2C00F00922 /* UIView+FRTouchBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FRTouchBlock.m"; sourceTree = "<group>"; };
 		1316D4401935E59200F00922 /* FRCameraUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCameraUtils.h; sourceTree = "<group>"; };
@@ -90,8 +92,6 @@
 		132AAC51193BFC29003ECD2D /* NSObject+FRBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FRBlock.m"; sourceTree = "<group>"; };
 		132AAC53193C051D003ECD2D /* UIViewController+FRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRProgressHUD.h"; sourceTree = "<group>"; };
 		132AAC54193C051D003ECD2D /* UIViewController+FRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FRProgressHUD.m"; sourceTree = "<group>"; };
-		133C8683192F26D40091E968 /* FRLoadDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRLoadDataViewController.h; sourceTree = "<group>"; };
-		133C8684192F26D40091E968 /* FRLoadDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoadDataViewController.m; sourceTree = "<group>"; };
 		133C8687192F26E70091E968 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
 		133C8688192F26E70091E968 /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewController.m; sourceTree = "<group>"; };
 		133CE549192AF50100F69CDE /* FirerageKitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirerageKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +229,15 @@
 			path = FRDevice;
 			sourceTree = "<group>";
 		};
+		130327D5193D5C7C0001976F /* FRRefreshAndLoadMoreView */ = {
+			isa = PBXGroup;
+			children = (
+				130327D6193D5C8E0001976F /* FRRefreshAndLoadMoreView.h */,
+				130327D7193D5C8E0001976F /* FRRefreshAndLoadMoreView.m */,
+			);
+			path = FRRefreshAndLoadMoreView;
+			sourceTree = "<group>";
+		};
 		1316D43F1935E58300F00922 /* FRCameraUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,8 +286,8 @@
 		133C8682192F26D40091E968 /* FRLoadDataViewController */ = {
 			isa = PBXGroup;
 			children = (
-				133C8683192F26D40091E968 /* FRLoadDataViewController.h */,
-				133C8684192F26D40091E968 /* FRLoadDataViewController.m */,
+				130327D9193D634E0001976F /* FRLoadDataTableViewController.h */,
+				130327DA193D634E0001976F /* FRLoadDataTableViewController.m */,
 			);
 			path = FRLoadDataViewController;
 			sourceTree = "<group>";
@@ -354,6 +363,7 @@
 		1361F591192AEE6100A985F6 /* FirerageKit */ = {
 			isa = PBXGroup;
 			children = (
+				130327D5193D5C7C0001976F /* FRRefreshAndLoadMoreView */,
 				13C3EF431939A73F00508EB6 /* ThirdFrameWork */,
 				13913DE11938564F0016F742 /* FRPersistenceUtils */,
 				1316D43F1935E58300F00922 /* FRCameraUtils */,
@@ -715,15 +725,13 @@
 				13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */,
 				13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */,
 				13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */,
-				133C8689192F26E70091E968 /* FRChatViewController.m in Sources */,
 				1316D45C19371F6C00F00922 /* UIColor+FRUtils.m in Sources */,
-				139093AE1930467700ECB341 /* FRSendMessageViewController.m in Sources */,
 				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
 				13913DE7193856BC0016F742 /* FRFileManager.m in Sources */,
+				130327D8193D5C8E0001976F /* FRRefreshAndLoadMoreView.m in Sources */,
 				1316D45F193736BE00F00922 /* UIImage+FRCrop.m in Sources */,
 				13017E711932E20000FD4BC9 /* FRDevice.m in Sources */,
 				13913DE4193856670016F742 /* FRPersistenceUtils.m in Sources */,
-				13E2197E1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m in Sources */,
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
@@ -741,10 +749,10 @@
 				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
-				133C8685192F26D40091E968 /* FRLoadDataViewController.m in Sources */,
 				1361F598192AEE6100A985F6 /* main.m in Sources */,
 				13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */,
 				13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */,
+				130327DB193D634E0001976F /* FRLoadDataTableViewController.m in Sources */,
 				134BF4931939548000D1D524 /* FRUser.m in Sources */,
 				1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */,
 				1399CBE8192CF08800ACB1E0 /* FRPullDownRefreshView.m in Sources */,
