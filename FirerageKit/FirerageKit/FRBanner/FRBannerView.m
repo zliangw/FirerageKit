@@ -69,12 +69,12 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
     if(_direction == RBannerViewDefaultDirection || _direction == RBannerViewLandscapeDirection)
     {
         _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * 3,
-                                            _scrollView.frame.size.height);
+                                             _scrollView.frame.size.height);
     }
     else if(_direction == RBannerViewPortaitDirection)
     {
         _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width,
-                                            _scrollView.frame.size.height * 3);
+                                             _scrollView.frame.size.height * 3);
     }
     
     for (NSInteger i = 0; i < 3; i++)
@@ -161,9 +161,13 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 
 - (NSArray *)getDisplayItemsWithPageIndex:(NSInteger)page
 {
+    if (_bannerItems == nil || _bannerItems.count < 3) {
+        return nil;
+    }
+    
     NSInteger pre = [self getPageIndex:_curPage-1];
     NSInteger last = [self getPageIndex:_curPage+1];
-
+    
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:0];
     [images addObject:[_bannerItems objectAtIndex:pre-1]];
     [images addObject:[_bannerItems objectAtIndex:_curPage-1]];
@@ -193,8 +197,10 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
     
     [self stopRolling];
     
-    self.autoRolling = YES;
-    [self performSelector:@selector(rollingScrollAction) withObject:nil afterDelay:self.autoRollingDelayTime];
+    if (_autoRoolEnabled) {
+        self.autoRolling = YES;
+        [self performSelector:@selector(rollingScrollAction) withObject:nil afterDelay:self.autoRollingDelayTime];
+    }
 }
 
 - (void)stopRolling
@@ -277,7 +283,7 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 {
     NSInteger x = aScrollView.contentOffset.x;
     NSInteger y = aScrollView.contentOffset.y;
-
+    
     if (self.autoRoolEnabled)
     {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(rollingScrollAction) object:nil];
@@ -336,7 +342,7 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
         _scrollView.contentOffset = CGPointMake(0, _scrollView.frame.size.height);
     }
     
-    if (self.autoRolling)
+    if (self.autoRoolEnabled)
     {
         [self performSelector:@selector(rollingScrollAction) withObject:nil afterDelay:self.autoRollingDelayTime];
     }
