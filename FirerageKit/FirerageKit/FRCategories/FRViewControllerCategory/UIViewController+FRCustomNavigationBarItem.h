@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *backBarButtonItemHighlightedImageName;
 @property (nonatomic, copy) NSString *backBarButtonItemTitle;
 
-- (void)addIOSBackBarButtonItemAutomatically;
+- (void)addIOS7BackBarButtonItemAutomatically;
 - (void)addIOS7BackBarButtonItemWithTitle:(NSString *)title normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName;
 - (void)addLeftBarButtonItemWithTarget:(id)target title:(NSString *)title normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName selector:(SEL)selctor;
 - (void)addRightBarButtonItemWithTarget:(id)target title:(NSString *)title normalImageName:(NSString *)normalImageName highlightedImageName:(NSString *)highlightedImageName selector:(SEL)selctor;

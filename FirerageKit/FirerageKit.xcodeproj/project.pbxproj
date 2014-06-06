@@ -12,6 +12,7 @@
 		13017E711932E20000FD4BC9 /* FRDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E701932E20000FD4BC9 /* FRDevice.m */; };
 		130327D8193D5C8E0001976F /* FRRefreshAndLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 130327D7193D5C8E0001976F /* FRRefreshAndLoadMoreView.m */; };
 		130327DB193D634E0001976F /* FRLoadDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 130327DA193D634E0001976F /* FRLoadDataTableViewController.m */; };
+		130B34E11941735300843A04 /* NSString+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B34E01941735300843A04 /* NSString+FRUtils.m */; };
 		1316D43E1935DE2C00F00922 /* UIView+FRTouchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D43D1935DE2C00F00922 /* UIView+FRTouchBlock.m */; };
 		1316D4421935E59200F00922 /* FRCameraUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D4411935E59200F00922 /* FRCameraUtils.m */; };
 		1316D44A1936CEC600F00922 /* UIAlertView+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D4491936CEC600F00922 /* UIAlertView+FRUtils.m */; };
@@ -74,6 +75,8 @@
 		130327D7193D5C8E0001976F /* FRRefreshAndLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRRefreshAndLoadMoreView.m; sourceTree = "<group>"; };
 		130327D9193D634E0001976F /* FRLoadDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRLoadDataTableViewController.h; sourceTree = "<group>"; };
 		130327DA193D634E0001976F /* FRLoadDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoadDataTableViewController.m; sourceTree = "<group>"; };
+		130B34DF1941735300843A04 /* NSString+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FRUtils.h"; sourceTree = "<group>"; };
+		130B34E01941735300843A04 /* NSString+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRUtils.m"; sourceTree = "<group>"; };
 		1316D43C1935DE2C00F00922 /* UIView+FRTouchBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRTouchBlock.h"; sourceTree = "<group>"; };
 		1316D43D1935DE2C00F00922 /* UIView+FRTouchBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FRTouchBlock.m"; sourceTree = "<group>"; };
 		1316D4401935E59200F00922 /* FRCameraUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCameraUtils.h; sourceTree = "<group>"; };
@@ -236,6 +239,15 @@
 				130327D7193D5C8E0001976F /* FRRefreshAndLoadMoreView.m */,
 			);
 			path = FRRefreshAndLoadMoreView;
+			sourceTree = "<group>";
+		};
+		130B34DE1941732600843A04 /* FRStringCategory */ = {
+			isa = PBXGroup;
+			children = (
+				130B34DF1941735300843A04 /* NSString+FRUtils.h */,
+				130B34E01941735300843A04 /* NSString+FRUtils.m */,
+			);
+			path = FRStringCategory;
 			sourceTree = "<group>";
 		};
 		1316D43F1935E58300F00922 /* FRCameraUtils */ = {
@@ -478,6 +490,7 @@
 		13BAF43C192CAC8800F189D6 /* FRCategories */ = {
 			isa = PBXGroup;
 			children = (
+				130B34DE1941732600843A04 /* FRStringCategory */,
 				132AAC4F193BFC0B003ECD2D /* FRObjectCategory */,
 				1316D46019373E1200F00922 /* FRImageViewCategory */,
 				1316D45919371F5300F00922 /* FRColorCategory */,
@@ -743,6 +756,7 @@
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
 				1316D46319373EB000F00922 /* UIImageView+FRFaceAwareFill.m in Sources */,
 				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
+				130B34E11941735300843A04 /* NSString+FRUtils.m in Sources */,
 				13AE732B1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m in Sources */,
 				1316D44A1936CEC600F00922 /* UIAlertView+FRUtils.m in Sources */,
 				132AAC52193BFC29003ECD2D /* NSObject+FRBlock.m in Sources */,

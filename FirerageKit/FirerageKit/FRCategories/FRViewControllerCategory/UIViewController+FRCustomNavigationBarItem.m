@@ -51,9 +51,9 @@ static const void *FRBackBarButtonItemTitleKey = &FRBackBarButtonItemTitleKey;
 #pragma mark -
 #pragma mark - Member
 
-- (void)addIOSBackBarButtonItemAutomatically
+- (void)addIOS7BackBarButtonItemAutomatically
 {
-    if (self.navigationController.viewControllers.count > 0) {
+    if (self.navigationController.viewControllers.count > 1) {
         [self addIOS7BackBarButtonItemWithTitle:self.backBarButtonItemTitle normalImageName:self.backBarButtonItemNormalImageName highlightedImageName:self.backBarButtonItemHighlightedImageName];
     }
 }
@@ -63,7 +63,8 @@ static const void *FRBackBarButtonItemTitleKey = &FRBackBarButtonItemTitleKey;
     [self addBarButtonItemWithTarget:self title:title normalImageName:normalImageName highlightedImageName:highlightedImageName isLeft:YES selector:@selector(iOS7BackBarButtonItemDidPressed:)];
     if ([UIDevice currentDevice].systemVersion.floatValue >= 7.) {
         UIButton *lBtn = (UIButton *)self.navigationItem.leftBarButtonItem.customView;
-        lBtn.imageEdgeInsets  = UIEdgeInsetsMake(0, -20, 0, 0);
+        lBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        lBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
     }
 }
 
@@ -86,13 +87,26 @@ static const void *FRBackBarButtonItemTitleKey = &FRBackBarButtonItemTitleKey;
 {
     UIButton *rBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [rBtn setTitle:title forState:UIControlStateNormal];
-    rBtn.frame = CGRectMake(0, 0, 40, 40);
+    rBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    
+    CGSize titleSize = [title sizeWithFont:rBtn.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, self.navigationController.navigationBar.frame.size.height)];
+    CGSize imageSize = CGSizeZero;
+    
+    UIImage *nImage = [UIImage imageNamed:normalImageName];
+    UIImage *hImage = [UIImage imageNamed:highlightedImageName];
+    if (nImage) {
+        imageSize = nImage.size;
+    }
+    
     if (normalImageName.length > 0) {
-        [rBtn setImage:[UIImage imageNamed:normalImageName] forState:UIControlStateNormal];
+        [rBtn setImage:nImage forState:UIControlStateNormal];
     }
     if (highlightedImageName.length > 0) {
-        [rBtn setImage:[UIImage imageNamed:highlightedImageName] forState:UIControlStateHighlighted];
+        [rBtn setImage:hImage forState:UIControlStateHighlighted];
     }
+    
+    rBtn.frame = CGRectMake(0, 0, titleSize.width + imageSize.width, MAX(titleSize.height, imageSize.height));
+    
     [rBtn addTarget:self action:selctor forControlEvents:UIControlEventTouchUpInside];
     if (isLeft) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rBtn];

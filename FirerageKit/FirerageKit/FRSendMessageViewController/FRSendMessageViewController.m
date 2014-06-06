@@ -21,7 +21,6 @@
 
 - (void)dealloc
 {
-    self.loadDataDelegate = nil;
     self.messageInputView.delegate = nil;
     self.sendMessageDelegate = nil;
     [self.messageInputView resignFirstResponder];

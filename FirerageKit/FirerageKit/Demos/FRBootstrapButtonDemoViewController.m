@@ -18,6 +18,7 @@
 #import "FRUser.h"
 #import "UIViewController+FRProgressHUD.h"
 #import "NSObject+FRBlock.h"
+#import "FRLoadDataTableViewController.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -113,20 +114,24 @@
 
 - (IBAction)testBtn:(id)sender
 {
-    self.successedHUDImageName = @"37x-Checkmark.png";
+//    self.successedHUDImageName = @"37x-Checkmark.png";
+//    
+////    [self showHUDWithLabelText:@"Loading..."];
+//    
+//    [self showSuccessedToast:@"Complete" hideAfterDelay:4.];
+//    
+//    __weak typeof(self) weakSelf = self;
+//    [self performBlock:^{
+////        UIImageView *imageView;
+////        UIImage *image = [UIImage imageNamed:@"37x-Checkmark.png"];
+////        imageView = [[UIImageView alloc] initWithImage:image];
+////        [weakSelf changeHUDStateWithMode:FRProgressHUDModeCustomView labelText:@"Complete" customView:imageView];
+//        [weakSelf showSuccessedToast:@"Complete" hideAfterDelay:4.];
+//    } afterDelay:2.];
     
-//    [self showHUDWithLabelText:@"Loading..."];
-    
-    [self showSuccessedToast:@"Complete" hideAfterDelay:4.];
-    
-    __weak typeof(self) weakSelf = self;
-    [self performBlock:^{
-//        UIImageView *imageView;
-//        UIImage *image = [UIImage imageNamed:@"37x-Checkmark.png"];
-//        imageView = [[UIImageView alloc] initWithImage:image];
-//        [weakSelf changeHUDStateWithMode:FRProgressHUDModeCustomView labelText:@"Complete" customView:imageView];
-        [weakSelf showSuccessedToast:@"Complete" hideAfterDelay:4.];
-    } afterDelay:2.];
+    FRLoadDataTableViewController *loadDataTableViewController = [[FRLoadDataTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    loadDataTableViewController.loadMoreShowed = YES;
+    [self.navigationController pushViewController:loadDataTableViewController animated:YES];
 }
 
 @end
