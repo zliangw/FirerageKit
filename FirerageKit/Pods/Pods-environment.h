@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
 
+// MJRefresh
+#define COCOAPODS_POD_AVAILABLE_MJRefresh
+#define COCOAPODS_VERSION_MAJOR_MJRefresh 0
+#define COCOAPODS_VERSION_MINOR_MJRefresh 0
+#define COCOAPODS_VERSION_PATCH_MJRefresh 1
+
 // NavigationMenu
 #define COCOAPODS_POD_AVAILABLE_NavigationMenu
 #define COCOAPODS_VERSION_MAJOR_NavigationMenu 0
@@ -63,8 +69,8 @@
 // UIBubbleTableView
 #define COCOAPODS_POD_AVAILABLE_UIBubbleTableView
 #define COCOAPODS_VERSION_MAJOR_UIBubbleTableView 0
-#define COCOAPODS_VERSION_MINOR_UIBubbleTableView 2
-#define COCOAPODS_VERSION_PATCH_UIBubbleTableView 0
+#define COCOAPODS_VERSION_MINOR_UIBubbleTableView 0
+#define COCOAPODS_VERSION_PATCH_UIBubbleTableView 1
 
 // UIColor+MLPFlatColors
 #define COCOAPODS_POD_AVAILABLE_UIColor_MLPFlatColors

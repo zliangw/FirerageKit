@@ -30,7 +30,9 @@
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *text = [dateFormatter stringFromDate:value];
+#if !__has_feature(objc_arc)
     [dateFormatter release];
+#endif
     
     if (self.label)
     {
@@ -42,7 +44,7 @@
     self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, [UIBubbleHeaderTableViewCell height])];
     self.label.text = text;
     self.label.font = [UIFont boldSystemFontOfSize:12];
-    self.label.textAlignment = UITextAlignmentCenter;
+    self.label.textAlignment = NSTextAlignmentCenter;
     self.label.shadowOffset = CGSizeMake(0, 1);
     self.label.shadowColor = [UIColor whiteColor];
     self.label.textColor = [UIColor darkGrayColor];

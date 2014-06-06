@@ -6,17 +6,18 @@
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import "FRLoadDataViewController.h"
+#import <UIKit/UIKit.h>
 
 @protocol FRSendMessageViewControllerDelegate;
 
-@interface FRSendMessageViewController : FRLoadDataViewController
+@interface FRSendMessageViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet id<FRSendMessageViewControllerDelegate> sendMessageDelegate;
 @property (nonatomic, assign) CGFloat inputViewHeight;// Default is 44
 @property (nonatomic, copy) NSString *placeholder;
 @property (nonatomic, strong) IBOutlet UIView *messageContentView;
 @property (nonatomic, strong) UIColor *inputContainerColor;
+@property (nonatomic, assign , readonly) BOOL inputting;
 
 - (void)clearMessageInputView;
 - (void)resignInputViewFirstResponder;

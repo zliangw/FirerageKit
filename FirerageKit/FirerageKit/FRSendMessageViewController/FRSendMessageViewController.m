@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UIView *inputContainerView;
 @property (nonatomic, strong) HPGrowingTextView *messageInputView;
+@property (nonatomic, assign , readwrite) BOOL inputting;
 
 @end
 
@@ -97,13 +98,22 @@
     self.view.keyboardTriggerOffset = _inputContainerView.bounds.size.height;
     __weak typeof(self) weakSelf = self;
     [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView, BOOL opening, BOOL closing) {
+
         CGRect toolBarFrame = weakSelf.inputContainerView.frame;
         toolBarFrame.origin.y = keyboardFrameInView.origin.y - toolBarFrame.size.height;
-        weakSelf.inputContainerView.frame = toolBarFrame;
-        
         CGRect tableViewFrame = weakSelf.messageContentView.frame;
         tableViewFrame.size.height = toolBarFrame.origin.y;
-        weakSelf.messageContentView.frame = tableViewFrame;
+        if (opening) {
+            weakSelf.inputContainerView.frame = toolBarFrame;
+            weakSelf.messageContentView.frame = tableViewFrame;
+            
+            if (weakSelf.sendMessageDelegate && [weakSelf.sendMessageDelegate respondsToSelector:@selector(sendMessageViewControllerDidBeginInputting:)]) {
+                [weakSelf.sendMessageDelegate sendMessageViewControllerDidBeginInputting:weakSelf];
+            }
+        } else if (closing) {
+            weakSelf.inputContainerView.frame = toolBarFrame;
+            weakSelf.messageContentView.frame = tableViewFrame;
+        }
     }];
 }
 
@@ -203,9 +213,7 @@
 
 - (void)growingTextViewDidBeginEditing:(HPGrowingTextView *)growingTextView
 {
-    if (_sendMessageDelegate && [_sendMessageDelegate respondsToSelector:@selector(sendMessageViewControllerDidBeginInputting:)]) {
-        [_sendMessageDelegate sendMessageViewControllerDidBeginInputting:self];
-    }
+    self.inputting = YES;
 }
 
 - (void)growingTextViewDidEndEditing:(HPGrowingTextView *)growingTextView
@@ -213,6 +221,7 @@
     if (_sendMessageDelegate && [_sendMessageDelegate respondsToSelector:@selector(sendMessageViewControllerDidEndInputting:withMessage:)]) {
         [_sendMessageDelegate sendMessageViewControllerDidEndInputting:self withMessage:_messageInputView.text];
     }
+    self.inputting = NO;
 }
 
 @end

@@ -18,7 +18,6 @@
 #import "FRUser.h"
 #import "UIViewController+FRProgressHUD.h"
 #import "NSObject+FRBlock.h"
-#import "FRLoadDataTableViewController.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -129,9 +128,6 @@
 //        [weakSelf showSuccessedToast:@"Complete" hideAfterDelay:4.];
 //    } afterDelay:2.];
     
-    FRLoadDataTableViewController *loadDataTableViewController = [[FRLoadDataTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    loadDataTableViewController.loadMoreShowed = YES;
-    [self.navigationController pushViewController:loadDataTableViewController animated:YES];
 }
 
 @end

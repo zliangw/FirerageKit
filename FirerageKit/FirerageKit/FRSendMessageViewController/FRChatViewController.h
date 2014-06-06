@@ -6,14 +6,15 @@
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import "FRLoadDataViewController.h"
+#import "FRSendMessageViewController.h"
+#import "NSBubbleData.h"
 
 @protocol FRChatViewControllerDelegate;
 
-@interface FRChatViewController : FRLoadDataViewController
+@interface FRChatViewController : FRSendMessageViewController
 
 @property (nonatomic, weak) IBOutlet id<FRChatViewControllerDelegate> delegate;
-@property (nonatomic, strong, readonly) UITableView *messageTableView;
+@property (nonatomic, strong) NSArray *bubbleDatas;
 
 @end
 
@@ -21,9 +22,5 @@
 
 @optional
 - (void)chatViewController:(FRChatViewController *)chatViewController didSentMessage:(NSString *)message;
-
-@required
-- (NSInteger)chatViewController:(FRChatViewController *)chatViewController numberOfRowsInSection:(NSInteger)section;
-- (UITableViewCell *)chatViewController:(FRChatViewController *)chatViewController cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
