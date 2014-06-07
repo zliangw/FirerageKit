@@ -56,6 +56,9 @@
         [btn setBackgroundImage:[UIImage imageWithColor:_selectedColor] forState:UIControlStateSelected];
         [btn setTitleColor:_itemTitleNormalColor forState:UIControlStateSelected];
         [btn setTitleColor:_itemTitleSelectedColor forState:UIControlStateNormal];
+        if (_itemTitleFont) {
+            btn.titleLabel.font = _itemTitleFont;
+        }
         [buttons addObject:btn];
     }
     self.buttonsArray = buttons;
@@ -80,6 +83,12 @@
 {
     self.clipsToBounds = YES;
     self.layer.cornerRadius = cornerRadius;
+}
+
+- (void)setItemTitleFont:(UIFont *)itemTitleFont
+{
+    _itemTitleFont = itemTitleFont;
+    [self reloadView];
 }
 
 - (NSInteger)selectedIndex

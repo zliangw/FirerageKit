@@ -18,5 +18,6 @@
 @property (nonatomic, strong) UIColor *selectedColor;
 @property (nonatomic, strong) UIColor *itemTitleNormalColor;
 @property (nonatomic, strong) UIColor *itemTitleSelectedColor;
+@property (nonatomic, strong) UIFont *itemTitleFont;
 
 @end
