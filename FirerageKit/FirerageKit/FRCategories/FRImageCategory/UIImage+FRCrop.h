@@ -24,4 +24,6 @@ typedef enum {
 - (UIImage *)cropWithProportion:(CGFloat)proportion type:(FRCropType)cropType;
 - (void)faceAwareFillWithSize:(CGSize)size block:(FRCropBlock)cropBlock;
 
+- (UIImage *)scaleAndRotateWithResolution:(CGFloat)resolution;
+
 @end
