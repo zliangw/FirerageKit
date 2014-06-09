@@ -91,13 +91,15 @@ static const void *FRFailedHUDImageNameKey = &FRFailedHUDImageNameKey;
         if (customView) {
             self.progressHUD.customView = customView;
             self.progressHUD.mode = MBProgressHUDModeCustomView;
+        } else {
+            self.progressHUD.mode = MBProgressHUDModeText;
         }
         self.progressHUD.labelText = toast;
     } else {
         if (customView) {
             [self changeProgressStateWithMode:FRProgressHUDModeCustomView labelText:toast customView:customView];
         } else {
-            [self changeProgressStateWithMode:(FRProgressHUDMode)self.progressHUD.mode labelText:toast customView:customView];
+            [self changeProgressStateWithMode:(FRProgressHUDMode)MBProgressHUDModeText labelText:toast customView:customView];
         }
     }
     if (self.progressHUD.alpha == 0.0f) {
@@ -139,6 +141,8 @@ static const void *FRFailedHUDImageNameKey = &FRFailedHUDImageNameKey;
     self.progressHUD.customView = customView;
     self.progressHUD.mode = (MBProgressHUDMode)hudMode;
 	self.progressHUD.labelText = labelText;
+    [self.progressHUD setNeedsLayout];
+    [self.progressHUD setNeedsDisplay];
 }
 
 #pragma mark -
