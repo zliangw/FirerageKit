@@ -36,7 +36,7 @@ static char operationKey;
                 if (!wself) return;
                 if (image) {
                     if (faceAwareFilled) {
-                        [image faceAwareFillWithSize:self.frame.size block:^(UIImage *faceAwareFilledImage) {
+                        [image faceAwareFillWithSize:CGSizeMake(self.frame.size.width * 2, self.frame.size.height * 2) block:^(UIImage *faceAwareFilledImage) {
                             wself.image = faceAwareFilledImage;
                             [wself setNeedsLayout];
                         }];

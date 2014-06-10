@@ -54,8 +54,8 @@
         [btn setTitle:itemTitle forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageWithColor:_normalColor] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageWithColor:_selectedColor] forState:UIControlStateSelected];
-        [btn setTitleColor:_itemTitleNormalColor forState:UIControlStateSelected];
-        [btn setTitleColor:_itemTitleSelectedColor forState:UIControlStateNormal];
+        [btn setTitleColor:_itemTitleNormalColor forState:UIControlStateNormal];
+        [btn setTitleColor:_itemTitleSelectedColor forState:UIControlStateSelected];
         if (_itemTitleFont) {
             btn.titleLabel.font = _itemTitleFont;
         }
@@ -68,6 +68,30 @@
 - (void)setItemTitles:(NSArray *)itemTitles
 {
     _itemTitles = itemTitles;
+    [self reloadView];
+}
+
+- (void)setNormalColor:(UIColor *)normalColor
+{
+    _normalColor = normalColor;
+    [self reloadView];
+}
+
+- (void)setSelectedColor:(UIColor *)selectedColor
+{
+    _selectedColor = selectedColor;
+    [self reloadView];
+}
+
+- (void)setItemTitleNormalColor:(UIColor *)itemTitleNormalColor
+{
+    _itemTitleNormalColor = itemTitleNormalColor;
+    [self reloadView];
+}
+
+- (void)setItemTitleSelectedColor:(UIColor *)itemTitleSelectedColor
+{
+    _itemTitleSelectedColor = itemTitleSelectedColor;
     [self reloadView];
 }
 

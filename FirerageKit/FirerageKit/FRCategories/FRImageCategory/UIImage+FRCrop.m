@@ -117,7 +117,7 @@
     return totalFaceRects;
 }
 
-- (UIImage *) scaleImageFocusingOnRect:(CGRect) facesRect fillSize:(CGSize)fillSize
+- (UIImage *) scaleImageFocusingOnRect:(CGRect) facesRect fillSize:(CGSize)fillSize cropType:(FRCropType)cropType
 {
     CGFloat multi1 = fillSize.width / self.size.width;
     CGFloat multi2 = fillSize.height / self.size.height;
@@ -141,16 +141,21 @@
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    newImage = [self cropWithProportion:fillSize.width / fillSize.height type:FRCropCenterType];
+    newImage = [self cropWithProportion:fillSize.width / fillSize.height type:cropType];
     
     return newImage;
 }
 
 - (void)faceAwareFillWithSize:(CGSize)size block:(FRCropBlock)cropBlock
 {
+    [self faceAwareFillWithSize:size cropType:FRCropTopType block:cropBlock];
+}
+
+- (void)faceAwareFillWithSize:(CGSize)size cropType:(FRCropType)cropType block:(FRCropBlock)cropBlock
+{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         CGRect facesRect = [self rectWithFaces];
-        UIImage *newImage = [self scaleImageFocusingOnRect:facesRect fillSize:size];
+        UIImage *newImage = [self scaleImageFocusingOnRect:facesRect fillSize:size cropType:cropType];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             cropBlock(newImage);
