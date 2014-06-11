@@ -10,6 +10,7 @@
 		13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E671932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m */; };
 		13017E6D1932E0FE00FD4BC9 /* UILabel+FRFitSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E6C1932E0FE00FD4BC9 /* UILabel+FRFitSize.m */; };
 		13017E711932E20000FD4BC9 /* FRDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 13017E701932E20000FD4BC9 /* FRDevice.m */; };
+		1301BE9D1947137300965487 /* NSArray+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1301BE9C1947137300965487 /* NSArray+FRUtils.m */; };
 		130B34E11941735300843A04 /* NSString+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 130B34E01941735300843A04 /* NSString+FRUtils.m */; };
 		1316D43E1935DE2C00F00922 /* UIView+FRTouchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D43D1935DE2C00F00922 /* UIView+FRTouchBlock.m */; };
 		1316D4421935E59200F00922 /* FRCameraUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D4411935E59200F00922 /* FRCameraUtils.m */; };
@@ -67,6 +68,8 @@
 		13017E6C1932E0FE00FD4BC9 /* UILabel+FRFitSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FRFitSize.m"; sourceTree = "<group>"; };
 		13017E6F1932E20000FD4BC9 /* FRDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRDevice.h; sourceTree = "<group>"; };
 		13017E701932E20000FD4BC9 /* FRDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRDevice.m; sourceTree = "<group>"; };
+		1301BE9B1947137300965487 /* NSArray+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FRUtils.h"; sourceTree = "<group>"; };
+		1301BE9C1947137300965487 /* NSArray+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FRUtils.m"; sourceTree = "<group>"; };
 		130B34DF1941735300843A04 /* NSString+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FRUtils.h"; sourceTree = "<group>"; };
 		130B34E01941735300843A04 /* NSString+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRUtils.m"; sourceTree = "<group>"; };
 		1316D43C1935DE2C00F00922 /* UIView+FRTouchBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRTouchBlock.h"; sourceTree = "<group>"; };
@@ -216,6 +219,15 @@
 				13017E701932E20000FD4BC9 /* FRDevice.m */,
 			);
 			path = FRDevice;
+			sourceTree = "<group>";
+		};
+		1301BE9A1947136600965487 /* FRArrayCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1301BE9B1947137300965487 /* NSArray+FRUtils.h */,
+				1301BE9C1947137300965487 /* NSArray+FRUtils.m */,
+			);
+			path = FRArrayCategory;
 			sourceTree = "<group>";
 		};
 		130B34DE1941732600843A04 /* FRStringCategory */ = {
@@ -434,6 +446,7 @@
 		13BAF43C192CAC8800F189D6 /* FRCategories */ = {
 			isa = PBXGroup;
 			children = (
+				1301BE9A1947136600965487 /* FRArrayCategory */,
 				130B34DE1941732600843A04 /* FRStringCategory */,
 				132AAC4F193BFC0B003ECD2D /* FRObjectCategory */,
 				1316D46019373E1200F00922 /* FRImageViewCategory */,
@@ -684,6 +697,7 @@
 				1316D45C19371F6C00F00922 /* UIColor+FRUtils.m in Sources */,
 				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
 				13913DE7193856BC0016F742 /* FRFileManager.m in Sources */,
+				1301BE9D1947137300965487 /* NSArray+FRUtils.m in Sources */,
 				1316D45F193736BE00F00922 /* UIImage+FRCrop.m in Sources */,
 				13017E711932E20000FD4BC9 /* FRDevice.m in Sources */,
 				13913DE4193856670016F742 /* FRPersistenceUtils.m in Sources */,

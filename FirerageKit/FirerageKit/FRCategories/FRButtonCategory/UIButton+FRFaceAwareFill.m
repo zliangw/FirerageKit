@@ -14,6 +14,11 @@ static char operationKey;
 
 @implementation UIButton (FRFaceAwareFill)
 
+- (void)setFaceAwareFilledBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder state:(UIControlState)state completed:(SDWebImageCompletedBlock)completedBlock
+{
+    [self  setBackgroundImageWithURL:url placeholderImage:placeholder faceAwareFilled:YES cropProportion:self.frame.size.width / self.frame.size.height cropType:FRCropTopType state:state completed:completedBlock];
+}
+
 - (void)setBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder faceAwareFilled:(BOOL)faceAwareFilled cropProportion:(CGFloat)proportion cropType:(FRCropType)cropType state:(UIControlState)state completed:(SDWebImageCompletedBlock)completedBlock
 {
     [self cancelCurrentImageLoad];

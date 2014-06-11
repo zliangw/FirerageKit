@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Cocoa UI component for chat bubbles with avatars and images support'
   s.homepage = 'https://github.com/iSapozhnik/NavigationMenu'
   s.author   = { 'iSapozhnik' => 'iSapozhnik' }
-  s.source   = { :git => 'https://github.com/illidan-firerage/UIBubbleTableView.git', :commit => 'f92fab9233358fc04b27dd31a5f9cee9bb813d19' }
+  s.source   = { :git => 'https://github.com/illidan-firerage/UIBubbleTableView.git', :commit => '566291b595e1a33df00965991f4f13024b703d50' }
   s.platform = :ios, '5.1.1'
   s.source_files = 'src/*.{h,m}'
   s.resources = "images/*@2x.png"

@@ -15,8 +15,9 @@
 @interface UIBubbleTableViewCell ()
 
 @property (nonatomic, retain) UIView *customView;
-@property (nonatomic, retain) UIImageView *bubbleImage;
-@property (nonatomic, retain) UIImageView *avatarImage;
+@property (nonatomic, retain) UIImageView *bubbleImageView;
+@property (nonatomic, retain) UIImageView *avatarImageView;
+@property (nonatomic, retain) UIImageView *bubbleNewImageView;
 
 - (void) setupInternalData;
 
@@ -26,9 +27,9 @@
 
 @synthesize data = _data;
 @synthesize customView = _customView;
-@synthesize bubbleImage = _bubbleImage;
+@synthesize bubbleImageView = _bubbleImageView;
 @synthesize showAvatar = _showAvatar;
-@synthesize avatarImage = _avatarImage;
+@synthesize avatarImageView = _avatarImageView;
 
 - (void)setFrame:(CGRect)frame
 {
@@ -41,8 +42,8 @@
 {
     self.data = nil;
     self.customView = nil;
-    self.bubbleImage = nil;
-    self.avatarImage = nil;
+    self.bubbleImageView = nil;
+    self.avatarImageView = nil;
     [super dealloc];
 }
 #endif
@@ -57,14 +58,14 @@
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if (!self.bubbleImage)
+    if (!self.bubbleImageView)
     {
 #if !__has_feature(objc_arc)
-        self.bubbleImage = [[[UIImageView alloc] init] autorelease];
+        self.bubbleImageView = [[[UIImageView alloc] init] autorelease];
 #else
-        self.bubbleImage = [[UIImageView alloc] init];        
+        self.bubbleImageView = [[UIImageView alloc] init];
 #endif
-        [self addSubview:self.bubbleImage];
+        [self addSubview:self.bubbleImageView];
     }
     
     NSBubbleType type = self.data.type;
@@ -78,28 +79,33 @@
     // Adjusting the x coordinate for avatar
     if (self.showAvatar)
     {
-        [self.avatarImage removeFromSuperview];
+        [self.avatarImageView removeFromSuperview];
 #if !__has_feature(objc_arc)
-        self.avatarImage = [[[UIImageView alloc] initWithImage:(self.data.avatar ? self.data.avatar : [UIImage imageNamed:@"missingAvatar.png"])] autorelease];
+        self.avatarImageView = [[[UIImageView alloc] initWithImage:(self.data.avatar ? self.data.avatar : self.data.missingAvatar)] autorelease];
+        self.bubbleNewImageView = [[[UIImageView alloc] initWithImage:self.data.bubbleNewImage] autorelease];
 #else
-        self.avatarImage = [[UIImageView alloc] initWithImage:(self.data.avatar ? self.data.avatar : [UIImage imageNamed:@"missingAvatar.png"])];
+        self.avatarImageView = [[UIImageView alloc] initWithImage:(self.data.avatar ? self.data.avatar : self.data.missingAvatar)];
+        self.bubbleNewImageView = [[UIImageView alloc] initWithImage:self.data.bubbleNewImage];
 #endif
-        self.avatarImage.layer.cornerRadius = 9.0;
-        self.avatarImage.layer.masksToBounds = YES;
-        self.avatarImage.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.2].CGColor;
-        self.avatarImage.layer.borderWidth = 1.0;
+        self.avatarImageView.layer.cornerRadius = 9.0;
+        self.avatarImageView.layer.masksToBounds = YES;
+        self.avatarImageView.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.2].CGColor;
+        self.avatarImageView.layer.borderWidth = 1.0;
         
-        CGFloat avatarX = (type == BubbleTypeSomeoneElse) ? 2 : self.frame.size.width - 52;
-        CGFloat avatarY = self.frame.size.height - 50;
+        CGFloat avatarX = (type == BubbleTypeSomeoneElse) ? 10 : self.frame.size.width - self.data.avatarSize.width - 10;
+        CGFloat avatarY = self.frame.size.height - self.data.avatarSize.height;
         
-        self.avatarImage.frame = CGRectMake(avatarX, avatarY, 50, 50);
-        [self addSubview:self.avatarImage];
+        self.avatarImageView.frame = CGRectMake(avatarX, avatarY, self.data.avatarSize.width, self.data.avatarSize.height);
+        [self addSubview:self.avatarImageView];
+        
+        self.bubbleNewImageView.frame = CGRectMake(avatarX, avatarY - NSBubbleNewMarginY - CGRectGetHeight(self.bubbleNewImageView.frame), CGRectGetWidth(self.bubbleNewImageView.frame), CGRectGetHeight(self.bubbleNewImageView.frame));
+        [self addSubview:self.bubbleNewImageView];
         
         CGFloat delta = self.frame.size.height - (self.data.insets.top + self.data.insets.bottom + self.data.view.frame.size.height);
         if (delta > 0) y = delta;
         
-        if (type == BubbleTypeSomeoneElse) x += 54;
-        if (type == BubbleTypeMine) x -= 54;
+        if (type == BubbleTypeSomeoneElse) x += self.data.avatarSize.width + 13;
+        if (type == BubbleTypeMine) x -= self.data.avatarSize.width + 10;
     }
 
     [self.customView removeFromSuperview];
@@ -107,16 +113,8 @@
     self.customView.frame = CGRectMake(x + self.data.insets.left, y + self.data.insets.top, width, height);
     [self.contentView addSubview:self.customView];
 
-    if (type == BubbleTypeSomeoneElse)
-    {
-        self.bubbleImage.image = [[UIImage imageNamed:@"bubbleSomeone.png"] stretchableImageWithLeftCapWidth:21 topCapHeight:14];
-
-    }
-    else {
-        self.bubbleImage.image = [[UIImage imageNamed:@"bubbleMine.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:14];
-    }
-
-    self.bubbleImage.frame = CGRectMake(x, y, width + self.data.insets.left + self.data.insets.right, height + self.data.insets.top + self.data.insets.bottom);
+    self.bubbleImageView.image = self.data.bubbleImage;
+    self.bubbleImageView.frame = CGRectMake(x, y, width + self.data.insets.left + self.data.insets.right, height + self.data.insets.top + self.data.insets.bottom);
 }
 
 @end

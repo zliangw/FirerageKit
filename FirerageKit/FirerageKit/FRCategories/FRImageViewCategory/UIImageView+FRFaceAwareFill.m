@@ -23,6 +23,11 @@ static char operationKey;
     }
 }
 
+- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock
+{
+    [self setImageWithURL:url placeholderImage:placeholder faceAwareFilled:YES cropProportion:self.frame.size.width / self.frame.size.height cropType:FRCropTopType completed:completedBlock];
+}
+
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder faceAwareFilled:(BOOL)faceAwareFilled cropProportion:(CGFloat)proportion cropType:(FRCropType)cropType completed:(SDWebImageCompletedBlock)completedBlock
 {
     [self cancelCurrentImageLoad];

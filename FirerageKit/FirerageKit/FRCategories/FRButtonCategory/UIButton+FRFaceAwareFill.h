@@ -13,6 +13,8 @@
 
 @interface UIButton (FRFaceAwareFill)
 
+- (void)setFaceAwareFilledBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder state:(UIControlState)state completed:(SDWebImageCompletedBlock)completedBlock;
+
 - (void)setBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder faceAwareFilled:(BOOL)faceAwareFilled cropProportion:(CGFloat)proportion cropType:(FRCropType)cropType state:(UIControlState)state completed:(SDWebImageCompletedBlock)completedBlock;
 
 @end

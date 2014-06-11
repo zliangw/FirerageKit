@@ -11,6 +11,8 @@
 #import <UIKit/UIKit.h>
 #import "NSBubbleData.h"
 
+#define NSBubbleNewMarginY 5
+
 @interface UIBubbleTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) NSBubbleData *data;

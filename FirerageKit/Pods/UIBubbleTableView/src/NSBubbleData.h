@@ -22,7 +22,11 @@ typedef enum _NSBubbleType
 @property (readonly, nonatomic) NSBubbleType type;
 @property (readonly, nonatomic, strong) UIView *view;
 @property (readonly, nonatomic) UIEdgeInsets insets;
+@property (nonatomic, assign) CGSize avatarSize; // Default is {40, 40}
 @property (nonatomic, strong) UIImage *avatar;
+@property (nonatomic, strong) UIImage *missingAvatar;
+@property (nonatomic, strong) UIImage *bubbleImage;
+@property (nonatomic, strong) UIImage *bubbleNewImage;
 
 - (id)initWithText:(NSString *)text date:(NSDate *)date type:(NSBubbleType)type;
 + (id)dataWithText:(NSString *)text date:(NSDate *)date type:(NSBubbleType)type;
