@@ -56,11 +56,11 @@ static id instance;
 {
     NSAssert([UIImagePickerController isSourceTypeAvailable:sourceType], @"Device not support the type");
     
-    if (_imagePicker == nil) {
-        _imagePicker = [[UIImagePickerController alloc] init];
-        _imagePicker.delegate = self;
-        _imagePicker.allowsEditing = allowsEditing;
-        _imagePicker.sourceType = sourceType;
+    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker.delegate = self;
+    _imagePicker.allowsEditing = allowsEditing;
+    _imagePicker.sourceType = sourceType;
+    if (sourceType == UIImagePickerControllerSourceTypeCamera) {
         _imagePicker.cameraDevice = cameraDevice;
     }
     
@@ -73,7 +73,9 @@ static id instance;
     }
     
     [viewController presentViewController:_imagePicker animated:YES completion:^{
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+        if (sourceType == UIImagePickerControllerSourceTypeCamera) {
+            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+        }
     }];
 }
 
@@ -88,6 +90,9 @@ static id instance;
             _canceledBlock();
         }
     }];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
@@ -98,17 +103,20 @@ static id instance;
             _finishedBlock(image, editingInfo);
         }
     }];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
 }
 
-//- (void)navigationController:(UINavigationController *)navigationController
-//      willShowViewController:(UIViewController *)viewController
-//                    animated:(BOOL)animated {
-//    
-//    if ([navigationController isKindOfClass:[UIImagePickerController class]] &&
-//        ((UIImagePickerController *)navigationController).sourceType == UIImagePickerControllerSourceTypePhotoLibrary) {
-//        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
-//    }
-//}
+#pragma -
+#pragma mark UINavigationController
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+	if (_imagePicker != nil) {
+		if ([UIDevice currentDevice].systemVersion.floatValue >= 7.) {
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        }
+	}
+}
 
 @end

@@ -11,5 +11,6 @@
 @interface NSString (FRUtils)
 
 + (NSString *)nullToEmptyString:(NSString *)string;
++ (NSString *)toLegalString:(NSString *)string;
 
 @end

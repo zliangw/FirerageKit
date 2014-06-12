@@ -163,6 +163,18 @@
     });
 }
 
+- (void)faceAwareFillWithSize:(CGSize)size cropType:(FRCropType)cropType faceBlock:(FRCropFaceBlock)cropBlock
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        CGRect facesRect = [self rectWithFaces];
+        UIImage *newImage = [self scaleImageFocusingOnRect:facesRect fillSize:size cropType:cropType];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cropBlock(newImage, facesRect);
+        });
+    });
+}
+
 - (UIImage *)scaleAndRotateWithResolution:(CGFloat)resolution
 {
     CGImageRef imgRef = self.CGImage;

@@ -10,10 +10,10 @@
 #import "UIImageView+WebCache.h"
 
 static CGFloat AutoRollingDefaultDelayTime = 2.;
+#define FRBannerItemMinCount  2
 
 @interface FRBannerView () <UIScrollViewDelegate>
 {
-    NSInteger _totalPage;
     NSInteger _totalCount;
 }
 
@@ -35,15 +35,13 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
         [self setDefaultDatas];
         self.direction = direction;
         self.bannerItems = bannerItems;
-        [self reloadData];
     }
     return self;
 }
 
 - (void)setDefaultDatas
 {
-    _totalPage = _bannerItems.count;
-    _totalCount = _totalPage;
+    _totalCount = _bannerItems.count;
     _curPage = 1;
     self.autoRoolEnabled = YES;
     self.autoRollingDelayTime = AutoRollingDefaultDelayTime;
@@ -134,6 +132,7 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 {
     _bannerItems = bannerItems;
     self.pageControl.numberOfPages = self.bannerItems.count;
+    [self reloadData];
 }
 
 - (void)setPageControlStyle:(FRBannerViewPageControlStyle)pageControlStyle
@@ -161,7 +160,7 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 
 - (NSArray *)getDisplayItemsWithPageIndex:(NSInteger)page
 {
-    if (_bannerItems == nil || _bannerItems.count < 3) {
+    if (_bannerItems == nil || _bannerItems.count < FRBannerItemMinCount) {
         return nil;
     }
     
@@ -179,10 +178,10 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 - (NSInteger)getPageIndex:(NSInteger)index
 {
     if (index == 0) {
-        index = _totalPage;
+        index = _totalCount;
     }
     
-    if (index == _totalPage + 1) {
+    if (index == _totalCount + 1) {
         index = 1;
     }
     
@@ -191,10 +190,11 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 
 - (void)startRolling
 {
-    if (_bannerItems.count <= 2) {
+    if (_bannerItems.count < FRBannerItemMinCount) {
         return;
     }
     
+    _scrollView.scrollEnabled = YES;
     [self stopRolling];
     
     if (_autoRoolEnabled) {
@@ -225,6 +225,15 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
     }];
 }
 
+- (void)setImageToImageView:(UIImageView *)imageView withBannerItem:(FRBannerItem *)bannerItem
+{
+    if (bannerItem.imageName.length > 0) {
+        [imageView setImage:[UIImage imageNamed:bannerItem.imageName]];
+    } else if (bannerItem.imageURL.length > 0) {
+        [imageView setImageWithURL:[NSURL URLWithString:bannerItem.imageURL] placeholderImage:[UIImage imageNamed:bannerItem.placeholderImageName]];
+    }
+}
+
 - (void)refreshScrollView
 {
     NSArray *curDisplayItems = [self getDisplayItemsWithPageIndex:_curPage];
@@ -233,11 +242,7 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
     {
         UIImageView *imageView = (UIImageView *)[_scrollView viewWithTag:i+1];
         FRBannerItem *bannerItem = [curDisplayItems objectAtIndex:i];
-        if (bannerItem.imageName.length > 0) {
-            [imageView setImage:[UIImage imageNamed:bannerItem.imageName]];
-        } else if (bannerItem.imageURL.length > 0) {
-            [imageView setImageWithURL:[NSURL URLWithString:bannerItem.imageURL] placeholderImage:[UIImage imageNamed:bannerItem.placeholderImageName]];
-        }
+        [self setImageToImageView:imageView withBannerItem:bannerItem];
     }
     
     if (_direction == RBannerViewDefaultDirection || _direction == RBannerViewLandscapeDirection)
@@ -258,11 +263,19 @@ static CGFloat AutoRollingDefaultDelayTime = 2.;
 - (void)reloadData
 {
     [self stopRolling];
-    _totalPage = _bannerItems.count;
-    _totalCount = _totalPage;
+    _totalCount = _bannerItems.count;
     _curPage = 1;
-    [self refreshScrollView];
-    [self startRolling];
+    if (_bannerItems.count == 1) {
+        _scrollView.scrollEnabled = NO;
+        self.pageControlStyle = FRBannerViewPageControlNoneStyle;
+        FRBannerItem *bannerItem = [_bannerItems objectAtIndex:0];
+        UIImageView *imageView = (UIImageView *)[_scrollView viewWithTag:1];
+        [self setImageToImageView:imageView withBannerItem:bannerItem];
+    } else if (_bannerItems.count >= FRBannerItemMinCount) {
+        _scrollView.scrollEnabled = YES;
+        [self refreshScrollView];
+        [self startRolling];
+    }
 }
 
 #pragma mark -

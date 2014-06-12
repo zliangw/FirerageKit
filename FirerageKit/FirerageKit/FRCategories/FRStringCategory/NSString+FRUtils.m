@@ -18,4 +18,16 @@
     return string;
 }
 
++ (NSString *)toLegalString:(NSString *)string
+{
+    if ([string isKindOfClass:[NSString class]] || !string) {
+        string = string;
+    } else if ([string isKindOfClass:[NSNull class]]) {
+        string = nil;
+    } else {
+        string = [NSString stringWithFormat:@"%@", string];
+    }
+    return string;
+}
+
 @end
