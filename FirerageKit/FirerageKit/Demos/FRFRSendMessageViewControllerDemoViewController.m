@@ -84,7 +84,9 @@
 
 - (void)sendMessageViewController:(FRSendMessageViewController *)sendMessageViewController didSentMessage:(NSString *)message
 {
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(chatViewController:didSentMessage:)]) {
+        [_delegate chatViewController:self didSentMessage:message];
+    }
 }
 
 - (void)sendMessageViewControllerDidBeginInputting:(FRSendMessageViewController *)sendMessageViewController
