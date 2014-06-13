@@ -206,8 +206,6 @@
 - (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
 {
     [self sendMessage:_messageInputView.text];
-    [self clearMessageInputView];
-    
     return NO;
 }
 
