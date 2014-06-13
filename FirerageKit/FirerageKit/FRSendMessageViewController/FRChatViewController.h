@@ -7,13 +7,14 @@
 //
 
 #import "FRSendMessageViewController.h"
-#import "NSBubbleData.h"
+#import "UIBubbleTableView.h"
 
 @protocol FRChatViewControllerDelegate;
 
 @interface FRChatViewController : FRSendMessageViewController
 
 @property (nonatomic, weak) IBOutlet id<FRChatViewControllerDelegate> delegate;
+@property (strong, nonatomic, readonly) UIBubbleTableView *bubbleTable;
 @property (nonatomic, strong) NSArray *bubbleDatas;
 
 @end
