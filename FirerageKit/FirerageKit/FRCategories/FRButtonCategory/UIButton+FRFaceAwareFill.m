@@ -25,14 +25,20 @@ static char operationKey;
     
     [self setBackgroundImage:placeholder forState:state];
     
-    if (url) {
-        CGSize cropSize = CGSizeMake(self.frame.size.width * 2, self.frame.size.height * 2);
-        NSString *cacheKey = [NSString stringWithFormat:@"%@cacheForSize%@faceAwareFilled%dproportion%fcropType%d", url.absoluteString, NSStringFromCGSize(cropSize), faceAwareFilled, proportion, cropType];
-        UIImage *cacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:cacheKey];
+    if (!url) {
+        if (completedBlock) {
+            completedBlock(nil, nil, SDImageCacheTypeNone);
+        }
+        return;
+    }
+    
+    CGSize cropSize = CGSizeMake(self.frame.size.width * 2, self.frame.size.height * 2);
+    NSString *cacheKey = [NSString stringWithFormat:@"%@cacheForSize%@faceAwareFilled%dproportion%fcropType%d", url.absoluteString, NSStringFromCGSize(cropSize), faceAwareFilled, proportion, cropType];
+    [[SDImageCache sharedImageCache] queryDiskCacheForKey:cacheKey done:^(UIImage *cacheImage, SDImageCacheType cacheType) {
         if (cacheImage) {
             [self setBackgroundImage:cacheImage forState:state];
             if (completedBlock) {
-                completedBlock(cacheImage, nil, SDImageCacheTypeDisk);
+                completedBlock(cacheImage, nil, cacheType);
             }
         } else {
             __weak UIButton *wself = self;
@@ -42,11 +48,14 @@ static char operationKey;
                     __strong UIButton *sself = wself;
                     if (!sself) return;
                     if (image) {
-                        UIImage *newImage = [image cropWithProportion:proportion type:cropType];
                         if (faceAwareFilled) {
-                            [newImage faceAwareFillWithSize:cropSize cropType:cropType block:^(UIImage *faceAwareFilledImage) {
-                                [sself setBackgroundImage:faceAwareFilledImage forState:state];
-                                [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
+                            [image faceAwareFillWithSize:cropSize cropType:cropType block:^(UIImage *faceAwareFilledImage) {
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [sself setBackgroundImage:faceAwareFilledImage forState:state];
+                                });
+                                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                                    [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
+                                });
                                 if (completedBlock && finished) {
                                     completedBlock(faceAwareFilledImage, error, cacheType);
                                 }
@@ -54,20 +63,21 @@ static char operationKey;
                         } else {
                             UIImage *cropImage = [image cropWithProportion:proportion type:cropType];
                             [sself setBackgroundImage:cropImage forState:state];
-                            [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+                            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                                [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+                            });
                             if (completedBlock && finished) {
                                 completedBlock(cropImage, error, cacheType);
                             }
                         }
-                    }
-                    if (completedBlock && finished) {
+                    } else if (completedBlock && finished) {
                         completedBlock(image, error, cacheType);
                     }
                 });
             }];
             objc_setAssociatedObject(self, &operationKey, operation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
-    }
+    }];
 }
 
 - (void)cancelCurrentImageLoad {
@@ -77,6 +87,16 @@ static char operationKey;
         [operation cancel];
         objc_setAssociatedObject(self, &operationKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
+}
+
+- (void)setCropBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder state:(UIControlState)state completed:(SDWebImageCompletedBlock)completedBlock
+{
+    [self setCropBackgroundImageWithURL:url placeholderImage:placeholder state:state cropType:FRCropTopType completed:completedBlock];
+}
+
+- (void)setCropBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder state:(UIControlState)state cropType:(FRCropType)cropType completed:(SDWebImageCompletedBlock)completedBlock
+{
+    [self setBackgroundImageWithURL:url placeholderImage:placeholder faceAwareFilled:NO cropProportion:self.frame.size.width / self.frame.size.height cropType:cropType state:state completed:completedBlock];
 }
 
 @end

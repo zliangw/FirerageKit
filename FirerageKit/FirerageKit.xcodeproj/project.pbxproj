@@ -54,6 +54,8 @@
 		13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF450192D9A8100F189D6 /* FRBannerView.m */; };
 		13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */; };
 		13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */; };
+		13C7E628194C105800E72CF7 /* NSDate+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C7E627194C105800E72CF7 /* NSDate+FRUtils.m */; };
+		13C7E62B194C108300E72CF7 /* FRDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C7E62A194C108300E72CF7 /* FRDate.m */; };
 		13E21980193068440044FCF2 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */; };
 		13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */; };
 		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
@@ -148,6 +150,10 @@
 		13BAF453192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRBannerViewDemoViewController.m; sourceTree = "<group>"; };
 		13BE30D1192DE68500B1F24D /* FRNavigationMenuDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRNavigationMenuDemoViewController.h; sourceTree = "<group>"; };
 		13BE30D2192DE68500B1F24D /* FRNavigationMenuDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRNavigationMenuDemoViewController.m; sourceTree = "<group>"; };
+		13C7E626194C105800E72CF7 /* NSDate+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FRUtils.h"; sourceTree = "<group>"; };
+		13C7E627194C105800E72CF7 /* NSDate+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FRUtils.m"; sourceTree = "<group>"; };
+		13C7E629194C108300E72CF7 /* FRDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRDate.h; sourceTree = "<group>"; };
+		13C7E62A194C108300E72CF7 /* FRDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRDate.m; sourceTree = "<group>"; };
 		13E2197C1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFRSendMessageViewControllerDemoViewController.h; sourceTree = "<group>"; };
 		13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRSendMessageViewControllerDemoViewController.m; sourceTree = "<group>"; };
 		13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendTextViewBkg@2x.png"; sourceTree = "<group>"; };
@@ -446,6 +452,7 @@
 		13BAF43C192CAC8800F189D6 /* FRCategories */ = {
 			isa = PBXGroup;
 			children = (
+				13C7E625194C104300E72CF7 /* FRDateCategory */,
 				1301BE9A1947136600965487 /* FRArrayCategory */,
 				130B34DE1941732600843A04 /* FRStringCategory */,
 				132AAC4F193BFC0B003ECD2D /* FRObjectCategory */,
@@ -490,6 +497,17 @@
 			children = (
 			);
 			path = ThirdFrameWork;
+			sourceTree = "<group>";
+		};
+		13C7E625194C104300E72CF7 /* FRDateCategory */ = {
+			isa = PBXGroup;
+			children = (
+				13C7E626194C105800E72CF7 /* NSDate+FRUtils.h */,
+				13C7E627194C105800E72CF7 /* NSDate+FRUtils.m */,
+				13C7E629194C108300E72CF7 /* FRDate.h */,
+				13C7E62A194C108300E72CF7 /* FRDate.m */,
+			);
+			path = FRDateCategory;
 			sourceTree = "<group>";
 		};
 		13FC988A1935C9A200A95D75 /* FRFlatSegmentedControl */ = {
@@ -714,6 +732,7 @@
 				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
 				130B34E11941735300843A04 /* NSString+FRUtils.m in Sources */,
 				13AE732B1930A5E4009C527A /* UIViewController+FRCustomNavigationBarItem.m in Sources */,
+				13C7E62B194C108300E72CF7 /* FRDate.m in Sources */,
 				1316D44A1936CEC600F00922 /* UIAlertView+FRUtils.m in Sources */,
 				132AAC52193BFC29003ECD2D /* NSObject+FRBlock.m in Sources */,
 				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
@@ -725,6 +744,7 @@
 				13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */,
 				134BF4931939548000D1D524 /* FRUser.m in Sources */,
 				1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */,
+				13C7E628194C105800E72CF7 /* NSDate+FRUtils.m in Sources */,
 				13017E6D1932E0FE00FD4BC9 /* UILabel+FRFitSize.m in Sources */,
 				132AAC55193C051D003ECD2D /* UIViewController+FRProgressHUD.m in Sources */,
 			);

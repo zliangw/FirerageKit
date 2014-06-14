@@ -34,10 +34,16 @@ static char operationKey;
     
     self.image = placeholder;
     
-    if (url) {
-        CGSize cropSize = CGSizeMake(self.frame.size.width * 2, self.frame.size.height * 2);
-        NSString *cacheKey = [NSString stringWithFormat:@"%@cacheForSize%@faceAwareFilled%dproportion%fcropType%d", url.absoluteString, NSStringFromCGSize(cropSize), faceAwareFilled, proportion, cropType];
-        UIImage *cacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:cacheKey];
+    if (!url) {
+        if (completedBlock) {
+            completedBlock(nil, nil, SDImageCacheTypeNone);
+        }
+        return;
+    }
+    
+    CGSize cropSize = CGSizeMake(self.frame.size.width * 2, self.frame.size.height * 2);
+    NSString *cacheKey = [NSString stringWithFormat:@"%@cacheForSize%@faceAwareFilled%dproportion%fcropType%d", url.absoluteString, NSStringFromCGSize(cropSize), faceAwareFilled, proportion, cropType];
+    [[SDImageCache sharedImageCache] queryDiskCacheForKey:cacheKey done:^(UIImage *cacheImage, SDImageCacheType cacheType) {
         if (cacheImage) {
             self.image = cacheImage;
             if (completedBlock) {
@@ -52,8 +58,12 @@ static char operationKey;
                     if (image) {
                         if (faceAwareFilled) {
                             [image faceAwareFillWithSize:cropSize cropType:cropType block:^(UIImage *faceAwareFilledImage) {
-                                wself.image = faceAwareFilledImage;
-                                [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    wself.image = faceAwareFilledImage;
+                                });
+                                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                                    [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
+                                });
                                 if (completedBlock && finished) {
                                     completedBlock(faceAwareFilledImage, error, cacheType);
                                 }
@@ -61,17 +71,31 @@ static char operationKey;
                         } else {
                             UIImage *cropImage = [image cropWithProportion:proportion type:cropType];
                             wself.image = cropImage;
-                            [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+                            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                                [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+                            });
                             if (completedBlock && finished) {
                                 completedBlock(cropImage, error, cacheType);
                             }
                         }
+                    } else if (completedBlock && finished) {
+                        completedBlock(image, error, cacheType);
                     }
                 });
             }];
             objc_setAssociatedObject(self, &operationKey, operation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
-    }
+    }];
+}
+
+- (void)setCropImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock
+{
+    [self setCropImageWithURL:url placeholderImage:placeholder cropType:FRCropTopType completed:completedBlock];
+}
+
+- (void)setCropImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder cropType:(FRCropType)cropType completed:(SDWebImageCompletedBlock)completedBlock
+{
+    [self setImageWithURL:url placeholderImage:placeholder faceAwareFilled:NO cropProportion:self.frame.size.width / self.frame.size.height cropType:cropType completed:completedBlock];
 }
 
 @end
