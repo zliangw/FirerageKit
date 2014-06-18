@@ -141,7 +141,7 @@
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    newImage = [self cropWithProportion:fillSize.width / fillSize.height type:cropType];
+    newImage = [newImage cropWithProportion:fillSize.width / fillSize.height type:cropType];
     
     return newImage;
 }
