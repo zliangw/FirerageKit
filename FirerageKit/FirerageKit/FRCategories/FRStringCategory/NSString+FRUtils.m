@@ -30,4 +30,14 @@
     return string;
 }
 
+- (NSString *)nullToEmptyString
+{
+    return [NSString nullToEmptyString:self];
+}
+
+- (NSString *)toLegalString
+{
+    return [NSString toLegalString:self];
+}
+
 @end

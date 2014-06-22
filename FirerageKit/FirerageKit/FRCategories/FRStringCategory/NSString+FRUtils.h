@@ -13,4 +13,7 @@
 + (NSString *)nullToEmptyString:(NSString *)string;
 + (NSString *)toLegalString:(NSString *)string;
 
+- (NSString *)nullToEmptyString;
+- (NSString *)toLegalString;
+
 @end
