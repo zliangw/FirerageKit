@@ -57,6 +57,15 @@
 		13C7E628194C105800E72CF7 /* NSDate+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C7E627194C105800E72CF7 /* NSDate+FRUtils.m */; };
 		13C7E62B194C108300E72CF7 /* FRDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C7E62A194C108300E72CF7 /* FRDate.m */; };
 		13E21980193068440044FCF2 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */; };
+		13EA3C0B195B2CD300432ED0 /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3BF9195B2CD300432ED0 /* MJArgument.m */; };
+		13EA3C0C195B2CD300432ED0 /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3BFC195B2CD300432ED0 /* MJIvar.m */; };
+		13EA3C0D195B2CD300432ED0 /* MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3BFE195B2CD300432ED0 /* MJMember.m */; };
+		13EA3C0E195B2CD300432ED0 /* MJMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3C00195B2CD300432ED0 /* MJMethod.m */; };
+		13EA3C0F195B2CD300432ED0 /* MJType.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3C02195B2CD300432ED0 /* MJType.m */; };
+		13EA3C10195B2CD300432ED0 /* MJTypeEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3C04195B2CD300432ED0 /* MJTypeEncoding.m */; };
+		13EA3C11195B2CD300432ED0 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3C06195B2CD300432ED0 /* NSObject+MJCoding.m */; };
+		13EA3C12195B2CD300432ED0 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3C08195B2CD300432ED0 /* NSObject+MJKeyValue.m */; };
+		13EA3C13195B2CD300432ED0 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EA3C0A195B2CD300432ED0 /* NSObject+MJMember.m */; };
 		13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */; };
 		13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FD2815192C96A80082C3C7 /* FRGridViewDemoViewController.m */; };
 		23DC8B58F9F74A2CB10AD7AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550F6612F44F4627B361DB43 /* libPods.a */; };
@@ -157,6 +166,25 @@
 		13E2197C1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFRSendMessageViewControllerDemoViewController.h; sourceTree = "<group>"; };
 		13E2197D1930624F0044FCF2 /* FRFRSendMessageViewControllerDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFRSendMessageViewControllerDemoViewController.m; sourceTree = "<group>"; };
 		13E2197F193068440044FCF2 /* SendTextViewBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendTextViewBkg@2x.png"; sourceTree = "<group>"; };
+		13EA3BF8195B2CD300432ED0 /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
+		13EA3BF9195B2CD300432ED0 /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
+		13EA3BFA195B2CD300432ED0 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		13EA3BFB195B2CD300432ED0 /* MJIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJIvar.h; sourceTree = "<group>"; };
+		13EA3BFC195B2CD300432ED0 /* MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJIvar.m; sourceTree = "<group>"; };
+		13EA3BFD195B2CD300432ED0 /* MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMember.h; sourceTree = "<group>"; };
+		13EA3BFE195B2CD300432ED0 /* MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMember.m; sourceTree = "<group>"; };
+		13EA3BFF195B2CD300432ED0 /* MJMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMethod.h; sourceTree = "<group>"; };
+		13EA3C00195B2CD300432ED0 /* MJMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMethod.m; sourceTree = "<group>"; };
+		13EA3C01195B2CD300432ED0 /* MJType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJType.h; sourceTree = "<group>"; };
+		13EA3C02195B2CD300432ED0 /* MJType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJType.m; sourceTree = "<group>"; };
+		13EA3C03195B2CD300432ED0 /* MJTypeEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTypeEncoding.h; sourceTree = "<group>"; };
+		13EA3C04195B2CD300432ED0 /* MJTypeEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTypeEncoding.m; sourceTree = "<group>"; };
+		13EA3C05195B2CD300432ED0 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		13EA3C06195B2CD300432ED0 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		13EA3C07195B2CD300432ED0 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		13EA3C08195B2CD300432ED0 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		13EA3C09195B2CD300432ED0 /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
+		13EA3C0A195B2CD300432ED0 /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
 		13FC988B1935C9C900A95D75 /* FRFlatSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFlatSegmentedControl.h; sourceTree = "<group>"; };
 		13FC988C1935C9C900A95D75 /* FRFlatSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFlatSegmentedControl.m; sourceTree = "<group>"; };
 		13FD2814192C96A80082C3C7 /* FRGridViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRGridViewDemoViewController.h; sourceTree = "<group>"; };
@@ -495,6 +523,7 @@
 		13C3EF431939A73F00508EB6 /* ThirdFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				13EA3BF7195B2CD300432ED0 /* MJExtension */,
 			);
 			path = ThirdFrameWork;
 			sourceTree = "<group>";
@@ -508,6 +537,32 @@
 				13C7E62A194C108300E72CF7 /* FRDate.m */,
 			);
 			path = FRDateCategory;
+			sourceTree = "<group>";
+		};
+		13EA3BF7195B2CD300432ED0 /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				13EA3BF8195B2CD300432ED0 /* MJArgument.h */,
+				13EA3BF9195B2CD300432ED0 /* MJArgument.m */,
+				13EA3BFA195B2CD300432ED0 /* MJExtension.h */,
+				13EA3BFB195B2CD300432ED0 /* MJIvar.h */,
+				13EA3BFC195B2CD300432ED0 /* MJIvar.m */,
+				13EA3BFD195B2CD300432ED0 /* MJMember.h */,
+				13EA3BFE195B2CD300432ED0 /* MJMember.m */,
+				13EA3BFF195B2CD300432ED0 /* MJMethod.h */,
+				13EA3C00195B2CD300432ED0 /* MJMethod.m */,
+				13EA3C01195B2CD300432ED0 /* MJType.h */,
+				13EA3C02195B2CD300432ED0 /* MJType.m */,
+				13EA3C03195B2CD300432ED0 /* MJTypeEncoding.h */,
+				13EA3C04195B2CD300432ED0 /* MJTypeEncoding.m */,
+				13EA3C05195B2CD300432ED0 /* NSObject+MJCoding.h */,
+				13EA3C06195B2CD300432ED0 /* NSObject+MJCoding.m */,
+				13EA3C07195B2CD300432ED0 /* NSObject+MJKeyValue.h */,
+				13EA3C08195B2CD300432ED0 /* NSObject+MJKeyValue.m */,
+				13EA3C09195B2CD300432ED0 /* NSObject+MJMember.h */,
+				13EA3C0A195B2CD300432ED0 /* NSObject+MJMember.m */,
+			);
+			path = MJExtension;
 			sourceTree = "<group>";
 		};
 		13FC988A1935C9A200A95D75 /* FRFlatSegmentedControl */ = {
@@ -708,10 +763,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13489F821941ACF80019F1B0 /* FRChatViewController.m in Sources */,
+				13EA3C0F195B2CD300432ED0 /* MJType.m in Sources */,
 				1316D43E1935DE2C00F00922 /* UIView+FRTouchBlock.m in Sources */,
 				13BAF44E192D9A6600F189D6 /* FRBannerItem.m in Sources */,
 				13ACA47F192BA2A6009010AC /* FRGridItemIndexPath.m in Sources */,
 				13FD2816192C96A80082C3C7 /* FRGridViewDemoViewController.m in Sources */,
+				13EA3C13195B2CD300432ED0 /* NSObject+MJMember.m in Sources */,
 				1316D45C19371F6C00F00922 /* UIColor+FRUtils.m in Sources */,
 				13BAF451192D9A8100F189D6 /* FRBannerView.m in Sources */,
 				13913DE7193856BC0016F742 /* FRFileManager.m in Sources */,
@@ -722,12 +779,15 @@
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
+				13EA3C12195B2CD300432ED0 /* NSObject+MJKeyValue.m in Sources */,
+				13EA3C0B195B2CD300432ED0 /* MJArgument.m in Sources */,
 				137921241931CFFD00589DC5 /* FRTextViewTableViewCell.m in Sources */,
 				13BAF442192CAC8800F189D6 /* UIView+FRLayout.m in Sources */,
 				137921211931CD7100589DC5 /* FRTextFieldTableViewCell.m in Sources */,
 				134454A51935A5B0008C6A9C /* UIImage+FRColor.m in Sources */,
 				1316D4421935E59200F00922 /* FRCameraUtils.m in Sources */,
 				1361F59C192AEE6100A985F6 /* FRAppDelegate.m in Sources */,
+				13EA3C10195B2CD300432ED0 /* MJTypeEncoding.m in Sources */,
 				1316D46319373EB000F00922 /* UIImageView+FRFaceAwareFill.m in Sources */,
 				13BAF443192CAC8800F189D6 /* UIView+FRImage.m in Sources */,
 				130B34E11941735300843A04 /* NSString+FRUtils.m in Sources */,
@@ -735,13 +795,17 @@
 				13C7E62B194C108300E72CF7 /* FRDate.m in Sources */,
 				1316D44A1936CEC600F00922 /* UIAlertView+FRUtils.m in Sources */,
 				132AAC52193BFC29003ECD2D /* NSObject+FRBlock.m in Sources */,
+				13EA3C0E195B2CD300432ED0 /* MJMethod.m in Sources */,
 				13BE30D3192DE68500B1F24D /* FRNavigationMenuDemoViewController.m in Sources */,
+				13EA3C0C195B2CD300432ED0 /* MJIvar.m in Sources */,
 				13ACA461192B991C009010AC /* FRDemoTableViewController.m in Sources */,
 				13BAF454192DAAF800F189D6 /* FRFRBannerViewDemoViewController.m in Sources */,
 				1361F598192AEE6100A985F6 /* main.m in Sources */,
+				13EA3C11195B2CD300432ED0 /* NSObject+MJCoding.m in Sources */,
 				13FC988D1935C9C900A95D75 /* FRFlatSegmentedControl.m in Sources */,
 				13489F831941ACFD0019F1B0 /* FRSendMessageViewController.m in Sources */,
 				13017E681932D26E00FD4BC9 /* FRBootstrapButtonDemoViewController.m in Sources */,
+				13EA3C0D195B2CD300432ED0 /* MJMember.m in Sources */,
 				134BF4931939548000D1D524 /* FRUser.m in Sources */,
 				1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */,
 				13C7E628194C105800E72CF7 /* NSDate+FRUtils.m in Sources */,

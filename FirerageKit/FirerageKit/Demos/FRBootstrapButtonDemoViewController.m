@@ -18,6 +18,7 @@
 #import "FRUser.h"
 #import "UIViewController+FRProgressHUD.h"
 #import "NSObject+FRBlock.h"
+#import "MJExtension.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -86,12 +87,23 @@
 //    [FRDevice isDevice5];
     
     FRUser *user = [[FRUser alloc] init];
-    user.sex = YES;
+    user.sex = NO;
     user.name = @"MR";
+    user.memberId12 = 10120;
     [FRPersistenceUtils archiveObject:user];
     
     FRUser *user2 = [FRPersistenceUtils unArchiveObjectByClass:[FRUser class]];
-    NSLog(@"%d, %@", user2.sex, user2.name);
+    
+    
+    NSLog(@"%d, %@, %ld", user2.sex, user2.name, user2.memberId12);
+    
+//    FRUser *user = [[FRUser alloc] init];
+//    [user enumerateIvarsWithBlock:^(MJIvar *ivar, BOOL *stop) {
+//        if (ivar.isSrcClassFromFoundation) return;
+//        if (!ivar.type.typeClass) {
+//            NSLog(@"%@ - %@ - %@", ivar.name,ivar.type.code,ivar.type.typeClass);
+//        }
+//    }];
 }
 
 - (void)didReceiveMemoryWarning
