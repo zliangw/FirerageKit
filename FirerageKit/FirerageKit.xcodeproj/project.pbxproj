@@ -19,6 +19,8 @@
 		1316D45F193736BE00F00922 /* UIImage+FRCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D45E193736BE00F00922 /* UIImage+FRCrop.m */; };
 		1316D46319373EB000F00922 /* UIImageView+FRFaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D46219373EB000F00922 /* UIImageView+FRFaceAwareFill.m */; };
 		1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D46519373ED300F00922 /* UIButton+FRFaceAwareFill.m */; };
+		131C683F195E749C00833C3E /* FRChatCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 131C683E195E749C00833C3E /* FRChatCacheManager.m */; };
+		131C6842195E751700833C3E /* FRFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 131C6841195E751700833C3E /* FRFileCache.m */; };
 		132AAC52193BFC29003ECD2D /* NSObject+FRBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 132AAC51193BFC29003ECD2D /* NSObject+FRBlock.m */; };
 		132AAC55193C051D003ECD2D /* UIViewController+FRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 132AAC54193C051D003ECD2D /* UIViewController+FRProgressHUD.m */; };
 		133CE54A192AF50100F69CDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1361F58B192AEE6100A985F6 /* Foundation.framework */; };
@@ -97,6 +99,10 @@
 		1316D46219373EB000F00922 /* UIImageView+FRFaceAwareFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FRFaceAwareFill.m"; sourceTree = "<group>"; };
 		1316D46419373ED300F00922 /* UIButton+FRFaceAwareFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FRFaceAwareFill.h"; sourceTree = "<group>"; };
 		1316D46519373ED300F00922 /* UIButton+FRFaceAwareFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FRFaceAwareFill.m"; sourceTree = "<group>"; };
+		131C683D195E749C00833C3E /* FRChatCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatCacheManager.h; sourceTree = "<group>"; };
+		131C683E195E749C00833C3E /* FRChatCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatCacheManager.m; sourceTree = "<group>"; };
+		131C6840195E751700833C3E /* FRFileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFileCache.h; sourceTree = "<group>"; };
+		131C6841195E751700833C3E /* FRFileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFileCache.m; sourceTree = "<group>"; };
 		132AAC50193BFC29003ECD2D /* NSObject+FRBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FRBlock.h"; sourceTree = "<group>"; };
 		132AAC51193BFC29003ECD2D /* NSObject+FRBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FRBlock.m"; sourceTree = "<group>"; };
 		132AAC53193C051D003ECD2D /* UIViewController+FRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRProgressHUD.h"; sourceTree = "<group>"; };
@@ -326,6 +332,8 @@
 				133C8688192F26E70091E968 /* FRChatViewController.m */,
 				139093AC1930467700ECB341 /* FRSendMessageViewController.h */,
 				139093AD1930467700ECB341 /* FRSendMessageViewController.m */,
+				131C683D195E749C00833C3E /* FRChatCacheManager.h */,
+				131C683E195E749C00833C3E /* FRChatCacheManager.m */,
 			);
 			path = FRSendMessageViewController;
 			sourceTree = "<group>";
@@ -449,6 +457,8 @@
 				13913DE3193856670016F742 /* FRPersistenceUtils.m */,
 				13913DE5193856BC0016F742 /* FRFileManager.h */,
 				13913DE6193856BC0016F742 /* FRFileManager.m */,
+				131C6840195E751700833C3E /* FRFileCache.h */,
+				131C6841195E751700833C3E /* FRFileCache.m */,
 			);
 			path = FRPersistenceUtils;
 			sourceTree = "<group>";
@@ -778,6 +788,7 @@
 				13913DE4193856670016F742 /* FRPersistenceUtils.m in Sources */,
 				13ACA47C192BA173009010AC /* FRGridViewItem.m in Sources */,
 				139093AB19303F0C00ECB341 /* FRChatViewControllerDemoViewController.m in Sources */,
+				131C683F195E749C00833C3E /* FRChatCacheManager.m in Sources */,
 				13ACA479192B9D5E009010AC /* FRGridView.m in Sources */,
 				13EA3C12195B2CD300432ED0 /* NSObject+MJKeyValue.m in Sources */,
 				13EA3C0B195B2CD300432ED0 /* MJArgument.m in Sources */,
@@ -809,6 +820,7 @@
 				134BF4931939548000D1D524 /* FRUser.m in Sources */,
 				1316D46619373ED300F00922 /* UIButton+FRFaceAwareFill.m in Sources */,
 				13C7E628194C105800E72CF7 /* NSDate+FRUtils.m in Sources */,
+				131C6842195E751700833C3E /* FRFileCache.m in Sources */,
 				13017E6D1932E0FE00FD4BC9 /* UILabel+FRFitSize.m in Sources */,
 				132AAC55193C051D003ECD2D /* UIViewController+FRProgressHUD.m in Sources */,
 			);

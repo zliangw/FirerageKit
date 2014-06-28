@@ -19,6 +19,7 @@
 #import "UIViewController+FRProgressHUD.h"
 #import "NSObject+FRBlock.h"
 #import "MJExtension.h"
+#import "FRChatCacheManager.h"
 
 @interface FRBootstrapButtonDemoViewController ()
 
@@ -104,6 +105,19 @@
 //            NSLog(@"%@ - %@ - %@", ivar.name,ivar.type.code,ivar.type.typeClass);
 //        }
 //    }];
+    
+//    [[FRChatCacheManager sharedChatManager] storeVoice:UIImageJPEGRepresentation([UIImage imageNamed:@"avatar.png"], 1.) key:@"fuck" fromUserID:@"1" toUserID:@"2"];
+//    
+//    [[FRChatCacheManager sharedChatManager] cleanCacheWithCompletionBlock:^{
+//        NSData *data = [[FRChatCacheManager sharedChatManager] getVoiceDataWithKey:@"fuck" fromUserID:@"1" toUserID:@"2"];
+//    }];
+//    
+//    [[FRChatCacheManager sharedChatManager] deleteVoiceDataWithKey:@"fuck" fromUserID:@"1" toUserID:@"2"];
+//    
+//    NSData *data = [[FRChatCacheManager sharedChatManager] getVoiceDataWithKey:@"fuck" fromUserID:@"1" toUserID:@"2"];
+//    
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:data]];
+//    [self.view addSubview:imageView];
 }
 
 - (void)didReceiveMemoryWarning
