@@ -11,13 +11,16 @@
 #import "SDWebImageManager.h"
 #import "UIImage+FRCrop.h"
 
+typedef void(^FRImageLoadedCompletion)(UIImage *image, NSError *error);
+
 @interface UIImageView (FRFaceAwareFill)
 
-- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock;
+- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion;
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder faceAwareFilled:(BOOL)faceAwareFilled cropProportion:(CGFloat)proportion cropType:(FRCropType)cropType completed:(SDWebImageCompletedBlock)completedBlock;
+- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder faceAwareFilled:(BOOL)faceAwareFilled cropProportion:(CGFloat)proportion cropType:(FRCropType)cropType completion:(FRImageLoadedCompletion)completion;
 
-- (void)setCropImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletedBlock)completedBlock;
-- (void)setCropImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder cropType:(FRCropType)cropType completed:(SDWebImageCompletedBlock)completedBlock;
+- (void)setCropImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion;
+
+- (void)setCropImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder cropType:(FRCropType)cropType completion:(FRImageLoadedCompletion)completion;
 
 @end
