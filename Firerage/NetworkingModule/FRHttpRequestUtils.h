@@ -59,7 +59,7 @@ typedef void(^FRHttpRequestCompletion)(id JSON, NSError *error);
  *  @param progress   进度
  *  @param completion 回调
  */
-+ (void)uploadWithPath:(NSString *)path parameters:(NSDictionary *)parameters filePath:(NSString *)filePath progress:(void(^)(float progress))progress completion:(void(^)(id JSON, NSError *error))completion;
++ (void)uploadWithPath:(NSString *)path parameters:(NSDictionary *)parameters filePath:(NSString *)filePath progress:(void(^)(float progress))progress completion:(FRHttpRequestCompletion)completion;
 
 /**
  *  下载文件
@@ -69,6 +69,6 @@ typedef void(^FRHttpRequestCompletion)(id JSON, NSError *error);
  *  @param progress   进度
  *  @param completion 回调
  */
-+ (void)downloadWithURLString:(NSString *)URLString parameters:(NSDictionary *)parameters progress:(void(^)(float progress))progress completion:(void(^)(id JSON, NSError *error))completion;
++ (void)downloadWithURLString:(NSString *)URLString parameters:(NSDictionary *)parameters progress:(void(^)(float progress))progress completion:(FRHttpRequestCompletion)completion;
 
 @end

@@ -101,20 +101,9 @@
     
     AFHTTPRequestOperation *operation =
     [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSError *error = nil;
-        
-        id json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
-        if (!error) {
-            if (completion) {
-                completion(json,nil);
-            }
-        } else{
-            if (completion) {
-                completion(nil,error);
-            }
+        if (completion) {
+            completion(responseObject,nil);
         }
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion(nil,error);
