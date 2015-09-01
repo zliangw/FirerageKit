@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const ZAHttpHostErrorDomain;
+
 typedef NS_ENUM(NSInteger, ZAHttpHostErrorCode) {
     FRHttpHostErrorCode_Network, //网络错误
     FRHttpHostErrorCode_HostResolution, //域名解析错误

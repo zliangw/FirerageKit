@@ -12,7 +12,7 @@
 
 static NSString *const ZAAssistHost = @"www.baidu.com";
 
-static NSString *const ZAHttpHostErrorDomain = @"FRHttpHostErrorDomain";
+NSString *const ZAHttpHostErrorDomain = @"FRHttpHostErrorDomain";
 
 @interface FRHttpHostUtils ()
 
