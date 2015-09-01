@@ -13,4 +13,5 @@ target :Firerage do
    pod 'HPGrowingTextView', :podspec => './PodsSpecs/HPGrowingTextView.podspec'
    pod 'MBProgressHUD', :podspec => './PodsSpecs/MBProgressHUD.podspec'
    pod 'UIBubbleTableView', :podspec => './PodsSpecs/UIBubbleTableView.podspec'
+   pod 'AFNetworking', '~> 2.6.0'
 end

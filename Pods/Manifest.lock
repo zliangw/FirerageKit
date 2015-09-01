@@ -1,4 +1,25 @@
 PODS:
+  - AFNetworking (2.6.0):
+    - AFNetworking/NSURLConnection (= 2.6.0)
+    - AFNetworking/NSURLSession (= 2.6.0)
+    - AFNetworking/Reachability (= 2.6.0)
+    - AFNetworking/Security (= 2.6.0)
+    - AFNetworking/Serialization (= 2.6.0)
+    - AFNetworking/UIKit (= 2.6.0)
+  - AFNetworking/NSURLConnection (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.0)
+  - AFNetworking/Security (2.6.0)
+  - AFNetworking/Serialization (2.6.0)
+  - AFNetworking/UIKit (2.6.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - AKSegmentedControl (1.0.4)
   - BButton (4.0.0)
   - DAKeyboardControl (2.4.0)
@@ -15,6 +36,7 @@ PODS:
   - UIColor+MLPFlatColors (1.0)
 
 DEPENDENCIES:
+  - AFNetworking (~> 2.6.0)
   - AKSegmentedControl
   - BButton (from `./PodsSpecs/BButton.podspec`)
   - DAKeyboardControl
@@ -43,6 +65,7 @@ EXTERNAL SOURCES:
     :podspec: ./PodsSpecs/UIBubbleTableView.podspec
 
 SPEC CHECKSUMS:
+  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   AKSegmentedControl: c076491ef773c0d70b70d03a8e5a0c04a9efbf08
   BButton: 32f49d034a21cb2c1c5305e108c2723a84a12d70
   DAKeyboardControl: 9d9bca22a5cc3c1d3cc61e24fbd208c3e84a3d2d

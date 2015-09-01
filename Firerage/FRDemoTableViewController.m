@@ -7,6 +7,8 @@
 //
 
 #import "FRDemoTableViewController.h"
+#import "FRHttpHostUtils.h"
+#import "FRHttpRequestUtils.h"
 
 @interface FRDemoTableViewController ()
 
@@ -26,6 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // 网络请求demo
+    [FRHttpHostUtils configWithDefaultHost:@"www.baidu.com" backupHosts:nil];
+    [FRHttpRequestUtils postWithPath:nil parameters:nil completion:^(id JSON, NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning

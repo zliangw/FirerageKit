@@ -60,6 +60,9 @@
 		3266EDDB1B9549C700C8D8E3 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3266EDA91B9549C700C8D8E3 /* SendTextViewBkg@2x.png */; };
 		3266EDDC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m */; };
 		3266EDDD1B9549C700C8D8E3 /* FRTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAE1B9549C700C8D8E3 /* FRTextViewTableViewCell.m */; };
+		3266EDF61B954E6F00C8D8E3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDF51B954E6F00C8D8E3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3266EDFF1B95549A00C8D8E3 /* FRHttpHostUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDFB1B95549A00C8D8E3 /* FRHttpHostUtils.m */; };
+		3266EE001B95549A00C8D8E3 /* FRHttpRequestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDFD1B95549A00C8D8E3 /* FRHttpRequestUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +180,12 @@
 		3266EDAD1B9549C700C8D8E3 /* FRTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextViewTableViewCell.h; sourceTree = "<group>"; };
 		3266EDAE1B9549C700C8D8E3 /* FRTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRTextViewTableViewCell.m; sourceTree = "<group>"; };
 		3266EDDE1B954A4700C8D8E3 /* Firerage-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Firerage-Prefix.pch"; sourceTree = "<group>"; };
+		3266EDF41B954E6F00C8D8E3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		3266EDF51B954E6F00C8D8E3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		3266EDFA1B95549A00C8D8E3 /* FRHttpHostUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRHttpHostUtils.h; sourceTree = "<group>"; };
+		3266EDFB1B95549A00C8D8E3 /* FRHttpHostUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRHttpHostUtils.m; sourceTree = "<group>"; };
+		3266EDFC1B95549A00C8D8E3 /* FRHttpRequestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRHttpRequestUtils.h; sourceTree = "<group>"; };
+		3266EDFD1B95549A00C8D8E3 /* FRHttpRequestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRHttpRequestUtils.m; sourceTree = "<group>"; };
 		3DBFCB769672F7D25DAA9096 /* libPods-Firerage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Firerage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0141A81245D3194073BB4A0 /* Pods-Firerage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firerage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Firerage/Pods-Firerage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +236,7 @@
 				3266ED181B9547AD00C8D8E3 /* AppDelegate.m */,
 				3266ED8B1B9549C700C8D8E3 /* FRDemoTableViewController.h */,
 				3266ED8C1B9549C700C8D8E3 /* FRDemoTableViewController.m */,
+				3266EDF71B95549A00C8D8E3 /* NetworkingModule */,
 				3266ED391B9549C700C8D8E3 /* Demos */,
 				3266ED481B9549C700C8D8E3 /* FRBanner */,
 				3266ED4D1B9549C700C8D8E3 /* FRCameraUtils */,
@@ -551,6 +561,34 @@
 			path = FRTableViewCell;
 			sourceTree = "<group>";
 		};
+		3266EDF21B954E6F00C8D8E3 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3266EDF31B954E6F00C8D8E3 /* Reachability */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		3266EDF31B954E6F00C8D8E3 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				3266EDF41B954E6F00C8D8E3 /* Reachability.h */,
+				3266EDF51B954E6F00C8D8E3 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		3266EDF71B95549A00C8D8E3 /* NetworkingModule */ = {
+			isa = PBXGroup;
+			children = (
+				3266EDFA1B95549A00C8D8E3 /* FRHttpHostUtils.h */,
+				3266EDFB1B95549A00C8D8E3 /* FRHttpHostUtils.m */,
+				3266EDFC1B95549A00C8D8E3 /* FRHttpRequestUtils.h */,
+				3266EDFD1B95549A00C8D8E3 /* FRHttpRequestUtils.m */,
+			);
+			path = NetworkingModule;
+			sourceTree = "<group>";
+		};
 		4E5201EE6BCCE8BE20CF7039 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +601,7 @@
 		F70067C4F07E2ECC0C4D7C1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3266EDF21B954E6F00C8D8E3 /* Vendor */,
 				3DBFCB769672F7D25DAA9096 /* libPods-Firerage.a */,
 			);
 			name = Frameworks;
@@ -614,6 +653,7 @@
 		3266ED081B9547AD00C8D8E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FR;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Illidan;
 				TargetAttributes = {
@@ -720,11 +760,13 @@
 				3266EDD71B9549C700C8D8E3 /* FRPersistenceUtils.m in Sources */,
 				3266EDBB1B9549C700C8D8E3 /* NSArray+FRUtils.m in Sources */,
 				3266EDCD1B9549C700C8D8E3 /* UIViewController+FRCustomNavigationBarItem.m in Sources */,
+				3266EDF61B954E6F00C8D8E3 /* Reachability.m in Sources */,
 				3266EDC01B9549C700C8D8E3 /* UIImage+FRColor.m in Sources */,
 				3266EDBE1B9549C700C8D8E3 /* NSDate+FRUtils.m in Sources */,
 				3266EDD11B9549C700C8D8E3 /* FRFlatSegmentedControl.m in Sources */,
 				3266EDD51B9549C700C8D8E3 /* FRFileCache.m in Sources */,
 				3266EDBD1B9549C700C8D8E3 /* UIControl+FRUtils.m in Sources */,
+				3266EE001B95549A00C8D8E3 /* FRHttpRequestUtils.m in Sources */,
 				3266EDB71B9549C700C8D8E3 /* FRBannerView.m in Sources */,
 				3266EDB11B9549C700C8D8E3 /* FRFRBannerViewDemoViewController.m in Sources */,
 				3266EDCF1B9549C700C8D8E3 /* FRDemoTableViewController.m in Sources */,
@@ -741,6 +783,7 @@
 				3266EDB91B9549C700C8D8E3 /* UIActionSheet+FRUtils.m in Sources */,
 				3266EDB51B9549C700C8D8E3 /* FRUser.m in Sources */,
 				3266EDD31B9549C700C8D8E3 /* FRGridView.m in Sources */,
+				3266EDFF1B95549A00C8D8E3 /* FRHttpHostUtils.m in Sources */,
 				3266EDCA1B9549C700C8D8E3 /* UIView+FRLayout.m in Sources */,
 				3266EDCC1B9549C700C8D8E3 /* UIView+FRTouchBlock.m in Sources */,
 				3266EDD61B9549C700C8D8E3 /* FRFileManager.m in Sources */,
