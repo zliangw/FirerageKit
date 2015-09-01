@@ -75,6 +75,62 @@
     }];
 }
 
++ (void)uploadWithPath:(NSString *)path parameters:(NSDictionary *)parameters file:(id)file progress:(void (^)(float))progress completion:(void (^)(id, NSError *))completion
+{
+    NSError *error = nil;
+    NSString *URLString = [self getHttpURLStringWithPath:path error:&error securityActived:NO];
+    
+    if (error) {
+        if (completion) {
+            completion(nil,error);
+        }
+        return;
+    }
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        if ([file isKindOfClass:[NSData class]]) {
+            [formData appendPartWithFileData:file name:nil fileName:nil mimeType:nil];
+        } else {
+            [formData appendPartWithFileURL:[NSURL fileURLWithPath:file] name:nil error:nil];
+        }
+    } error:nil];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    AFHTTPRequestOperation *operation =
+    [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError *error = nil;
+        
+        id json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+        if (!error) {
+            if (completion) {
+                completion(json,nil);
+            }
+        } else{
+            if (completion) {
+                completion(nil,error);
+            }
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil,error);
+        }
+    }];
+
+    
+    if (progress) {
+        [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,long long totalBytesWritten,long long totalBytesExpectedToWrite) {
+            progress((double)totalBytesWritten / (double)totalBytesExpectedToWrite);
+        }];
+    }
+    
+    [operation start];
+}
+
 #pragma mark - Member Methods
 
 + (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(FRHttpRequestCompletion)completion
@@ -110,6 +166,39 @@
             completion(nil, error);
         }
     }];
+}
+
++ (void)uploadWithPath:(NSString *)path parameters:(NSDictionary *)parameters fileData:(NSData *)fileData progress:(void (^)(float))progress completion:(void (^)(id, NSError *))completion
+{
+    [self uploadWithPath:path parameters:parameters file:fileData progress:progress completion:completion];
+}
+
++ (void)uploadWithPath:(NSString *)path parameters:(NSDictionary *)parameters filePath:(NSString *)filePath progress:(void (^)(float))progress completion:(void (^)(id, NSError *))completion
+{
+    [self uploadWithPath:path parameters:parameters file:filePath progress:progress completion:completion];
+}
+
++ (void)downloadWithURLString:(NSString *)URLString parameters:(NSDictionary *)parameters progress:(void (^)(float))progress completion:(void (^)(id, NSError *))completion
+{
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:URLString]]];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion(responseObject, nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil,error);
+        }
+    }];
+    
+    if (progress) {
+        [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,long long totalBytesWritten,long long totalBytesExpectedToWrite) {
+            progress((double)totalBytesWritten / (double)totalBytesExpectedToWrite);
+        }];
+    }
+    
+    [operation start];
 }
 
 @end

@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.6.0):
-    - AFNetworking/NSURLConnection (= 2.6.0)
-    - AFNetworking/NSURLSession (= 2.6.0)
-    - AFNetworking/Reachability (= 2.6.0)
-    - AFNetworking/Security (= 2.6.0)
-    - AFNetworking/Serialization (= 2.6.0)
-    - AFNetworking/UIKit (= 2.6.0)
-  - AFNetworking/NSURLConnection (2.6.0):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.0):
+  - AFNetworking/NSURLSession (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.0)
-  - AFNetworking/Security (2.6.0)
-  - AFNetworking/Serialization (2.6.0)
-  - AFNetworking/UIKit (2.6.0):
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AKSegmentedControl (1.0.4)
@@ -26,27 +26,27 @@ PODS:
   - GCPlaceholderTextView (0.0.1)
   - HPGrowingTextView (0.0.1)
   - MBProgressHUD (0.8)
-  - MJExtension (2.5.9)
-  - MJRefresh (2.4.7)
+  - MJExtension (2.1.0)
+  - MJRefresh (1.4.6)
   - NavigationMenu (0.0.1)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
   - UIBubbleTableView (0.0.1)
   - UIColor+MLPFlatColors (1.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.6.0)
+  - AFNetworking (~> 2.5.4)
   - AKSegmentedControl
   - BButton (from `./PodsSpecs/BButton.podspec`)
   - DAKeyboardControl
   - GCPlaceholderTextView (from `./PodsSpecs/GCPlaceholderTextView.podspec`)
   - HPGrowingTextView (from `./PodsSpecs/HPGrowingTextView.podspec`)
   - MBProgressHUD (from `./PodsSpecs/MBProgressHUD.podspec`)
-  - MJExtension (~> 2.5.8)
-  - MJRefresh (~> 2.4.7)
+  - MJExtension (~> 2.1.0)
+  - MJRefresh (~> 1.4.6)
   - NavigationMenu (from `./PodsSpecs/NavigationMenu.podspec`)
-  - SDWebImage (~> 3.7.3)
+  - SDWebImage (~> 3.7.2)
   - UIBubbleTableView (from `./PodsSpecs/UIBubbleTableView.podspec`)
   - UIColor+MLPFlatColors (~> 1.0)
 
@@ -65,17 +65,17 @@ EXTERNAL SOURCES:
     :podspec: ./PodsSpecs/UIBubbleTableView.podspec
 
 SPEC CHECKSUMS:
-  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AKSegmentedControl: c076491ef773c0d70b70d03a8e5a0c04a9efbf08
   BButton: 32f49d034a21cb2c1c5305e108c2723a84a12d70
   DAKeyboardControl: 9d9bca22a5cc3c1d3cc61e24fbd208c3e84a3d2d
   GCPlaceholderTextView: 010cd97274018d3e53ddc705f3983ce255ff7fc8
   HPGrowingTextView: b8b2a18dad3d88ff8ee810182ea6737a3b3b122d
   MBProgressHUD: a9cd9d4f1ec40a973cc475236010f7c4659e14aa
-  MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
-  MJRefresh: 6eb2f61338f89f64fd628fd43debcf479381ff59
+  MJExtension: d4fd481247b262b59cf8cdf5815661cff460aaa2
+  MJRefresh: 2eaa3fd8f67fbb86497840fb0167446f7eb61dc7
   NavigationMenu: 284a68ebb16001951f73a11d2b776c574faa3ba8
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   UIBubbleTableView: 953b2f56cf82de28ba4e6977c68ccb137c8d1f3b
   UIColor+MLPFlatColors: 14deb8f28da06ab8918c14231d4ff49ca7cd384a
 
