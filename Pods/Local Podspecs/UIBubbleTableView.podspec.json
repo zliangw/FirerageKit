@@ -1,0 +1,26 @@
+{
+  "name": "UIBubbleTableView",
+  "version": "0.0.1",
+  "license": "MIT",
+  "summary": "Cocoa UI component for chat bubbles with avatars and images support",
+  "homepage": "https://github.com/iSapozhnik/NavigationMenu",
+  "authors": {
+    "iSapozhnik": "iSapozhnik"
+  },
+  "source": {
+    "git": "https://github.com/illidan-firerage/UIBubbleTableView.git",
+    "commit": "566291b595e1a33df00965991f4f13024b703d50"
+  },
+  "platforms": {
+    "ios": "5.1.1"
+  },
+  "source_files": "src/*.{h,m}",
+  "resources": "images/*@2x.png",
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "CoreGraphics",
+    "QuartzCore"
+  ],
+  "requires_arc": true
+}

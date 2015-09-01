@@ -1,0 +1,25 @@
+{
+  "name": "HPGrowingTextView",
+  "version": "0.0.1",
+  "summary": "HPGrowingTextView",
+  "homepage": "https://github.com/illidan-firerage/HPGrowingTextView",
+  "social_media_url": "https://github.com/illidan-firerage/HPGrowingTextView",
+  "license": "MIT",
+  "authors": {
+    "illidan": "illidan"
+  },
+  "source": {
+    "git": "https://github.com/illidan-firerage/HPGrowingTextView.git",
+    "commit": "e014ffd4606861d1d373c60d43f4b284e1fb2685"
+  },
+  "platforms": {
+    "ios": "5.1.1"
+  },
+  "source_files": "*.{h,m}",
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "CoreGraphics"
+  ],
+  "requires_arc": true
+}

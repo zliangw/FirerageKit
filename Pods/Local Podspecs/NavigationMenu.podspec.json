@@ -1,0 +1,26 @@
+{
+  "name": "NavigationMenu",
+  "version": "0.0.1",
+  "license": "MIT",
+  "summary": "Objective-C component that adds menu to the navigation bar.",
+  "homepage": "https://github.com/iSapozhnik/NavigationMenu",
+  "authors": {
+    "iSapozhnik": "iSapozhnik"
+  },
+  "source": {
+    "git": "https://github.com/iSapozhnik/NavigationMenu.git",
+    "commit": "7e2528d2a22e67528137cbfa649f950d07716317"
+  },
+  "platforms": {
+    "ios": "5.1.1"
+  },
+  "source_files": "NavigationMenu/NavigationMenuView/*.{h,m}",
+  "resources": "NavigationMenu/NavigationMenuView/images/arrow_down@2x.png",
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "CoreGraphics",
+    "QuartzCore"
+  ],
+  "requires_arc": true
+}

@@ -1,0 +1,24 @@
+{
+  "name": "GCPlaceholderTextView",
+  "version": "0.0.1",
+  "license": "MIT",
+  "summary": "A subclass of UITextView that allow a placeholder.",
+  "homepage": "https://github.com/gcamp/GCPlaceholderTextView",
+  "authors": {
+    "gcamp": "gcamp"
+  },
+  "source": {
+    "git": "https://github.com/gcamp/GCPlaceholderTextView.git",
+    "commit": "c89d0d2563b976f4b1dca04f68d59bc94394f2f6"
+  },
+  "source_files": "GCPlaceholderTextView/*.{h,m}",
+  "platforms": {
+    "ios": "5.1.1"
+  },
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "CoreGraphics"
+  ],
+  "requires_arc": true
+}

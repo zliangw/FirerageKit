@@ -1,0 +1,1 @@
+UIBUBBLETABLEVIEW_OTHER_LDFLAGS = -framework "CoreGraphics" -framework "Foundation" -framework "QuartzCore" -framework "UIKit"
