@@ -59,23 +59,23 @@ NSInteger COL_TO_RGB256(float col) { return (NSInteger)(col * 255.0); }
 	if (hexStringLength == 3) {
 		// RGB, once character each (each should be repeated)
 		hexString = [NSString stringWithFormat:@"%c%c%c%c%c%c", [hexString characterAtIndex:0], [hexString characterAtIndex:0], [hexString characterAtIndex:1], [hexString characterAtIndex:1], [hexString characterAtIndex:2], [hexString characterAtIndex:2]];
-		hex = strtoul([hexString UTF8String], NULL, 16);
+		hex = (uint)strtoul([hexString UTF8String], NULL, 16);
         
 		return [self colorWithRGB:hex];
 	} else if (hexStringLength == 4) {
 		// RGBA, once character each (each should be repeated)
 		hexString = [NSString stringWithFormat:@"%c%c%c%c%c%c%c%c", [hexString characterAtIndex:0], [hexString characterAtIndex:0], [hexString characterAtIndex:1], [hexString characterAtIndex:1], [hexString characterAtIndex:2], [hexString characterAtIndex:2], [hexString characterAtIndex:3], [hexString characterAtIndex:3]];
-		hex = strtoul([hexString UTF8String], NULL, 16);
+		hex = (uint)strtoul([hexString UTF8String], NULL, 16);
         
 		return [self colorWithRGBA:hex];
 	} else if (hexStringLength == 6) {
 		// RGB
-		hex = strtoul([hexString UTF8String], NULL, 16);
+		hex = (uint)strtoul([hexString UTF8String], NULL, 16);
 		
 		return [self colorWithRGB:hex];
 	} else if (hexStringLength == 8) {
 		// RGBA
-		hex = strtoul([hexString UTF8String], NULL, 16);
+		hex = (uint)strtoul([hexString UTF8String], NULL, 16);
         
 		return [self colorWithRGBA:hex];
 	}
@@ -97,10 +97,10 @@ NSInteger COL_TO_RGB256(float col) { return (NSInteger)(col * 255.0); }
 - (NSString *) hexString {
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
 	
-	NSInteger red = (int)(components[0] * MAX_RGB_COLOR_VALUE);
-	NSInteger green = (int)(components[1] * MAX_RGB_COLOR_VALUE);
-	NSInteger blue = (int)(components[2] * MAX_RGB_COLOR_VALUE);
-	NSInteger alpha = (int)(components[3] * MAX_RGB_COLOR_VALUE);
+	int red = (int)(components[0] * MAX_RGB_COLOR_VALUE);
+	int green = (int)(components[1] * MAX_RGB_COLOR_VALUE);
+	int blue = (int)(components[2] * MAX_RGB_COLOR_VALUE);
+	int alpha = (int)(components[3] * MAX_RGB_COLOR_VALUE);
 	
 	if (alpha < 255) {
 		return [NSString stringWithFormat:@"#%02x%02x%02x%02x", red, green, blue, alpha];
