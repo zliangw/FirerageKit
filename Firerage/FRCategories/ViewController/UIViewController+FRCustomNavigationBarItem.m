@@ -40,7 +40,7 @@ static const void *FRBackBarButtonItemTitleKey = &FRBackBarButtonItemTitleKey;
     [rBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [rBtn.titleLabel setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:16]];
     
-    CGSize titleSize = [title sizeWithFont:rBtn.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, self.navigationController.navigationBar.frame.size.height)];
+    CGSize titleSize = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, self.navigationController.navigationBar.frame.size.height) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName:rBtn.titleLabel.font} context:nil].size;
     CGSize imageSize = CGSizeZero;
     
     UIImage *nImage = [UIImage imageNamed:normalImageName];
@@ -71,7 +71,7 @@ static const void *FRBackBarButtonItemTitleKey = &FRBackBarButtonItemTitleKey;
     [rBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [rBtn.titleLabel setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:16]];
     
-    CGSize titleSize = [title sizeWithFont:rBtn.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, self.navigationController.navigationBar.frame.size.height)];
+    CGSize titleSize = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, self.navigationController.navigationBar.frame.size.height) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName:rBtn.titleLabel.font} context:nil].size;
     CGSize imageSize = CGSizeZero;
     
     UIImage *nImage = [UIImage imageNamed:normalImageName];
