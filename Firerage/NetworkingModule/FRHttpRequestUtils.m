@@ -88,44 +88,13 @@
     }
     
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        NSError *fileError = nil;
-        
+
         if ([file isKindOfClass:[NSData class]]) {
             [formData appendPartWithFileData:file name:@"name" fileName:@"faileName" mimeType:@"file"];
         } else {
-            [formData appendPartWithFileURL:[NSURL fileURLWithPath:file] name:@"name" error:&fileError];
+            [formData appendPartWithFileURL:[NSURL fileURLWithPath:file] name:@"name" error:nil];
         }
-        
-        if (fileError) {
-            if (completion) {
-                completion(nil,fileError);
-            }
-            return;
-        }
-        
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        
-        AFHTTPRequestOperation *operation =
-        [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            if (completion) {
-                completion(responseObject,nil);
-            }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            if (completion) {
-                completion(nil,error);
-            }
-        }];
-        
-        if (progress) {
-            [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,long long totalBytesWritten,long long totalBytesExpectedToWrite) {
-                progress((double)totalBytesWritten / (double)totalBytesExpectedToWrite);
-            }];
-        }
-        
-        [operation start];
-        
+
     } error:&error];
     
     if (error) {
@@ -133,6 +102,29 @@
             completion(nil,error);
         }
     }
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    AFHTTPRequestOperation *operation =
+    [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completion) {
+            completion(responseObject,nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completion) {
+            completion(nil,error);
+        }
+    }];
+    
+    if (progress) {
+        [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,long long totalBytesWritten,long long totalBytesExpectedToWrite) {
+            progress((double)totalBytesWritten / (double)totalBytesExpectedToWrite);
+        }];
+    }
+    
+    [operation start];
 }
 
 #pragma mark - Member Methods
