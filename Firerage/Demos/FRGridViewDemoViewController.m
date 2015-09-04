@@ -8,6 +8,7 @@
 
 #import "FRGridViewDemoViewController.h"
 #import "FRGridView.h"
+#import "UIViewController+FRCustomNavigationBarItem.h"
 
 @interface FRGridViewDemoViewController () <FRGridViewDelegate, FRGridViewDataSource>
 
@@ -30,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self addIOS7BackBarButtonItemAutomatically];
 }
 
 - (void)didReceiveMemoryWarning

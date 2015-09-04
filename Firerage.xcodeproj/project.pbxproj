@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1350EA6B1B99B7DE00516184 /* UIImageView+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1350EA6A1B99B7DE00516184 /* UIImageView+FRUtils.m */; };
+		1350EA6F1B99C11700516184 /* UIButton+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1350EA6E1B99C11700516184 /* UIButton+FRUtils.m */; };
 		1C38B6477425E0A0F4C02215 /* libPods-Firerage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBFCB769672F7D25DAA9096 /* libPods-Firerage.a */; };
 		3266ED161B9547AD00C8D8E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED151B9547AD00C8D8E3 /* main.m */; };
 		3266ED191B9547AD00C8D8E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED181B9547AD00C8D8E3 /* AppDelegate.m */; };
@@ -33,7 +35,6 @@
 		3266EDC01B9549C700C8D8E3 /* UIImage+FRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED681B9549C700C8D8E3 /* UIImage+FRColor.m */; };
 		3266EDC11B9549C700C8D8E3 /* UIImage+FRCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED6A1B9549C700C8D8E3 /* UIImage+FRCrop.m */; };
 		3266EDC21B9549C700C8D8E3 /* UIImage+FRTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED6C1B9549C700C8D8E3 /* UIImage+FRTint.m */; };
-		3266EDC31B9549C700C8D8E3 /* UIImageView+FRFaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED6F1B9549C700C8D8E3 /* UIImageView+FRFaceAwareFill.m */; };
 		3266EDC41B9549C700C8D8E3 /* UILabel+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED721B9549C700C8D8E3 /* UILabel+FRUtils.m */; };
 		3266EDC51B9549C700C8D8E3 /* NSObject+FRBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED751B9549C700C8D8E3 /* NSObject+FRBlock.m */; };
 		3266EDC61B9549C700C8D8E3 /* NSString+FRAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED781B9549C700C8D8E3 /* NSString+FRAttributedString.m */; };
@@ -76,6 +77,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1350EA691B99B7DE00516184 /* UIImageView+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FRUtils.h"; sourceTree = "<group>"; };
+		1350EA6A1B99B7DE00516184 /* UIImageView+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FRUtils.m"; sourceTree = "<group>"; };
+		1350EA6D1B99C11700516184 /* UIButton+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FRUtils.h"; sourceTree = "<group>"; };
+		1350EA6E1B99C11700516184 /* UIButton+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FRUtils.m"; sourceTree = "<group>"; };
 		20891822A3CF209504405330 /* Pods-Firerage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firerage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Firerage/Pods-Firerage.release.xcconfig"; sourceTree = "<group>"; };
 		3266ED101B9547AD00C8D8E3 /* Firerage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firerage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3266ED141B9547AD00C8D8E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,8 +131,6 @@
 		3266ED6A1B9549C700C8D8E3 /* UIImage+FRCrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FRCrop.m"; sourceTree = "<group>"; };
 		3266ED6B1B9549C700C8D8E3 /* UIImage+FRTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FRTint.h"; sourceTree = "<group>"; };
 		3266ED6C1B9549C700C8D8E3 /* UIImage+FRTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FRTint.m"; sourceTree = "<group>"; };
-		3266ED6E1B9549C700C8D8E3 /* UIImageView+FRFaceAwareFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FRFaceAwareFill.h"; sourceTree = "<group>"; };
-		3266ED6F1B9549C700C8D8E3 /* UIImageView+FRFaceAwareFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FRFaceAwareFill.m"; sourceTree = "<group>"; };
 		3266ED711B9549C700C8D8E3 /* UILabel+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FRUtils.h"; sourceTree = "<group>"; };
 		3266ED721B9549C700C8D8E3 /* UILabel+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FRUtils.m"; sourceTree = "<group>"; };
 		3266ED741B9549C700C8D8E3 /* NSObject+FRBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FRBlock.h"; sourceTree = "<group>"; };
@@ -209,6 +212,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1350EA6C1B99C0FB00516184 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				1350EA6D1B99C11700516184 /* UIButton+FRUtils.h */,
+				1350EA6E1B99C11700516184 /* UIButton+FRUtils.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		3266ED071B9547AD00C8D8E3 = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +336,7 @@
 		3266ED501B9549C700C8D8E3 /* FRCategories */ = {
 			isa = PBXGroup;
 			children = (
+				1350EA6C1B99C0FB00516184 /* Button */,
 				3266ED511B9549C700C8D8E3 /* ActionSheet */,
 				3266ED541B9549C700C8D8E3 /* AlertView */,
 				3266ED571B9549C700C8D8E3 /* Array */,
@@ -421,8 +434,8 @@
 		3266ED6D1B9549C700C8D8E3 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
-				3266ED6E1B9549C700C8D8E3 /* UIImageView+FRFaceAwareFill.h */,
-				3266ED6F1B9549C700C8D8E3 /* UIImageView+FRFaceAwareFill.m */,
+				1350EA691B99B7DE00516184 /* UIImageView+FRUtils.h */,
+				1350EA6A1B99B7DE00516184 /* UIImageView+FRUtils.m */,
 			);
 			path = ImageView;
 			sourceTree = "<group>";
@@ -751,8 +764,8 @@
 				3266EDC51B9549C700C8D8E3 /* NSObject+FRBlock.m in Sources */,
 				3266EDC11B9549C700C8D8E3 /* UIImage+FRCrop.m in Sources */,
 				3266EDBF1B9549C700C8D8E3 /* NSNull+FRUtils.m in Sources */,
-				3266EDC31B9549C700C8D8E3 /* UIImageView+FRFaceAwareFill.m in Sources */,
 				3266EDC61B9549C700C8D8E3 /* NSString+FRAttributedString.m in Sources */,
+				1350EA6F1B99C11700516184 /* UIButton+FRUtils.m in Sources */,
 				3266ED191B9547AD00C8D8E3 /* AppDelegate.m in Sources */,
 				3266EDB31B9549C700C8D8E3 /* FRGridViewDemoViewController.m in Sources */,
 				3266EDC91B9549C700C8D8E3 /* UIView+FRImage.m in Sources */,
@@ -770,6 +783,7 @@
 				3266EDB71B9549C700C8D8E3 /* FRBannerView.m in Sources */,
 				3266EDB11B9549C700C8D8E3 /* FRFRBannerViewDemoViewController.m in Sources */,
 				3266EDCF1B9549C700C8D8E3 /* FRDemoTableViewController.m in Sources */,
+				1350EA6B1B99B7DE00516184 /* UIImageView+FRUtils.m in Sources */,
 				3266EDC21B9549C700C8D8E3 /* UIImage+FRTint.m in Sources */,
 				3266EDB01B9549C700C8D8E3 /* FRChatViewControllerDemoViewController.m in Sources */,
 				3266EDDC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m in Sources */,

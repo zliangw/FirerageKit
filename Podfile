@@ -1,9 +1,9 @@
 platform :ios, '7.0.0'
 
 target :Firerage do
-   pod 'SDWebImage', '~> 3.7.3'
-   pod 'MJExtension', '~> 2.5.8'
-   pod 'MJRefresh', '~> 2.4.7'
+   pod 'SDWebImage', '~> 3.7.2'
+   pod 'MJExtension', '~> 2.1.0'
+   pod 'MJRefresh', '~> 1.4.6'
    pod 'DAKeyboardControl'
    pod 'AKSegmentedControl'
    pod 'UIColor+MLPFlatColors', '~> 1.0'
@@ -13,5 +13,5 @@ target :Firerage do
    pod 'HPGrowingTextView', :podspec => './PodsSpecs/HPGrowingTextView.podspec'
    pod 'MBProgressHUD', :podspec => './PodsSpecs/MBProgressHUD.podspec'
    pod 'UIBubbleTableView', :podspec => './PodsSpecs/UIBubbleTableView.podspec'
-   pod 'AFNetworking', '~> 2.6.0'
+   pod 'AFNetworking', '~> 2.5.4'
 end

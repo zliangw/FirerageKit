@@ -59,7 +59,7 @@ install_resource()
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "BButton/BButton/resources/FontAwesome.ttf"
-  install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "MJRefresh/MJRefreshExample/MJRefreshExample/MJRefresh/MJRefresh.bundle"
   install_resource "NavigationMenu/NavigationMenu/NavigationMenuView/images/arrow_down@2x.png"
   install_resource "UIBubbleTableView/images/bubbleMine@2x.png"
   install_resource "UIBubbleTableView/images/bubbleNew@2x.png"
@@ -70,7 +70,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "BButton/BButton/resources/FontAwesome.ttf"
-  install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "MJRefresh/MJRefreshExample/MJRefreshExample/MJRefresh/MJRefresh.bundle"
   install_resource "NavigationMenu/NavigationMenu/NavigationMenuView/images/arrow_down@2x.png"
   install_resource "UIBubbleTableView/images/bubbleMine@2x.png"
   install_resource "UIBubbleTableView/images/bubbleNew@2x.png"
