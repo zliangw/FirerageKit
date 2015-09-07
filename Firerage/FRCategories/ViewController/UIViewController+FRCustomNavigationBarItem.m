@@ -55,8 +55,13 @@ static const void *FRBackBarButtonItemTitleKey = &FRBackBarButtonItemTitleKey;
     
     [rBtn setImage:nImage forState:UIControlStateNormal];
     [rBtn setImage:hImage forState:UIControlStateHighlighted];
+    
+    CGFloat rBtnWidth = titleSize.width + imageSize.width;
+    if (rBtnWidth < 30) {
+        rBtnWidth = 30;
+    }
 
-    rBtn.frame = CGRectMake(0, 0, titleSize.width + imageSize.width + 22, MAX(titleSize.height, imageSize.height));
+    rBtn.frame = CGRectMake(0, 0, rBtnWidth, MAX(titleSize.height, imageSize.height));
     
     [rBtn addTarget:self action:selctor forControlEvents:UIControlEventTouchUpInside];
     
@@ -87,7 +92,12 @@ static const void *FRBackBarButtonItemTitleKey = &FRBackBarButtonItemTitleKey;
     [rBtn setImage:nImage forState:UIControlStateNormal];
     [rBtn setImage:hImage forState:UIControlStateHighlighted];
     
-    rBtn.frame = CGRectMake(0, 0, titleSize.width + imageSize.width + 22, MAX(titleSize.height, imageSize.height));
+    CGFloat rBtnWidth = titleSize.width + imageSize.width;
+    if (rBtnWidth < 30) {
+        rBtnWidth = 30;
+    }
+    
+    rBtn.frame = CGRectMake(0, 0, rBtnWidth, MAX(titleSize.height, imageSize.height));
     
     [rBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^(id sender) {
         if (btnClicked) {
