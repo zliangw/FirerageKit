@@ -17,4 +17,19 @@
     return[scan scanInt:&val] && [scan isAtEnd];
 }
 
+- (BOOL)isHanYu
+{
+    BOOL isHanYu = NO;
+    
+    for (NSInteger index = 0; index < self.length; index++) {
+        unichar c = [self characterAtIndex:index];
+        if (c >= 0x4E00 && c <= 0x9FFF) {
+            isHanYu = YES;
+            break;
+        }
+    }
+    
+    return isHanYu;
+}
+
 @end

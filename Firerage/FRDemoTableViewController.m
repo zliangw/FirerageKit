@@ -14,6 +14,7 @@
 #import "UIImage+FRColor.h"
 #import "UIControl+FRUtils.h"
 #import "UIImageView+FRUtils.h"
+#import "NSString+Utils.h"
 
 @interface FRDemoTableViewController ()
 
@@ -57,10 +58,14 @@
 //        }
 //    }];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
-    [self.view addSubview:imageView];
-//    imageView.image = [UIImage imageWithColor:[UIColor grayColor]];
-    [imageView setImageWithURLString:@"http://www.huabian.com/uploadfile/2014/1229/20141229044200228.jpg" placeholderImage:[UIImage imageWithColor:[UIColor grayColor]]];
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+//    [self.view addSubview:imageView];
+////    imageView.image = [UIImage imageWithColor:[UIColor grayColor]];
+//    [imageView setImageWithURLString:@"http://www.huabian.com/uploadfile/2014/1229/20141229044200228.jpg" placeholderImage:[UIImage imageWithColor:[UIColor grayColor]]];
+    
+//    BOOL isHanYu = [@"12s#@我sdf" isHanYu];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

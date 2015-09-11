@@ -17,4 +17,11 @@
  */
 - (BOOL)isPureInt;
 
+/**
+ *  是否是汉字
+ *
+ *  @return jude result
+ */
+- (BOOL)isHanYu;
+
 @end
