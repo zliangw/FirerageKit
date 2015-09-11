@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Winfires. All rights reserved.
 //
 
-#import "NSString+Utils.h"
+#import "NSString+FRUtils.h"
 
 @implementation NSString (Utils)
 

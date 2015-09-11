@@ -39,7 +39,7 @@
 		3266EDC51B9549C700C8D8E3 /* NSObject+FRBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED751B9549C700C8D8E3 /* NSObject+FRBlock.m */; };
 		3266EDC61B9549C700C8D8E3 /* NSString+FRAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED781B9549C700C8D8E3 /* NSString+FRAttributedString.m */; };
 		3266EDC71B9549C700C8D8E3 /* NSString+FRSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED7A1B9549C700C8D8E3 /* NSString+FRSize.m */; };
-		3266EDC81B9549C700C8D8E3 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED7C1B9549C700C8D8E3 /* NSString+Utils.m */; };
+		3266EDC81B9549C700C8D8E3 /* NSString+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED7C1B9549C700C8D8E3 /* NSString+FRUtils.m */; };
 		3266EDC91B9549C700C8D8E3 /* UIView+FRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED7F1B9549C700C8D8E3 /* UIView+FRImage.m */; };
 		3266EDCA1B9549C700C8D8E3 /* UIView+FRLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED811B9549C700C8D8E3 /* UIView+FRLayout.m */; };
 		3266EDCB1B9549C700C8D8E3 /* UIView+FRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED831B9549C700C8D8E3 /* UIView+FRProgressHUD.m */; };
@@ -139,8 +139,8 @@
 		3266ED781B9549C700C8D8E3 /* NSString+FRAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRAttributedString.m"; sourceTree = "<group>"; };
 		3266ED791B9549C700C8D8E3 /* NSString+FRSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FRSize.h"; sourceTree = "<group>"; };
 		3266ED7A1B9549C700C8D8E3 /* NSString+FRSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRSize.m"; sourceTree = "<group>"; };
-		3266ED7B1B9549C700C8D8E3 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
-		3266ED7C1B9549C700C8D8E3 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		3266ED7B1B9549C700C8D8E3 /* NSString+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FRUtils.h"; sourceTree = "<group>"; };
+		3266ED7C1B9549C700C8D8E3 /* NSString+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRUtils.m"; sourceTree = "<group>"; };
 		3266ED7E1B9549C700C8D8E3 /* UIView+FRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRImage.h"; sourceTree = "<group>"; };
 		3266ED7F1B9549C700C8D8E3 /* UIView+FRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FRImage.m"; sourceTree = "<group>"; };
 		3266ED801B9549C700C8D8E3 /* UIView+FRLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FRLayout.h"; sourceTree = "<group>"; };
@@ -465,8 +465,8 @@
 				3266ED781B9549C700C8D8E3 /* NSString+FRAttributedString.m */,
 				3266ED791B9549C700C8D8E3 /* NSString+FRSize.h */,
 				3266ED7A1B9549C700C8D8E3 /* NSString+FRSize.m */,
-				3266ED7B1B9549C700C8D8E3 /* NSString+Utils.h */,
-				3266ED7C1B9549C700C8D8E3 /* NSString+Utils.m */,
+				3266ED7B1B9549C700C8D8E3 /* NSString+FRUtils.h */,
+				3266ED7C1B9549C700C8D8E3 /* NSString+FRUtils.m */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -807,7 +807,7 @@
 				3266EDB61B9549C700C8D8E3 /* FRBannerItem.m in Sources */,
 				3266EDC41B9549C700C8D8E3 /* UILabel+FRUtils.m in Sources */,
 				3266ED161B9547AD00C8D8E3 /* main.m in Sources */,
-				3266EDC81B9549C700C8D8E3 /* NSString+Utils.m in Sources */,
+				3266EDC81B9549C700C8D8E3 /* NSString+FRUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

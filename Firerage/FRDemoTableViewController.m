@@ -14,7 +14,7 @@
 #import "UIImage+FRColor.h"
 #import "UIControl+FRUtils.h"
 #import "UIImageView+FRUtils.h"
-#import "NSString+Utils.h"
+#import "NSString+FRUtils.h"
 
 @interface FRDemoTableViewController ()
 
