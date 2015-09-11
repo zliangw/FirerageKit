@@ -42,25 +42,25 @@
     
 //    [[NSDate date] isLastYear];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 200, 300);
-    [self.view addSubview:btn];
-    [btn setImage:[UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(200, 300) andRoundSize:0] forState:UIControlStateNormal];
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    btn.frame = CGRectMake(0, 0, 200, 300);
+//    [self.view addSubview:btn];
+//    [btn setImage:[UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(200, 300) andRoundSize:0] forState:UIControlStateNormal];
+//    
+//    [btn handleControlEvent:UIControlEventTouchUpInside withBlock:^(id sender) {
+//        for (NSInteger i = 0; i < 5; i++) {
+//            if (i % 2 == 0) {
+//                [btn setImageWithURLString:@"http://e.hiphotos.baidu.com/baike/w%3D268/sign=a81bc317caef76093c0b9e9916dfa301/95eef01f3a292df544116b9fbd315c6035a8736e.jpg" placeholderImage:[UIImage imageWithColor:[UIColor yellowColor]] forState:UIControlStateNormal];
+//            } else {
+//                [btn setImageWithURLString:@"http://e.hiphotos.baidu.com/baike/w%3D268/sign=a81bc317caef76093c0b9e9916dfa301/95eef01f3a292df544116b9fbd315c6035a8736e.jpg" placeholderImage:[UIImage imageWithColor:[UIColor yellowColor]] forState:UIControlStateNormal];
+//            }
+//        }
+//    }];
     
-    [btn handleControlEvent:UIControlEventTouchUpInside withBlock:^(id sender) {
-        for (NSInteger i = 0; i < 5; i++) {
-            if (i % 2 == 0) {
-                [btn setImageWithURL:[NSURL URLWithString:@"http://www.gouzd.com/images/5159-37.jpg"] placeholderImage:[UIImage imageWithColor:[UIColor yellowColor]] forState:UIControlStateNormal];
-            } else {
-                [btn setImageWithURL:[NSURL URLWithString:@"http://www.huabian.com/uploadfile/2014/1229/20141229044200228.jpg"] placeholderImage:[UIImage imageWithColor:[UIColor yellowColor]] forState:UIControlStateNormal];
-            }
-        }
-    }];
-    
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
-//    [self.view addSubview:imageView];
-////    imageView.image = [UIImage imageWithColor:[UIColor grayColor]];
-//    [imageView setImageWithURL:[NSURL URLWithString:@"http://www.huabian.com/uploadfile/2014/1229/20141229044200228.jpg"] placeholderImage:[UIImage imageWithColor:[UIColor grayColor]]];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+    [self.view addSubview:imageView];
+//    imageView.image = [UIImage imageWithColor:[UIColor grayColor]];
+    [imageView setImageWithURLString:@"http://www.huabian.com/uploadfile/2014/1229/20141229044200228.jpg" placeholderImage:[UIImage imageWithColor:[UIColor grayColor]]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -43,14 +43,15 @@
     return CGSizeMake(CGRectGetWidth(self.frame) * [UIScreen mainScreen].scale, CGRectGetHeight(self.frame) * [UIScreen mainScreen].scale);
 }
 
-- (NSString *)cacheKeyWithURL:(NSURL *)url faceAwareFilled:(BOOL)faceAwareFilled
+- (NSString *)cacheKeyWithURLString:(NSString *)URLString faceAwareFilled:(BOOL)faceAwareFilled
 {
-    NSString *cacheKey = [NSString stringWithFormat:@"%@faceAwareFilled%d%@", url.absoluteString, faceAwareFilled, NSStringFromCGSize([self cropSize])];
+    NSString *cacheKey = [NSString stringWithFormat:@"%@faceAwareFilled%d%@", URLString, faceAwareFilled, NSStringFromCGSize([self cropSize])];
     return cacheKey;
 }
 
-- (void)loadImageWithURL:(NSURL *)url faceAwareFilled:(BOOL)faceAwareFilled completion:(FRImageLoadedCompletion)completion
+- (void)loadImageWithURLString:(NSString *)URLString faceAwareFilled:(BOOL)faceAwareFilled completion:(FRImageLoadedCompletion)completion
 {
+    NSURL *url = [NSURL URLWithString:URLString];
     __weak UIImageView *wself = self;
     id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:url options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         if (!wself) return;
@@ -58,7 +59,7 @@
             __strong UIImageView *sself = wself;
             if (!sself) return;
             if (image) {
-                NSString *cacheKey = [self cacheKeyWithURL:url faceAwareFilled:faceAwareFilled];
+                NSString *cacheKey = [self cacheKeyWithURLString:URLString faceAwareFilled:faceAwareFilled];
                 if (faceAwareFilled) {
                     [image faceAwareFillWithSize:[sself cropSize] cropType:FRCropTopType block:^(UIImage *faceAwareFilledImage) {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -88,12 +89,12 @@
     [self sd_setImageLoadOperation:operation];
 }
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder faceAwareFilled:(BOOL)faceAwareFilled completion:(FRImageLoadedCompletion)completion
+- (void)setImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder faceAwareFilled:(BOOL)faceAwareFilled completion:(FRImageLoadedCompletion)completion
 {
     [self setCurrentImage:placeholder];
     [self cancelImageLoad];
     
-    if (!url) {
+    if (URLString.length == 0) {
         dispatch_main_async_safe(^{
             NSError *error = [NSError errorWithDomain:@"SDWebImageErrorDomain" code:-1 userInfo:@{NSLocalizedDescriptionKey : @"Trying to load a nil url"}];
             if (completion) {
@@ -104,7 +105,7 @@
         return;
     }
     
-    NSString *cacheKey = [self cacheKeyWithURL:url faceAwareFilled:faceAwareFilled];
+    NSString *cacheKey = [self cacheKeyWithURLString:URLString faceAwareFilled:faceAwareFilled];
     __weak UIImageView *wself = self;
     
     [[SDImageCache sharedImageCache] queryDiskCacheForKey:cacheKey done:^(UIImage *image, SDImageCacheType cacheType) {
@@ -114,7 +115,7 @@
                 completion(image, nil);
             }
         } else {
-            [wself loadImageWithURL:url faceAwareFilled:faceAwareFilled completion:completion];
+            [wself loadImageWithURLString:URLString faceAwareFilled:faceAwareFilled completion:completion];
         }
     }];
 }
@@ -122,24 +123,24 @@
 #pragma mark -
 #pragma mark - Member Methods
 
-- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder
+- (void)setFaceAwareFilledImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder
 {
-    [self setFaceAwareFilledImageWithURL:url placeholderImage:placeholder completion:nil];
+    [self setFaceAwareFilledImageWithURLString:URLString placeholderImage:placeholder completion:nil];
 }
 
-- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion
+- (void)setFaceAwareFilledImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion
 {
-    [self setImageWithURL:url placeholderImage:placeholder faceAwareFilled:YES completion:completion];
+    [self setImageWithURLString:URLString placeholderImage:placeholder faceAwareFilled:YES completion:completion];
 }
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder
+- (void)setImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder
 {
-    [self setImageWithURL:url placeholderImage:placeholder completion:nil];
+    [self setImageWithURLString:URLString placeholderImage:placeholder completion:nil];
 }
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion
+- (void)setImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion
 {
-    [self setImageWithURL:url placeholderImage:placeholder faceAwareFilled:NO completion:completion];
+    [self setImageWithURLString:URLString placeholderImage:placeholder faceAwareFilled:NO completion:completion];
 }
 
 @end

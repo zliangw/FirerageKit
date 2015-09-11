@@ -12,20 +12,20 @@ typedef void(^FRImageDownLoadCompletion)(UIImage *image, NSError *error);
 
 @interface UIButton (FRUtils)
 
-- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
+- (void)setFaceAwareFilledImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
 
-- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
+- (void)setFaceAwareFilledImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
+- (void)setImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
+- (void)setImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
 
-- (void)setFaceAwareFilledBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
+- (void)setFaceAwareFilledBackgroundImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
 
-- (void)setFaceAwareFilledBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
+- (void)setFaceAwareFilledBackgroundImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
 
-- (void)setBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
+- (void)setBackgroundImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state;
 
-- (void)setBackgroundImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
+- (void)setBackgroundImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder forState:(UIControlState)state completion:(FRImageDownLoadCompletion)completion;
 
 @end

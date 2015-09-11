@@ -12,12 +12,12 @@ typedef void(^FRImageLoadedCompletion)(UIImage *image, NSError *error);
 
 @interface UIImageView (FRUtils)
 
-- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;
+- (void)setFaceAwareFilledImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder;
 
-- (void)setFaceAwareFilledImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion;
+- (void)setFaceAwareFilledImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion;
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;
+- (void)setImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder;
 
-- (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion;
+- (void)setImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholder completion:(FRImageLoadedCompletion)completion;
 
 @end
