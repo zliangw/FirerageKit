@@ -149,8 +149,6 @@
     [super reloadData];
 }
 
-#pragma mark - UITableViewDelegate implementation
-
 #pragma mark - UITableViewDataSource implementation
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -231,6 +229,13 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate implementation
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 #pragma mark -
 #pragma mark - UIScrollViewDelegate
 
@@ -246,12 +251,12 @@
 
 - (void)scrollsToBottomAnimated:(BOOL)animated
 {
-    int sectionCount = [self.bubbleSection count];
+    NSInteger sectionCount = [self.bubbleSection count];
     if (sectionCount == 0) {
         return;
     }
     
-    int row = 0;
+    NSInteger row = 0;
     if (self.typingBubble != NSBubbleTypingTypeNobody) {
         sectionCount++;
         row = 0;

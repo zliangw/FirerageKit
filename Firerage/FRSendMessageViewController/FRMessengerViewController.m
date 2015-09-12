@@ -79,7 +79,7 @@ static const CGFloat FRInputViewHeight = 44;
         make.right.equalTo(superView);
     }];
     
-    _messageInputView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.view.bounds) - 8.5, _inputContainerView.bounds.size.height)];
+    _messageInputView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(4.8, 5, CGRectGetWidth(self.view.bounds) - 8.5, _inputContainerView.bounds.size.height)];
     _messageInputView.contentInset = UIEdgeInsetsMake(0, 5, 0, 5);
     _messageInputView.minNumberOfLines = 1;
     _messageInputView.maxNumberOfLines = 2;
@@ -106,6 +106,9 @@ static const CGFloat FRInputViewHeight = 44;
     // Do any additional setup after loading the view.
     
     self.view.keyboardTriggerOffset = _inputContainerView.bounds.size.height;
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewDidTapped:)];
+    
     __weak typeof(self) weakSelf = self;
     [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView, BOOL opening, BOOL closing) {
         if (opening) {
@@ -113,14 +116,17 @@ static const CGFloat FRInputViewHeight = 44;
             [weakSelf.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(weakSelf.contentView.superview).with.insets(padding);
             }];
+            
+            [weakSelf.contentView addGestureRecognizer:tapGestureRecognizer];
         } else if (closing) {
             [weakSelf.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.edges.equalTo(weakSelf.contentView.superview);
-            }];;
+            }];
+            
+            [weakSelf.contentView removeGestureRecognizer:tapGestureRecognizer];
         }
         [UIView animateWithDuration:1.0 animations:^{
             [weakSelf.view layoutIfNeeded];
-        } completion:^(BOOL finished) {
             if (opening) {
                 if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(messengerViewControllerDidBeginInputting:)]) {
                     [weakSelf.delegate messengerViewControllerDidBeginInputting:weakSelf];
@@ -207,6 +213,13 @@ static const CGFloat FRInputViewHeight = 44;
 - (void)doneBtnDidPressed:(id)sender
 {
     [self sendMessage:_messageInputView.text];
+}
+
+- (void)contentViewDidTapped:(UITapGestureRecognizer *)tapGestureRecognizer
+{
+    if (self.inputting) {
+        [self resignInputViewFirstResponder];
+    }
 }
 
 #pragma mark - HPGrowingTextViewDelegate
