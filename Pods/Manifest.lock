@@ -25,6 +25,7 @@ PODS:
   - DAKeyboardControl (2.4.0)
   - GCPlaceholderTextView (0.0.1)
   - HPGrowingTextView (0.0.1)
+  - Masonry (0.6.1)
   - MBProgressHUD (0.8)
   - MJExtension (2.1.0)
   - MJRefresh (1.4.6)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - DAKeyboardControl
   - GCPlaceholderTextView (from `./PodsSpecs/GCPlaceholderTextView.podspec`)
   - HPGrowingTextView (from `./PodsSpecs/HPGrowingTextView.podspec`)
+  - Masonry (~> 0.6.1)
   - MBProgressHUD (from `./PodsSpecs/MBProgressHUD.podspec`)
   - MJExtension (~> 2.1.0)
   - MJRefresh (~> 1.4.6)
@@ -71,6 +73,7 @@ SPEC CHECKSUMS:
   DAKeyboardControl: 9d9bca22a5cc3c1d3cc61e24fbd208c3e84a3d2d
   GCPlaceholderTextView: 010cd97274018d3e53ddc705f3983ce255ff7fc8
   HPGrowingTextView: b8b2a18dad3d88ff8ee810182ea6737a3b3b122d
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   MBProgressHUD: a9cd9d4f1ec40a973cc475236010f7c4659e14aa
   MJExtension: d4fd481247b262b59cf8cdf5815661cff460aaa2
   MJRefresh: 2eaa3fd8f67fbb86497840fb0167446f7eb61dc7

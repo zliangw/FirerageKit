@@ -1,19 +1,19 @@
 //
-//  FRSendMessageTableViewController.h
+//  FRChatViewController.h
 //  FirerageKit
 //
 //  Created by Aidian.Tang on 14-5-21.
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import "FRSendMessageViewController.h"
+#import "FRMessengerViewController.h"
 #import "UIBubbleTableView.h"
 
 @protocol FRChatViewControllerDelegate;
 
-@interface FRChatViewController : FRSendMessageViewController
+@interface FRChatViewController : FRMessengerViewController
 
-@property (nonatomic, weak) IBOutlet id<FRChatViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<FRChatViewControllerDelegate> chatDelegate;
 @property (strong, nonatomic, readonly) UIBubbleTableView *bubbleTable;
 @property (nonatomic, strong) NSArray *bubbleDatas;
 

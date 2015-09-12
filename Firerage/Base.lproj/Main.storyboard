@@ -88,6 +88,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="KuA-xw-v69" kind="show" id="4p7-Ae-hfd"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="i06-OI-qAQ">
                                         <rect key="frame" x="0.0" y="240" width="320" height="44"/>
@@ -96,7 +99,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FRSendMessageDemo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-0H-dUu">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FRMessengerDemo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-0H-dUu">
                                                     <rect key="frame" x="20" y="11" width="177" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -136,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80X-lP-hdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="107"/>
+            <point key="canvasLocation" x="-1086" y="91"/>
         </scene>
         <!--FRBannerViewDemo-->
         <scene sceneID="gVA-IE-GCF">
@@ -166,6 +169,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yq7-2a-XY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073" y="139"/>
+        </scene>
+        <!--Chat View Controller Demo View Controller-->
+        <scene sceneID="uGI-8t-ZDu">
+            <objects>
+                <viewController id="KuA-xw-v69" customClass="FRChatViewControllerDemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m3Z-f2-b0R"/>
+                        <viewControllerLayoutGuide type="bottom" id="vkH-7L-EwL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4k9-ql-qo0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3X-hP-fXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662" y="3417"/>
         </scene>
         <!--FRBootstrapButtonDemo-->
         <scene sceneID="ynL-40-Lpf">
@@ -218,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76m-1p-mEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="3014"/>
+            <point key="canvasLocation" x="990" y="2590"/>
         </scene>
         <!--FRNavigationMenuDemo-->
         <scene sceneID="cXT-JH-Pdd">
@@ -237,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCo-a9-kgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="892"/>
+            <point key="canvasLocation" x="1129" y="1188"/>
         </scene>
         <!--FRGridViewDemo-->
         <scene sceneID="Oa4-g0-wbo">
@@ -285,7 +306,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kw-Cc-8nD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-596" y="147"/>
+            <point key="canvasLocation" x="-1996" y="91"/>
         </scene>
     </scenes>
 </document>

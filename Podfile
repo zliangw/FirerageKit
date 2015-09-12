@@ -14,4 +14,5 @@ target :Firerage do
    pod 'MBProgressHUD', :podspec => './PodsSpecs/MBProgressHUD.podspec'
    pod 'UIBubbleTableView', :podspec => './PodsSpecs/UIBubbleTableView.podspec'
    pod 'AFNetworking', '~> 2.5.4'
+   pod 'Masonry', '~> 0.6.1'
 end

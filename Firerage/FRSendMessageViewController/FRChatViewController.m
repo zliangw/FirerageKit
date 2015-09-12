@@ -1,5 +1,5 @@
 //
-//  FRSendMessageTableViewController.m
+//  FRChatViewController.m
 //  FirerageKit
 //
 //  Created by Aidian.Tang on 14-5-21.
@@ -11,7 +11,7 @@
 #import "UIBubbleTableViewDelegate.h"
 #import "UIView+FRLayout.h"
 
-@interface FRChatViewController () <UIBubbleTableViewDataSource, UIBubbleTableViewDelegate, FRSendMessageViewControllerDelegate>
+@interface FRChatViewController () <UIBubbleTableViewDataSource, UIBubbleTableViewDelegate, FRMessengerViewControllerDelegate>
 
 @property (strong, nonatomic, readwrite) UIBubbleTableView *bubbleTable;
 
@@ -24,8 +24,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
-        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
@@ -39,12 +37,12 @@
 {
     [super loadView];
     
-    CGFloat inputHeight = 44;
     if (!self.bubbleTable) {
-        self.bubbleTable = [[UIBubbleTableView alloc] initWithFrame:[self mainBoundsMinusHeight:inputHeight] style:UITableViewStylePlain];
-        [self.view addSubview:_bubbleTable];
+        //self.navigationController.navigationBar.frame.size.height
+        self.bubbleTable = [[UIBubbleTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        self.bubbleTable.contentInset = UIEdgeInsetsMake(self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height, 0.0f, 0.0f, 0.0f);
         self.messageContentView = _bubbleTable;
-        self.sendMessageDelegate = self;
+        super.delegate = self;
     }
     
 }
@@ -60,7 +58,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
     self.view.backgroundColor = [UIColor whiteColor];
     
     _bubbleTable.bubbleDataSource = self;
@@ -80,22 +77,15 @@
 #pragma mark -
 #pragma mark - Setters
 
-- (void)setBubbleData:(NSMutableArray *)bubbleData
+- (void)setBubbleDatas:(NSArray *)bubbleDatas
 {
-    _bubbleDatas = bubbleData;
+    _bubbleDatas = bubbleDatas;
     [_bubbleTable reloadData];
 }
 
 #pragma mark -
 #pragma mark - Private Methods
 
-- (CGRect)mainBoundsMinusHeight:(CGFloat)minus
-{
-    CGFloat navigationBarHeight = self.navigationController.navigationBarHidden ? 0 : self.navigationController.navigationBar.bounds.size.height;
-    CGFloat tabBarHeight = self.hidesBottomBarWhenPushed ? 0 : self.tabBarController.tabBar.bounds.size.height;
-    CGFloat bottomToolbarHeight = self.navigationController.toolbarHidden ? 0 : self.navigationController.toolbar.bounds.size.height;
-    return CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - [[UIApplication sharedApplication] statusBarFrame].size.height - navigationBarHeight - tabBarHeight - bottomToolbarHeight - minus);
-}
 
 #pragma mark - UIBubbleTableViewDataSource implementation
 
@@ -120,19 +110,19 @@
 }
 
 #pragma mark -
-#pragma mark - FRSendMessageViewControllerDelegate
+#pragma mark - FRMessengerViewControllerDelegate
 
-- (void)sendMessageViewController:(FRSendMessageViewController *)sendMessageViewController didSentMessage:(NSString *)message
+- (void)messengerViewController:(FRMessengerViewController *)messengerViewController didSentMessage:(NSString *)message
 {
     
 }
 
-- (void)sendMessageViewControllerDidBeginInputting:(FRSendMessageViewController *)sendMessageViewController
+- (void)messengerViewControllerDidBeginInputting:(FRMessengerViewController *)messengerViewController
 {
     [_bubbleTable scrollsToBottomAnimated:NO];
 }
 
-- (void)sendMessageViewControllerDidEndInputting:(FRSendMessageViewController *)sendMessageViewController withMessage:(NSString *)message
+- (void)messengerViewControllerDidEndInputting:(FRMessengerViewController *)messengerViewController withMessage:(NSString *)message
 {
     
 }

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FRChatViewController.h"
 
-@interface FRChatViewControllerDemoViewController : UIViewController
+@interface FRChatViewControllerDemoViewController : FRChatViewController
 
 @end

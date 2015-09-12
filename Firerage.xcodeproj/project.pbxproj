@@ -57,7 +57,7 @@
 		3266EDD71B9549C700C8D8E3 /* FRPersistenceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA01B9549C700C8D8E3 /* FRPersistenceUtils.m */; };
 		3266EDD81B9549C700C8D8E3 /* FRChatCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA31B9549C700C8D8E3 /* FRChatCacheManager.m */; };
 		3266EDD91B9549C700C8D8E3 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA51B9549C700C8D8E3 /* FRChatViewController.m */; };
-		3266EDDA1B9549C700C8D8E3 /* FRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA71B9549C700C8D8E3 /* FRSendMessageViewController.m */; };
+		3266EDDA1B9549C700C8D8E3 /* FRMessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA71B9549C700C8D8E3 /* FRMessengerViewController.m */; };
 		3266EDDB1B9549C700C8D8E3 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3266EDA91B9549C700C8D8E3 /* SendTextViewBkg@2x.png */; };
 		3266EDDC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m */; };
 		3266EDDD1B9549C700C8D8E3 /* FRTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAE1B9549C700C8D8E3 /* FRTextViewTableViewCell.m */; };
@@ -175,8 +175,8 @@
 		3266EDA31B9549C700C8D8E3 /* FRChatCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatCacheManager.m; sourceTree = "<group>"; };
 		3266EDA41B9549C700C8D8E3 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
 		3266EDA51B9549C700C8D8E3 /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewController.m; sourceTree = "<group>"; };
-		3266EDA61B9549C700C8D8E3 /* FRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRSendMessageViewController.h; sourceTree = "<group>"; };
-		3266EDA71B9549C700C8D8E3 /* FRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRSendMessageViewController.m; sourceTree = "<group>"; };
+		3266EDA61B9549C700C8D8E3 /* FRMessengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMessengerViewController.h; sourceTree = "<group>"; };
+		3266EDA71B9549C700C8D8E3 /* FRMessengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMessengerViewController.m; sourceTree = "<group>"; };
 		3266EDA91B9549C700C8D8E3 /* SendTextViewBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendTextViewBkg@2x.png"; sourceTree = "<group>"; };
 		3266EDAB1B9549C700C8D8E3 /* FRTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		3266EDAC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRTextFieldTableViewCell.m; sourceTree = "<group>"; };
@@ -548,8 +548,8 @@
 				3266EDA31B9549C700C8D8E3 /* FRChatCacheManager.m */,
 				3266EDA41B9549C700C8D8E3 /* FRChatViewController.h */,
 				3266EDA51B9549C700C8D8E3 /* FRChatViewController.m */,
-				3266EDA61B9549C700C8D8E3 /* FRSendMessageViewController.h */,
-				3266EDA71B9549C700C8D8E3 /* FRSendMessageViewController.m */,
+				3266EDA61B9549C700C8D8E3 /* FRMessengerViewController.h */,
+				3266EDA71B9549C700C8D8E3 /* FRMessengerViewController.m */,
 				3266EDA81B9549C700C8D8E3 /* Images */,
 			);
 			path = FRSendMessageViewController;
@@ -791,7 +791,7 @@
 				3266EDD01B9549C700C8D8E3 /* FRDevice.m in Sources */,
 				3266EDBA1B9549C700C8D8E3 /* UIAlertView+FRUtils.m in Sources */,
 				3266EDDD1B9549C700C8D8E3 /* FRTextViewTableViewCell.m in Sources */,
-				3266EDDA1B9549C700C8D8E3 /* FRSendMessageViewController.m in Sources */,
+				3266EDDA1B9549C700C8D8E3 /* FRMessengerViewController.m in Sources */,
 				3266EDD91B9549C700C8D8E3 /* FRChatViewController.m in Sources */,
 				3266EDD21B9549C700C8D8E3 /* FRGridItemIndexPath.m in Sources */,
 				3266EDB91B9549C700C8D8E3 /* UIActionSheet+FRUtils.m in Sources */,
@@ -940,6 +940,7 @@
 				INFOPLIST_FILE = Firerage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eee8ebb2-b9ea-4991-8acb-b84f3a68fe52";
 			};
 			name = Debug;
 		};
