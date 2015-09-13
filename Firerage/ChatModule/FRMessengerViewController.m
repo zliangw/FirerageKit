@@ -19,7 +19,7 @@ static const CGFloat FRInputViewHeight = 44;
 @property (nonatomic, strong) UIView *inputContainerView;
 @property (nonatomic, strong) HPGrowingTextView *messageInputView;
 @property (nonatomic, assign , readwrite) BOOL inputting;
-
+@property (nonatomic, assign) CGRect keyboardFrameInView;
 @property (nonatomic, strong) MASConstraint *contentViewConstraint;
 
 @end
@@ -64,40 +64,43 @@ static const CGFloat FRInputViewHeight = 44;
     }
     
     self.inputContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_messageContentView.frame), CGRectGetWidth(self.view.bounds), self.inputViewHeight)];
-    if (!_inputContainerColor) {
-        _inputContainerColor = [UIColor clearColor];
-    }
-    _inputContainerView.backgroundColor = _inputContainerColor;
+    _inputContainerView.backgroundColor = self.inputContainerColor;
     [self.contentView addSubview:_inputContainerView];
-    _inputContainerView.backgroundColor = [UIColor clearColor];
     
-    UIView *superView = self.contentView;
     [_inputContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(self.inputViewHeight));
-        make.left.equalTo(superView);
-        make.bottom.equalTo(superView);
-        make.right.equalTo(superView);
+        make.height.equalTo(@(CGRectGetHeight(self.inputContainerView.frame)));
+        make.left.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+        make.right.equalTo(self.contentView);
     }];
     
-    _messageInputView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(4.8, 5, CGRectGetWidth(self.view.bounds) - 8.5, _inputContainerView.bounds.size.height)];
-    _messageInputView.contentInset = UIEdgeInsetsMake(0, 5, 0, 5);
+    UIView *separatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _inputContainerView.frame.size.width, .5f)];
+    separatorView.backgroundColor = [UIColor lightGrayColor];
+    [_inputContainerView addSubview:separatorView];
+    [separatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(.5f));
+        make.left.equalTo(self.inputContainerView);
+        make.top.equalTo(self.inputContainerView);
+        make.right.equalTo(self.inputContainerView);
+    }];
+    
+    _messageInputView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.view.bounds) - 10, _inputContainerView.bounds.size.height - 10)];
+    _messageInputView.clipsToBounds = YES;
+    _messageInputView.contentInset = UIEdgeInsetsMake(5, 5, 0, 5);
     _messageInputView.minNumberOfLines = 1;
-    _messageInputView.maxNumberOfLines = 2;
+    _messageInputView.maxNumberOfLines = 5;
     _messageInputView.returnKeyType = UIReturnKeySend;
     _messageInputView.font = [UIFont systemFontOfSize:15.0f];
     _messageInputView.delegate = self;
     _messageInputView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
     _messageInputView.backgroundColor = [UIColor clearColor];
-    _messageInputView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _messageInputView.internalTextView.enablesReturnKeyAutomatically = YES;
+    _messageInputView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _messageInputView.layer.borderWidth = .5f;
+    _messageInputView.layer.cornerRadius = 5.f;
     
     [_inputContainerView addSubview:_messageInputView];
     _inputContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    
-    UIImageView *messageTextViewBg = [[UIImageView alloc] initWithFrame:CGRectMake(_messageInputView.frame.origin.x - 2, _messageInputView.frame.origin.y - 3, _messageInputView.frame.size.width + 2, _messageInputView.frame.size.height + 7)];
-    messageTextViewBg.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    [messageTextViewBg setImage:[[UIImage imageNamed:@"SendTextViewBkg.png"] stretchableImageWithLeftCapWidth:25 topCapHeight:15]];
-    [_inputContainerView insertSubview:messageTextViewBg belowSubview:_messageInputView];
 }
 
 - (void)viewDidLoad
@@ -111,6 +114,8 @@ static const CGFloat FRInputViewHeight = 44;
     
     __weak typeof(self) weakSelf = self;
     [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView, BOOL opening, BOOL closing) {
+        weakSelf.keyboardFrameInView = keyboardFrameInView;
+        
         if (opening) {
             UIEdgeInsets padding = UIEdgeInsetsMake(0, 0, keyboardFrameInView.size.height, 0);
             [weakSelf.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -233,9 +238,25 @@ static const CGFloat FRInputViewHeight = 44;
     r.origin.y += diff;
 	_inputContainerView.frame = r;
     
-    CGRect tableViewFrame = self.messageContentView.frame;
-    tableViewFrame.size.height = _inputContainerView.frame.origin.y;
-    self.messageContentView.frame = tableViewFrame;
+    [_inputContainerView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(CGRectGetHeight(self.inputContainerView.frame)));
+        make.left.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+        make.right.equalTo(self.contentView);
+    }];
+    
+    _messageContentView.frame = CGRectMake(_messageContentView.frame.origin.x, _messageContentView.frame.origin.y, _messageContentView.frame.size.width, _messageContentView.frame.size.height + diff);
+    UIEdgeInsets padding = UIEdgeInsetsMake(0, 0, CGRectGetHeight(_inputContainerView.frame), 0);
+    [_messageContentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView).with.insets(padding);
+    }];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        [self.view layoutIfNeeded];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(messengerViewControllerWillChangeInputViewHeight:)]) {
+            [self.delegate messengerViewControllerWillChangeInputViewHeight:self];
+        }
+    }];
 }
 
 - (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
@@ -246,6 +267,9 @@ static const CGFloat FRInputViewHeight = 44;
 
 - (void)growingTextViewDidBeginEditing:(HPGrowingTextView *)growingTextView
 {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messengerViewControllerDidBeginInputting:)]) {
+        [self.delegate messengerViewControllerDidBeginInputting:self];
+    }
     self.inputting = YES;
 }
 

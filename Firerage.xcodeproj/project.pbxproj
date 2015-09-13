@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1350EA6B1B99B7DE00516184 /* UIImageView+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1350EA6A1B99B7DE00516184 /* UIImageView+FRUtils.m */; };
 		1350EA6F1B99C11700516184 /* UIButton+FRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1350EA6E1B99C11700516184 /* UIButton+FRUtils.m */; };
+		138FFFFC1BA3D480004C9B4A /* FRChatCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 138FFFF51BA3D480004C9B4A /* FRChatCacheManager.m */; };
+		138FFFFD1BA3D480004C9B4A /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138FFFF71BA3D480004C9B4A /* FRChatViewController.m */; };
+		138FFFFE1BA3D480004C9B4A /* FRMessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138FFFF91BA3D480004C9B4A /* FRMessengerViewController.m */; };
 		1C38B6477425E0A0F4C02215 /* libPods-Firerage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBFCB769672F7D25DAA9096 /* libPods-Firerage.a */; };
 		3266ED161B9547AD00C8D8E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED151B9547AD00C8D8E3 /* main.m */; };
 		3266ED191B9547AD00C8D8E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED181B9547AD00C8D8E3 /* AppDelegate.m */; };
@@ -55,10 +58,6 @@
 		3266EDD51B9549C700C8D8E3 /* FRFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED9C1B9549C700C8D8E3 /* FRFileCache.m */; };
 		3266EDD61B9549C700C8D8E3 /* FRFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED9E1B9549C700C8D8E3 /* FRFileManager.m */; };
 		3266EDD71B9549C700C8D8E3 /* FRPersistenceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA01B9549C700C8D8E3 /* FRPersistenceUtils.m */; };
-		3266EDD81B9549C700C8D8E3 /* FRChatCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA31B9549C700C8D8E3 /* FRChatCacheManager.m */; };
-		3266EDD91B9549C700C8D8E3 /* FRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA51B9549C700C8D8E3 /* FRChatViewController.m */; };
-		3266EDDA1B9549C700C8D8E3 /* FRMessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA71B9549C700C8D8E3 /* FRMessengerViewController.m */; };
-		3266EDDB1B9549C700C8D8E3 /* SendTextViewBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3266EDA91B9549C700C8D8E3 /* SendTextViewBkg@2x.png */; };
 		3266EDDC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m */; };
 		3266EDDD1B9549C700C8D8E3 /* FRTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAE1B9549C700C8D8E3 /* FRTextViewTableViewCell.m */; };
 		3266EDF61B954E6F00C8D8E3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDF51B954E6F00C8D8E3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -81,6 +80,12 @@
 		1350EA6A1B99B7DE00516184 /* UIImageView+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FRUtils.m"; sourceTree = "<group>"; };
 		1350EA6D1B99C11700516184 /* UIButton+FRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FRUtils.h"; sourceTree = "<group>"; };
 		1350EA6E1B99C11700516184 /* UIButton+FRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FRUtils.m"; sourceTree = "<group>"; };
+		138FFFF41BA3D480004C9B4A /* FRChatCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatCacheManager.h; sourceTree = "<group>"; };
+		138FFFF51BA3D480004C9B4A /* FRChatCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatCacheManager.m; sourceTree = "<group>"; };
+		138FFFF61BA3D480004C9B4A /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
+		138FFFF71BA3D480004C9B4A /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewController.m; sourceTree = "<group>"; };
+		138FFFF81BA3D480004C9B4A /* FRMessengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMessengerViewController.h; sourceTree = "<group>"; };
+		138FFFF91BA3D480004C9B4A /* FRMessengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMessengerViewController.m; sourceTree = "<group>"; };
 		20891822A3CF209504405330 /* Pods-Firerage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firerage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Firerage/Pods-Firerage.release.xcconfig"; sourceTree = "<group>"; };
 		3266ED101B9547AD00C8D8E3 /* Firerage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firerage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3266ED141B9547AD00C8D8E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,13 +176,6 @@
 		3266ED9E1B9549C700C8D8E3 /* FRFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFileManager.m; sourceTree = "<group>"; };
 		3266ED9F1B9549C700C8D8E3 /* FRPersistenceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPersistenceUtils.h; sourceTree = "<group>"; };
 		3266EDA01B9549C700C8D8E3 /* FRPersistenceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPersistenceUtils.m; sourceTree = "<group>"; };
-		3266EDA21B9549C700C8D8E3 /* FRChatCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatCacheManager.h; sourceTree = "<group>"; };
-		3266EDA31B9549C700C8D8E3 /* FRChatCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatCacheManager.m; sourceTree = "<group>"; };
-		3266EDA41B9549C700C8D8E3 /* FRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRChatViewController.h; sourceTree = "<group>"; };
-		3266EDA51B9549C700C8D8E3 /* FRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRChatViewController.m; sourceTree = "<group>"; };
-		3266EDA61B9549C700C8D8E3 /* FRMessengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRMessengerViewController.h; sourceTree = "<group>"; };
-		3266EDA71B9549C700C8D8E3 /* FRMessengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRMessengerViewController.m; sourceTree = "<group>"; };
-		3266EDA91B9549C700C8D8E3 /* SendTextViewBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendTextViewBkg@2x.png"; sourceTree = "<group>"; };
 		3266EDAB1B9549C700C8D8E3 /* FRTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		3266EDAC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		3266EDAD1B9549C700C8D8E3 /* FRTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextViewTableViewCell.h; sourceTree = "<group>"; };
@@ -221,6 +219,19 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		138FFFF31BA3D480004C9B4A /* ChatModule */ = {
+			isa = PBXGroup;
+			children = (
+				138FFFF41BA3D480004C9B4A /* FRChatCacheManager.h */,
+				138FFFF51BA3D480004C9B4A /* FRChatCacheManager.m */,
+				138FFFF61BA3D480004C9B4A /* FRChatViewController.h */,
+				138FFFF71BA3D480004C9B4A /* FRChatViewController.m */,
+				138FFFF81BA3D480004C9B4A /* FRMessengerViewController.h */,
+				138FFFF91BA3D480004C9B4A /* FRMessengerViewController.m */,
+			);
+			path = ChatModule;
+			sourceTree = "<group>";
+		};
 		3266ED071B9547AD00C8D8E3 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +259,7 @@
 				3266ED181B9547AD00C8D8E3 /* AppDelegate.m */,
 				3266ED8B1B9549C700C8D8E3 /* FRDemoTableViewController.h */,
 				3266ED8C1B9549C700C8D8E3 /* FRDemoTableViewController.m */,
+				138FFFF31BA3D480004C9B4A /* ChatModule */,
 				3266EDF71B95549A00C8D8E3 /* NetworkingModule */,
 				3266ED391B9549C700C8D8E3 /* Demos */,
 				3266ED481B9549C700C8D8E3 /* FRBanner */,
@@ -257,7 +269,6 @@
 				3266ED901B9549C700C8D8E3 /* FRFlatSegmentedControl */,
 				3266ED931B9549C700C8D8E3 /* FRGridView */,
 				3266ED9A1B9549C700C8D8E3 /* FRPersistenceUtils */,
-				3266EDA11B9549C700C8D8E3 /* FRSendMessageViewController */,
 				3266EDAA1B9549C700C8D8E3 /* FRTableViewCell */,
 				3266ED131B9547AD00C8D8E3 /* Supporting Files */,
 			);
@@ -541,28 +552,6 @@
 			path = FRPersistenceUtils;
 			sourceTree = "<group>";
 		};
-		3266EDA11B9549C700C8D8E3 /* FRSendMessageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				3266EDA21B9549C700C8D8E3 /* FRChatCacheManager.h */,
-				3266EDA31B9549C700C8D8E3 /* FRChatCacheManager.m */,
-				3266EDA41B9549C700C8D8E3 /* FRChatViewController.h */,
-				3266EDA51B9549C700C8D8E3 /* FRChatViewController.m */,
-				3266EDA61B9549C700C8D8E3 /* FRMessengerViewController.h */,
-				3266EDA71B9549C700C8D8E3 /* FRMessengerViewController.m */,
-				3266EDA81B9549C700C8D8E3 /* Images */,
-			);
-			path = FRSendMessageViewController;
-			sourceTree = "<group>";
-		};
-		3266EDA81B9549C700C8D8E3 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				3266EDA91B9549C700C8D8E3 /* SendTextViewBkg@2x.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 		3266EDAA1B9549C700C8D8E3 /* FRTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,7 +693,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3266ED1F1B9547AD00C8D8E3 /* Main.storyboard in Resources */,
-				3266EDDB1B9549C700C8D8E3 /* SendTextViewBkg@2x.png in Resources */,
 				3266ED241B9547AD00C8D8E3 /* LaunchScreen.xib in Resources */,
 				3266ED211B9547AD00C8D8E3 /* Images.xcassets in Resources */,
 			);
@@ -757,6 +745,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138FFFFC1BA3D480004C9B4A /* FRChatCacheManager.m in Sources */,
 				3266EDCE1B9549C700C8D8E3 /* UIViewController+FRProgressHUD.m in Sources */,
 				3266EDB41B9549C700C8D8E3 /* FRNavigationMenuDemoViewController.m in Sources */,
 				3266EDCB1B9549C700C8D8E3 /* UIView+FRProgressHUD.m in Sources */,
@@ -766,6 +755,7 @@
 				3266EDBF1B9549C700C8D8E3 /* NSNull+FRUtils.m in Sources */,
 				3266EDC61B9549C700C8D8E3 /* NSString+FRAttributedString.m in Sources */,
 				1350EA6F1B99C11700516184 /* UIButton+FRUtils.m in Sources */,
+				138FFFFD1BA3D480004C9B4A /* FRChatViewController.m in Sources */,
 				3266ED191B9547AD00C8D8E3 /* AppDelegate.m in Sources */,
 				3266EDB31B9549C700C8D8E3 /* FRGridViewDemoViewController.m in Sources */,
 				3266EDC91B9549C700C8D8E3 /* UIView+FRImage.m in Sources */,
@@ -778,6 +768,7 @@
 				3266EDBE1B9549C700C8D8E3 /* NSDate+FRUtils.m in Sources */,
 				3266EDD11B9549C700C8D8E3 /* FRFlatSegmentedControl.m in Sources */,
 				3266EDD51B9549C700C8D8E3 /* FRFileCache.m in Sources */,
+				138FFFFE1BA3D480004C9B4A /* FRMessengerViewController.m in Sources */,
 				3266EDBD1B9549C700C8D8E3 /* UIControl+FRUtils.m in Sources */,
 				3266EE001B95549A00C8D8E3 /* FRHttpRequestUtils.m in Sources */,
 				3266EDB71B9549C700C8D8E3 /* FRBannerView.m in Sources */,
@@ -791,8 +782,6 @@
 				3266EDD01B9549C700C8D8E3 /* FRDevice.m in Sources */,
 				3266EDBA1B9549C700C8D8E3 /* UIAlertView+FRUtils.m in Sources */,
 				3266EDDD1B9549C700C8D8E3 /* FRTextViewTableViewCell.m in Sources */,
-				3266EDDA1B9549C700C8D8E3 /* FRMessengerViewController.m in Sources */,
-				3266EDD91B9549C700C8D8E3 /* FRChatViewController.m in Sources */,
 				3266EDD21B9549C700C8D8E3 /* FRGridItemIndexPath.m in Sources */,
 				3266EDB91B9549C700C8D8E3 /* UIActionSheet+FRUtils.m in Sources */,
 				3266EDB51B9549C700C8D8E3 /* FRUser.m in Sources */,
@@ -802,7 +791,6 @@
 				3266EDCC1B9549C700C8D8E3 /* UIView+FRTouchBlock.m in Sources */,
 				3266EDD61B9549C700C8D8E3 /* FRFileManager.m in Sources */,
 				3266EDBC1B9549C700C8D8E3 /* UIColor+FRUtils.m in Sources */,
-				3266EDD81B9549C700C8D8E3 /* FRChatCacheManager.m in Sources */,
 				3266EDD41B9549C700C8D8E3 /* FRGridViewItem.m in Sources */,
 				3266EDB61B9549C700C8D8E3 /* FRBannerItem.m in Sources */,
 				3266EDC41B9549C700C8D8E3 /* UILabel+FRUtils.m in Sources */,

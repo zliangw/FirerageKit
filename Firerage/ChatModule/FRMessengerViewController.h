@@ -31,5 +31,6 @@
 - (void)messengerViewController:(FRMessengerViewController *)messengerViewController didSentMessage:(NSString *)message;
 - (void)messengerViewControllerDidBeginInputting:(FRMessengerViewController *)messengerViewController;
 - (void)messengerViewControllerDidEndInputting:(FRMessengerViewController *)messengerViewController withMessage:(NSString *)message;
+- (void)messengerViewControllerWillChangeInputViewHeight:(FRMessengerViewController *)messengerViewController;
 
 @end

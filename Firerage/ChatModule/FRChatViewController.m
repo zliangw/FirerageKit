@@ -38,9 +38,12 @@
     [super loadView];
     
     if (!self.bubbleTable) {
-        //self.navigationController.navigationBar.frame.size.height
         self.bubbleTable = [[UIBubbleTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        self.bubbleTable.contentInset = UIEdgeInsetsMake(self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height, 0.0f, 0.0f, 0.0f);
+        if (self.edgesForExtendedLayout & UIRectEdgeTop) {
+            self.bubbleTable.contentInset = UIEdgeInsetsMake(self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height, 0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, 0.0f);
+        } else {
+            self.bubbleTable.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, 0.0f);
+        }
         self.messageContentView = _bubbleTable;
         super.delegate = self;
     }
@@ -125,6 +128,11 @@
 - (void)messengerViewControllerDidEndInputting:(FRMessengerViewController *)messengerViewController withMessage:(NSString *)message
 {
     
+}
+
+- (void)messengerViewControllerWillChangeInputViewHeight:(FRMessengerViewController *)messengerViewController
+{
+    [_bubbleTable scrollsToBottomAnimated:NO];
 }
 
 @end
