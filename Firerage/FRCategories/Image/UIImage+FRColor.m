@@ -7,7 +7,6 @@
 //
 
 #import "UIImage+FRColor.h"
-#import "UIColor+FRUtils.h"
 
 @implementation UIImage (FRColor)
 
@@ -75,7 +74,7 @@
     UInt8 alpha = rawData[byteIndex + 3];
     
     if (alpha) {
-        resultColor = [UIColor colorWith256Red:red green:green blue:blue alpha:alpha];
+        resultColor = [UIColor colorWithRed:red / 255. green:green / 255. blue:blue / 255. alpha:alpha];
     }
     
     free(rawData);
