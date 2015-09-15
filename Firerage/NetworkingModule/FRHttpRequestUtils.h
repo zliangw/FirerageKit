@@ -19,7 +19,17 @@ typedef void(^FRHttpRequestCompletion)(id JSON, NSError *error);
  *  @param parameters 请求参数
  *  @param completion 请求回调
  */
-+ (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(FRHttpRequestCompletion)completion;
++ (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters  completion:(FRHttpRequestCompletion)completion;
+
+/**
+ *  HTTP POST请求
+ *
+ *  @param path       请求路径
+ *  @param parameters 请求参数
+ *  @param header     请求头
+ *  @param completion 请求回调
+ */
++ (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters header:(NSDictionary *)header completion:(FRHttpRequestCompletion)completion;
 
 /**
  *  HTTPS POST请求
@@ -29,6 +39,16 @@ typedef void(^FRHttpRequestCompletion)(id JSON, NSError *error);
  *  @param completion 请求回调
  */
 + (void)postSecurelyWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(FRHttpRequestCompletion)completion;
+
+/**
+ *  HTTPS POST请求
+ *
+ *  @param path       请求路径
+ *  @param parameters 请求参数
+ *  @param header     请求头
+ *  @param completion 请求回调
+ */
++ (void)postSecurelyWithPath:(NSString *)path parameters:(NSDictionary *)parameters header:(NSDictionary *)header completion:(FRHttpRequestCompletion)completion;
 
 /**
  *  GET POST请求

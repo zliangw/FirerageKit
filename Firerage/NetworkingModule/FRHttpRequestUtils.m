@@ -43,7 +43,7 @@
     return [self getHttpURLStringWithPath:path error:error securityActived:YES];
 }
 
-+ (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters securityActived:(BOOL)securityActived completion:(FRHttpRequestCompletion)completion
++ (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters securityActived:(BOOL)securityActived header:(NSDictionary *)header completion:(FRHttpRequestCompletion)completion
 {
     NSError *error = nil;
     
@@ -62,6 +62,12 @@
         AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
         securityPolicy.allowInvalidCertificates = YES;
         manager.securityPolicy = securityPolicy;
+    }
+    
+    if (header) {
+        for (NSString *key in header.allKeys) {
+            [manager.requestSerializer setValue:[header objectForKey:key] forHTTPHeaderField:key];
+        }
     }
     
     [manager POST:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -131,12 +137,22 @@
 
 + (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(FRHttpRequestCompletion)completion
 {
-    [self postWithPath:path parameters:parameters securityActived:NO completion:completion];
+    [self postWithPath:path parameters:parameters securityActived:NO header:nil completion:completion];
+}
+
++ (void)postWithPath:(NSString *)path parameters:(NSDictionary *)parameters header:(NSDictionary *)header completion:(FRHttpRequestCompletion)completion
+{
+    [self postWithPath:path parameters:parameters securityActived:NO header:header completion:completion];
 }
 
 + (void)postSecurelyWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(FRHttpRequestCompletion)completion
 {
-    [self postWithPath:path parameters:parameters securityActived:YES completion:completion];
+    [self postWithPath:path parameters:parameters securityActived:YES header:nil completion:completion];
+}
+
++ (void)postSecurelyWithPath:(NSString *)path parameters:(NSDictionary *)parameters header:(NSDictionary *)header completion:(FRHttpRequestCompletion)completion
+{
+    [self postWithPath:path parameters:parameters securityActived:YES header:header completion:completion];
 }
 
 + (void)getWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(FRHttpRequestCompletion)completion
