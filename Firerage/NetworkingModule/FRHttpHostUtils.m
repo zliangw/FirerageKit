@@ -73,8 +73,8 @@ NSString *const ZAHttpHostErrorDomain = @"FRHttpHostErrorDomain";
     // 使用默认域名
     NSString *host = self.defaultHost;
     
-    // 默认域名不可用
-    if (![self pingHost:self.defaultHost]) {
+    // 默认域名不可用，且有备用域名
+    if (![self pingHost:self.defaultHost] && self.backupHosts.count > 0) {
         NSString *backupHost = [self filtOKHost];
         if (backupHost.length > 0) {
             host = backupHost;
