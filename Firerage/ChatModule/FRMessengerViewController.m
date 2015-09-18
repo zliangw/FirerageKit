@@ -17,6 +17,7 @@ static const CGFloat FRInputViewHeight = 44;
 
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UIView *inputContainerView;
+@property (nonatomic, strong) UIView *separatorView;
 @property (nonatomic, strong) HPGrowingTextView *messageInputView;
 @property (nonatomic, assign , readwrite) BOOL inputting;
 @property (nonatomic, assign) CGRect keyboardFrameInView;
@@ -25,6 +26,12 @@ static const CGFloat FRInputViewHeight = 44;
 @end
 
 @implementation FRMessengerViewController
+
+@synthesize inputContainerSeparatorColor = _inputContainerSeparatorColor;
+@synthesize inputViewBorderColor = _inputViewBorderColor;
+@synthesize inputViewFont = _inputViewFont;
+@synthesize inputViewTextColor = _inputViewTextColor;
+@synthesize inputViewPlaceholderColor = _inputViewPlaceholderColor;
 
 - (void)dealloc
 {
@@ -64,7 +71,7 @@ static const CGFloat FRInputViewHeight = 44;
     }
     
     self.inputContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_messageContentView.frame), CGRectGetWidth(self.view.bounds), self.inputViewHeight)];
-    _inputContainerView.backgroundColor = self.inputContainerColor;
+    _inputContainerView.backgroundColor = self.inputContainerBackgroundColor;
     [self.contentView addSubview:_inputContainerView];
     
     [_inputContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -75,7 +82,7 @@ static const CGFloat FRInputViewHeight = 44;
     }];
     
     UIView *separatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _inputContainerView.frame.size.width, .5f)];
-    separatorView.backgroundColor = [UIColor lightGrayColor];
+    separatorView.backgroundColor = self.inputContainerSeparatorColor;
     [_inputContainerView addSubview:separatorView];
     [separatorView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(.5f));
@@ -83,6 +90,7 @@ static const CGFloat FRInputViewHeight = 44;
         make.top.equalTo(self.inputContainerView);
         make.right.equalTo(self.inputContainerView);
     }];
+    self.separatorView = separatorView;
     
     _messageInputView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.view.bounds) - 10, _inputContainerView.bounds.size.height - 10)];
     _messageInputView.clipsToBounds = YES;
@@ -90,12 +98,13 @@ static const CGFloat FRInputViewHeight = 44;
     _messageInputView.minNumberOfLines = 1;
     _messageInputView.maxNumberOfLines = 5;
     _messageInputView.returnKeyType = UIReturnKeySend;
-    _messageInputView.font = [UIFont systemFontOfSize:15.0f];
+    _messageInputView.font = self.inputViewFont;
+    _messageInputView.textColor = self.inputViewTextColor;
     _messageInputView.delegate = self;
     _messageInputView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
     _messageInputView.backgroundColor = [UIColor clearColor];
     _messageInputView.internalTextView.enablesReturnKeyAutomatically = YES;
-    _messageInputView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _messageInputView.layer.borderColor = self.inputViewBorderColor.CGColor;
     _messageInputView.layer.borderWidth = .5f;
     _messageInputView.layer.cornerRadius = 5.f;
     
@@ -175,22 +184,79 @@ static const CGFloat FRInputViewHeight = 44;
     return _inputViewHeight;
 }
 
-- (void)setInputContainerColor:(UIColor *)inputContainerColor
+- (void)setInputContainerBackgroundColor:(UIColor *)inputContainerColor
 {
-    if (_inputContainerColor) {
-        _inputContainerColor = inputContainerColor;
-        _inputContainerView.backgroundColor = _inputContainerColor;
+    _inputContainerBackgroundColor = inputContainerColor;
+    _inputContainerView.backgroundColor = _inputContainerBackgroundColor;
+}
+
+- (void)setInputContainerSeparatorColor:(UIColor *)inputContainerSeparatorColor
+{
+    _inputContainerSeparatorColor = inputContainerSeparatorColor;
+    self.separatorView.backgroundColor = _inputContainerSeparatorColor;
+}
+
+- (UIColor *)inputContainerSeparatorColor
+{
+    if (!_inputContainerSeparatorColor) {
+        _inputContainerSeparatorColor = [UIColor lightGrayColor];
     }
+    return _inputContainerSeparatorColor;
 }
 
-- (void)setPlaceholder:(NSString *)placeholder
+- (void)setInputViewPlaceholder:(NSString *)placeholder
 {
-    _placeholder = [placeholder copy];
-    _messageInputView.placeholder = _placeholder;
+    _inputViewPlaceholder = [placeholder copy];
+    _messageInputView.placeholder = _inputViewPlaceholder;
 }
 
-#pragma mark - Private Methods
+- (UIColor *)inputViewBorderColor
+{
+    if (!_inputViewBorderColor) {
+        _inputViewBorderColor = [UIColor lightGrayColor];
+    }
+    
+    return _inputViewBorderColor;
+}
 
+- (void)setInputViewBorderColor:(UIColor *)inputViewBorderColor
+{
+    _inputViewBorderColor = inputViewBorderColor;
+    self.messageInputView.layer.borderColor = _inputViewBorderColor.CGColor;
+}
+
+- (void)setInputViewFont:(UIFont *)inputViewFont
+{
+    _inputViewFont = inputViewFont;
+    self.messageInputView.font = inputViewFont;
+}
+
+- (UIFont *)inputViewFont
+{
+    if (!_inputViewFont) {
+        _inputViewFont = [UIFont systemFontOfSize:15.0f];
+    }
+    return _inputViewFont;
+}
+
+- (void)setInputViewTextColor:(UIColor *)inputViewTextColor
+{
+    _inputViewTextColor = inputViewTextColor;
+    self.messageInputView.textColor = _inputViewTextColor;
+}
+
+- (void)setInputViewPlaceholderColor:(UIColor *)inputViewPlaceholderColor
+{
+    _inputViewPlaceholderColor = inputViewPlaceholderColor;
+    self.messageInputView.placeholderColor = _inputViewPlaceholderColor;
+}
+
+- (void)setInputViewTintColor:(UIColor *)inputViewTintColor
+{
+    _inputViewTintColor = inputViewTintColor;
+    self.messageInputView.internalTextView.tintColor = _inputViewTintColor;
+
+}
 
 #pragma mark -
 #pragma mark - Member Methods

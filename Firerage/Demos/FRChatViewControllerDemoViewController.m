@@ -7,6 +7,7 @@
 //
 
 #import "FRChatViewControllerDemoViewController.h"
+#import "MJRefresh.h"
 
 @interface FRChatViewControllerDemoViewController ()
 
@@ -27,6 +28,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.inputViewBorderColor = [UIColor clearColor];
+    self.inputContainerSeparatorColor = [UIColor redColor];
+    self.inputViewFont = [UIFont systemFontOfSize:14];
+    self.inputViewPlaceholder = @"请输入文字";
+    self.inputViewTintColor = [UIColor redColor];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.bubbleTable addLegendHeaderWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.bubbleTable.header endRefreshing];
+        });
+    }];
+    
+    
     NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"Hey, halloween is soon" date:[NSDate dateWithTimeIntervalSinceNow:1] type:BubbleTypeSomeoneElse];
     heyBubble.avatar = [UIImage imageNamed:@"avatar"];
     

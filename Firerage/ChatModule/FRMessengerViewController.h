@@ -14,9 +14,15 @@
 
 @property (nonatomic, weak) IBOutlet id<FRMessengerViewControllerDelegate> delegate;
 @property (nonatomic, assign) CGFloat inputViewHeight;// Default is 44
-@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, copy) NSString *inputViewPlaceholder;
+@property (nonatomic, strong) UIColor *inputViewPlaceholderColor;
+@property (nonatomic, strong) UIColor *inputViewTintColor;
 @property (nonatomic, strong) IBOutlet UIView *messageContentView;
-@property (nonatomic, strong) UIColor *inputContainerColor;
+@property (nonatomic, strong) UIColor *inputContainerBackgroundColor;
+@property (nonatomic, strong) UIColor *inputContainerSeparatorColor;
+@property (nonatomic, strong) UIColor *inputViewBorderColor;
+@property (nonatomic, strong) UIFont *inputViewFont;
+@property (nonatomic, strong) UIColor *inputViewTextColor;
 @property (nonatomic, assign , readonly) BOOL inputting;
 
 - (void)clearMessageInputView;
