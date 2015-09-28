@@ -74,34 +74,43 @@ typedef NS_ENUM(NSInteger, FRButtonImageType) {
 {
     __weak UIButton *wself = self;
     id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:url options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        if (!wself) return;
+        if (!wself) {
+            if (completion) {
+                completion(nil, error);
+            }
+            return;
+        }
         dispatch_main_sync_safe(^{
             __strong UIButton *sself = wself;
-            if (!sself) return;
-            if (image) {
-                NSString *cacheKey = [self cacheKeyWithURL:url buttonImageType:buttonImageType faceAwareFilled:faceAwareFilled forState:state];
-                if (faceAwareFilled) {
-                    [image faceAwareFillWithSize:[sself cropSize] cropType:FRCropTopType block:^(UIImage *faceAwareFilledImage) {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [sself setImage:faceAwareFilledImage forState:state buttonImageType:buttonImageType];
-                        });
-                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                            [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
-                        });
-                        if (completion && finished) {
-                            completion(faceAwareFilledImage, error);
-                        }
-                    }];
-                } else {
-                    UIImage *cropImage = [image cropWithProportion:CGRectGetWidth(sself.frame) / CGRectGetHeight(sself.frame) type:FRCropTopType];
-                    [sself setImage:cropImage forState:state buttonImageType:buttonImageType];
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                        [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+            if (!sself || !image) {
+                if (completion) {
+                    completion(nil, error);
+                }
+                return;
+            }
+            
+            NSString *cacheKey = [self cacheKeyWithURL:url buttonImageType:buttonImageType faceAwareFilled:faceAwareFilled forState:state];
+            if (faceAwareFilled) {
+                [image faceAwareFillWithSize:[sself cropSize] cropType:FRCropTopType block:^(UIImage *faceAwareFilledImage) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [sself setImage:faceAwareFilledImage forState:state buttonImageType:buttonImageType];
                     });
-                    
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                        [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
+                    });
                     if (completion && finished) {
-                        completion(cropImage, error);
+                        completion(faceAwareFilledImage, error);
                     }
+                }];
+            } else {
+                UIImage *cropImage = [image cropWithProportion:CGRectGetWidth(sself.frame) / CGRectGetHeight(sself.frame) type:FRCropTopType];
+                [sself setImage:cropImage forState:state buttonImageType:buttonImageType];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                    [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+                });
+                
+                if (completion && finished) {
+                    completion(cropImage, error);
                 }
             }
         });

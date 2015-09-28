@@ -54,34 +54,43 @@
     NSURL *url = [NSURL URLWithString:URLString];
     __weak UIImageView *wself = self;
     id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:url options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        if (!wself) return;
+        if (!wself) {
+            if (completion) {
+                completion(nil, error);
+            }
+            return;
+        }
         dispatch_main_sync_safe(^{
             __strong UIImageView *sself = wself;
-            if (!sself) return;
-            if (image) {
-                NSString *cacheKey = [self cacheKeyWithURLString:URLString faceAwareFilled:faceAwareFilled];
-                if (faceAwareFilled) {
-                    [image faceAwareFillWithSize:[sself cropSize] cropType:FRCropTopType block:^(UIImage *faceAwareFilledImage) {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [sself setCurrentImage:faceAwareFilledImage];
-                        });
-                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                            [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
-                        });
-                        if (completion && finished) {
-                            completion(faceAwareFilledImage, error);
-                        }
-                    }];
-                } else {
-                    UIImage *cropImage = [image cropWithProportion:CGRectGetWidth(sself.frame) / CGRectGetHeight(sself.frame) type:FRCropTopType];
-                    [sself setCurrentImage:cropImage];
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                        [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+            if (!sself || !image) {
+                if (completion) {
+                    completion(nil, error);
+                }
+                return;
+            }
+            
+            NSString *cacheKey = [self cacheKeyWithURLString:URLString faceAwareFilled:faceAwareFilled];
+            if (faceAwareFilled) {
+                [image faceAwareFillWithSize:[sself cropSize] cropType:FRCropTopType block:^(UIImage *faceAwareFilledImage) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [sself setCurrentImage:faceAwareFilledImage];
                     });
-                    
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                        [[SDImageCache sharedImageCache] storeImage:faceAwareFilledImage forKey:cacheKey];
+                    });
                     if (completion && finished) {
-                        completion(cropImage, error);
+                        completion(faceAwareFilledImage, error);
                     }
+                }];
+            } else {
+                UIImage *cropImage = [image cropWithProportion:CGRectGetWidth(sself.frame) / CGRectGetHeight(sself.frame) type:FRCropTopType];
+                [sself setCurrentImage:cropImage];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                    [[SDImageCache sharedImageCache] storeImage:cropImage forKey:cacheKey];
+                });
+                
+                if (completion && finished) {
+                    completion(cropImage, error);
                 }
             }
         });
