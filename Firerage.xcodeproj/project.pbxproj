@@ -57,7 +57,7 @@
 		3266EDD41B9549C700C8D8E3 /* FRGridViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED991B9549C700C8D8E3 /* FRGridViewItem.m */; };
 		3266EDD51B9549C700C8D8E3 /* FRFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED9C1B9549C700C8D8E3 /* FRFileCache.m */; };
 		3266EDD61B9549C700C8D8E3 /* FRFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266ED9E1B9549C700C8D8E3 /* FRFileManager.m */; };
-		3266EDD71B9549C700C8D8E3 /* FRPersistenceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA01B9549C700C8D8E3 /* FRPersistenceUtils.m */; };
+		3266EDD71B9549C700C8D8E3 /* FRArchiverUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDA01B9549C700C8D8E3 /* FRArchiverUtils.m */; };
 		3266EDDC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m */; };
 		3266EDDD1B9549C700C8D8E3 /* FRTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDAE1B9549C700C8D8E3 /* FRTextViewTableViewCell.m */; };
 		3266EDF61B954E6F00C8D8E3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266EDF51B954E6F00C8D8E3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -174,8 +174,8 @@
 		3266ED9C1B9549C700C8D8E3 /* FRFileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFileCache.m; sourceTree = "<group>"; };
 		3266ED9D1B9549C700C8D8E3 /* FRFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRFileManager.h; sourceTree = "<group>"; };
 		3266ED9E1B9549C700C8D8E3 /* FRFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRFileManager.m; sourceTree = "<group>"; };
-		3266ED9F1B9549C700C8D8E3 /* FRPersistenceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPersistenceUtils.h; sourceTree = "<group>"; };
-		3266EDA01B9549C700C8D8E3 /* FRPersistenceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPersistenceUtils.m; sourceTree = "<group>"; };
+		3266ED9F1B9549C700C8D8E3 /* FRArchiverUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRArchiverUtils.h; sourceTree = "<group>"; };
+		3266EDA01B9549C700C8D8E3 /* FRArchiverUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRArchiverUtils.m; sourceTree = "<group>"; };
 		3266EDAB1B9549C700C8D8E3 /* FRTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		3266EDAC1B9549C700C8D8E3 /* FRTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		3266EDAD1B9549C700C8D8E3 /* FRTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRTextViewTableViewCell.h; sourceTree = "<group>"; };
@@ -546,8 +546,8 @@
 				3266ED9C1B9549C700C8D8E3 /* FRFileCache.m */,
 				3266ED9D1B9549C700C8D8E3 /* FRFileManager.h */,
 				3266ED9E1B9549C700C8D8E3 /* FRFileManager.m */,
-				3266ED9F1B9549C700C8D8E3 /* FRPersistenceUtils.h */,
-				3266EDA01B9549C700C8D8E3 /* FRPersistenceUtils.m */,
+				3266ED9F1B9549C700C8D8E3 /* FRArchiverUtils.h */,
+				3266EDA01B9549C700C8D8E3 /* FRArchiverUtils.m */,
 			);
 			path = FRPersistenceUtils;
 			sourceTree = "<group>";
@@ -760,7 +760,7 @@
 				3266EDB31B9549C700C8D8E3 /* FRGridViewDemoViewController.m in Sources */,
 				3266EDC91B9549C700C8D8E3 /* UIView+FRImage.m in Sources */,
 				3266EDB81B9549C700C8D8E3 /* FRCameraUtils.m in Sources */,
-				3266EDD71B9549C700C8D8E3 /* FRPersistenceUtils.m in Sources */,
+				3266EDD71B9549C700C8D8E3 /* FRArchiverUtils.m in Sources */,
 				3266EDBB1B9549C700C8D8E3 /* NSArray+FRUtils.m in Sources */,
 				3266EDCD1B9549C700C8D8E3 /* UIViewController+FRCustomNavigationBarItem.m in Sources */,
 				3266EDF61B954E6F00C8D8E3 /* Reachability.m in Sources */,

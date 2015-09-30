@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FRFileManager.h"
 
-@interface FRPersistenceUtils : NSObject
+@interface FRArchiverUtils : NSObject
 
 + (NSString *)defaultArchiverDirectoryOfObject:(Class)objectClass;
 + (NSString *)defaultArchiverFileNameOfObject:(Class)objectClass;

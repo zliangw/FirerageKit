@@ -14,7 +14,7 @@
 #import "FRCameraUtils.h"
 #import "UIAlertView+FRUtils.h"
 #import "FRDevice.h"
-#import "FRPersistenceUtils.h"
+#import "FRArchiverUtils.h"
 #import "FRUser.h"
 #import "UIViewController+FRProgressHUD.h"
 #import "NSObject+FRBlock.h"
@@ -91,9 +91,9 @@
     user.sex = NO;
     user.name = @"MR";
     user.memberId12 = 10120;
-    [FRPersistenceUtils archiveObject:user];
+    [FRArchiverUtils archiveObject:user];
     
-    FRUser *user2 = [FRPersistenceUtils unArchiveObjectByClass:[FRUser class]];
+    FRUser *user2 = [FRArchiverUtils unArchiveObjectByClass:[FRUser class]];
     
     
     NSLog(@"%d, %@, %ld", user2.sex, user2.name, user2.memberId12);

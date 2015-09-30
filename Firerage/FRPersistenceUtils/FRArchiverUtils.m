@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Illidan.Firerage. All rights reserved.
 //
 
-#import "FRPersistenceUtils.h"
+#import "FRArchiverUtils.h"
 
-@implementation FRPersistenceUtils
+@implementation FRArchiverUtils
 
 + (NSString *)defaultArchiverDirectoryOfObject:(Class)objectClass
 {
@@ -36,7 +36,7 @@
     if (!error) {
         NSString *fileName = [[self class] defaultArchiverFileNameOfObject:objectClass];
         NSString *key = [[self class] defaultArchiverKeyOfObject:[object class]];
-        error = [FRPersistenceUtils archiveObject:object withKey:key fileName:fileName];
+        error = [FRArchiverUtils archiveObject:object withKey:key fileName:fileName];
     }
     
     return error;
@@ -46,7 +46,7 @@
 {
     NSString *fileName = [[self class] defaultArchiverFileNameOfObject:objClass];
     NSString *key = [[self class] defaultArchiverKeyOfObject:objClass];
-    return [FRPersistenceUtils unArchiveWithKey:key fileName:fileName];
+    return [FRArchiverUtils unArchiveWithKey:key fileName:fileName];
 }
 
 + (NSError *)archiveObject:(id)object withKey:(NSString *)key fileName:(NSString *)fileName
